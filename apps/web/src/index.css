@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grid-line: rgba(47, 95, 227, 0.07);
+  }
+  .dark {
+    --grid-line: rgba(148, 197, 255, 0.05);
+  }
+
+  body {
+    @apply font-body text-ink-900 bg-paper dark:bg-board dark:text-slate-100 antialiased;
+    /* Nền vở ô ly — chất toán học */
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-chalk-amber/40;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-boardcard rounded-2xl border-2 border-ink-900/10 dark:border-white/10 shadow-note dark:shadow-note-dark;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-note-hover hover:-translate-y-0.5;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ink-500 px-5 py-2.5 font-display font-semibold text-white transition-all hover:bg-ink-600 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-medium text-ink-700 dark:text-slate-200 transition-colors hover:bg-ink-500/10;
+  }
+  .input {
+    @apply w-full rounded-xl border-2 border-ink-900/15 dark:border-white/15 bg-white dark:bg-board px-4 py-2.5 outline-none transition-colors focus:border-ink-500 dark:focus:border-chalk-sky placeholder:text-slate-400;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
+
+/* Watermark trôi trên video — pointer-events none để không cản thao tác */
+.watermark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  transition: top 4s linear, left 4s linear;
+  white-space: nowrap;
+}
