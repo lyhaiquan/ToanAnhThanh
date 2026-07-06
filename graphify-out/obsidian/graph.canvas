@@ -1,0 +1,1576 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Adapter Architecture (AI + Storage)",
+      "x": 0,
+      "y": 0,
+      "width": 1100,
+      "height": 820,
+      "color": "1"
+    },
+    {
+      "id": "n_design_ai_provider_interface",
+      "type": "file",
+      "file": "AIProvider Interface.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_adapter_pattern",
+      "type": "file",
+      "file": "Adapter Pattern for Volatile Subsystems.md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_DEFAULT_PASS_SCORE",
+      "type": "file",
+      "file": "DEFAULT_PASS_SCORE = 70.md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_dynamic_watermark",
+      "type": "file",
+      "file": "Dynamic Moving Watermark.md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_gdrive_provider",
+      "type": "file",
+      "file": "GoogleDriveProvider (stub).md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_stream_token",
+      "type": "file",
+      "file": "HMAC Signed Stream Token.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_local_storage_provider",
+      "type": "file",
+      "file": "LocalStorageProvider.md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_mock_ai_provider",
+      "type": "file",
+      "file": "MockAIProvider.md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_opennotebook_provider",
+      "type": "file",
+      "file": "OpenNotebookProvider.md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_prisma_data_model",
+      "type": "file",
+      "file": "Prisma Data Model (UserCourseChapterLessonQuizProgress).md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_quiz_gate",
+      "type": "file",
+      "file": "Quiz Gate (Sequential Unlock).md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_rbac",
+      "type": "file",
+      "file": "RBAC (JWT + requireRole).md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_Role",
+      "type": "file",
+      "file": "Role Type (ADMIN  STUDENT).md",
+      "x": 20,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_toan_anh_thanh_lms_root",
+      "type": "file",
+      "file": "Root Monorepo Package (toan-anh-thanh-lms).md",
+      "x": 220,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_tat_server",
+      "type": "file",
+      "file": "Server Package (@tatserver).md",
+      "x": 420,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_tat_shared",
+      "type": "file",
+      "file": "Shared Package (@tatshared).md",
+      "x": 20,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_storage_provider_interface",
+      "type": "file",
+      "file": "StorageProvider Interface.md",
+      "x": 220,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_toan_anh_thanh_lms",
+      "type": "file",
+      "file": "Toan Anh Thanh LMS Design Spec.md",
+      "x": 420,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_plan_toan_anh_thanh_lms",
+      "type": "file",
+      "file": "Toan Anh Thanh LMS Implementation Plan.md",
+      "x": 20,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Root Monorepo Config",
+      "x": 1180,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "2"
+    },
+    {
+      "id": "n_toananhthanh_package_devdependencies_concurrently",
+      "type": "file",
+      "file": "concurrently.md",
+      "x": 1200,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_desktop",
+      "type": "file",
+      "file": "desktop.md",
+      "x": 1400,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_dev",
+      "type": "file",
+      "file": "dev.md",
+      "x": 1600,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_dev_server",
+      "type": "file",
+      "file": "devserver.md",
+      "x": 1200,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_dev_web",
+      "type": "file",
+      "file": "devweb.md",
+      "x": 1400,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies.md",
+      "x": 1600,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_name",
+      "type": "file",
+      "file": "name.md",
+      "x": 1200,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_json",
+      "type": "file",
+      "file": "package.json.md",
+      "x": 1400,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_private",
+      "type": "file",
+      "file": "private.md",
+      "x": 1600,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts",
+      "type": "file",
+      "file": "scripts.md",
+      "x": 1200,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_seed",
+      "type": "file",
+      "file": "seed.md",
+      "x": 1400,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_test",
+      "type": "file",
+      "file": "test.md",
+      "x": 1600,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_version",
+      "type": "file",
+      "file": "version.md",
+      "x": 1200,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_workspaces",
+      "type": "file",
+      "file": "workspaces.md",
+      "x": 1400,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Server Dev Dependencies",
+      "x": 2140,
+      "y": 0,
+      "width": 880,
+      "height": 620,
+      "color": "3"
+    },
+    {
+      "id": "n_server_package_devdependencies_types_bcryptjs",
+      "type": "file",
+      "file": "@typesbcryptjs.md",
+      "x": 2160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_types_cors",
+      "type": "file",
+      "file": "@typescors.md",
+      "x": 2360,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_types_express",
+      "type": "file",
+      "file": "@typesexpress.md",
+      "x": 2560,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_types_jsonwebtoken",
+      "type": "file",
+      "file": "@typesjsonwebtoken.md",
+      "x": 2160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_types_multer",
+      "type": "file",
+      "file": "@typesmulter.md",
+      "x": 2360,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_types_node",
+      "type": "file",
+      "file": "@typesnode.md",
+      "x": 2560,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_types_supertest",
+      "type": "file",
+      "file": "@typessupertest.md",
+      "x": 2160,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies_1.md",
+      "x": 2360,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_prisma",
+      "type": "file",
+      "file": "prisma.md",
+      "x": 2560,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_supertest",
+      "type": "file",
+      "file": "supertest.md",
+      "x": 2160,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_tsx",
+      "type": "file",
+      "file": "tsx.md",
+      "x": 2360,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_typescript",
+      "type": "file",
+      "file": "typescript.md",
+      "x": 2560,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_vitest",
+      "type": "file",
+      "file": "vitest.md",
+      "x": 2160,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "TypeScript Config",
+      "x": 3100,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "4"
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions",
+      "type": "file",
+      "file": "compilerOptions.md",
+      "x": 3120,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_esmoduleinterop",
+      "type": "file",
+      "file": "esModuleInterop.md",
+      "x": 3320,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_include",
+      "type": "file",
+      "file": "include.md",
+      "x": 3520,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_module",
+      "type": "file",
+      "file": "module.md",
+      "x": 3120,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_moduleresolution",
+      "type": "file",
+      "file": "moduleResolution.md",
+      "x": 3320,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_resolvejsonmodule",
+      "type": "file",
+      "file": "resolveJsonModule.md",
+      "x": 3520,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_skiplibcheck",
+      "type": "file",
+      "file": "skipLibCheck.md",
+      "x": 3120,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_strict",
+      "type": "file",
+      "file": "strict.md",
+      "x": 3320,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_target",
+      "type": "file",
+      "file": "target.md",
+      "x": 3520,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_tsconfig_json",
+      "type": "file",
+      "file": "tsconfig.json.md",
+      "x": 3120,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_types",
+      "type": "file",
+      "file": "types.md",
+      "x": 3320,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Server Package Scripts",
+      "x": 0,
+      "y": 900,
+      "width": 880,
+      "height": 520,
+      "color": "5"
+    },
+    {
+      "id": "n_server_package_scripts_dev",
+      "type": "file",
+      "file": "dev_1.md",
+      "x": 20,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_fetch_media",
+      "type": "file",
+      "file": "fetch-media.md",
+      "x": 220,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_migrate",
+      "type": "file",
+      "file": "migrate.md",
+      "x": 420,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_name",
+      "type": "file",
+      "file": "name_1.md",
+      "x": 20,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_package_json",
+      "type": "file",
+      "file": "package.json_1.md",
+      "x": 220,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts",
+      "type": "file",
+      "file": "scripts_1.md",
+      "x": 420,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_seed",
+      "type": "file",
+      "file": "seed_1.md",
+      "x": 20,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_start",
+      "type": "file",
+      "file": "start.md",
+      "x": 220,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_test",
+      "type": "file",
+      "file": "test_1.md",
+      "x": 420,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_version",
+      "type": "file",
+      "file": "version_1.md",
+      "x": 20,
+      "y": 1220,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Server Runtime Dependencies",
+      "x": 1180,
+      "y": 900,
+      "width": 660,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_server_package_dependencies_prisma_client",
+      "type": "file",
+      "file": "@prismaclient.md",
+      "x": 1200,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_tat_shared",
+      "type": "file",
+      "file": "@tatshared.md",
+      "x": 1400,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_bcryptjs",
+      "type": "file",
+      "file": "bcryptjs.md",
+      "x": 1600,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_cors",
+      "type": "file",
+      "file": "cors.md",
+      "x": 1200,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies",
+      "type": "file",
+      "file": "dependencies.md",
+      "x": 1400,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_express",
+      "type": "file",
+      "file": "express.md",
+      "x": 1600,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_jsonwebtoken",
+      "type": "file",
+      "file": "jsonwebtoken.md",
+      "x": 1200,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_multer",
+      "type": "file",
+      "file": "multer.md",
+      "x": 1400,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_zod",
+      "type": "file",
+      "file": "zod.md",
+      "x": 1600,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Security & Monitoring Design",
+      "x": 2140,
+      "y": 900,
+      "width": 660,
+      "height": 420,
+      "color": "1"
+    },
+    {
+      "id": "n_shared_ACTIVITY_LABELS",
+      "type": "file",
+      "file": "ACTIVITY_LABELS (Vietnamese labels).md",
+      "x": 2160,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_activity_logging",
+      "type": "file",
+      "file": "ActivityLog  SecurityEvent Monitoring.md",
+      "x": 2360,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_ActivityType",
+      "type": "file",
+      "file": "ActivityType Union Type.md",
+      "x": 2560,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_client_security_guard",
+      "type": "file",
+      "file": "Client Security Guard (Web Deterrents).md",
+      "x": 2160,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_electron_content_protection",
+      "type": "file",
+      "file": "Electron setContentProtection.md",
+      "x": 2360,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_SECURITY_EVENT_LABELS",
+      "type": "file",
+      "file": "SECURITY_EVENT_LABELS (Vietnamese labels).md",
+      "x": 2560,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_SecurityEventType",
+      "type": "file",
+      "file": "SecurityEventType Union Type.md",
+      "x": 2160,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Shared Types Module",
+      "x": 3100,
+      "y": 900,
+      "width": 660,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "n_src_index_activity_labels",
+      "type": "file",
+      "file": "ACTIVITY_LABELS.md",
+      "x": 3120,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_index_activitytype",
+      "type": "file",
+      "file": "ActivityType.md",
+      "x": 3320,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_index_role",
+      "type": "file",
+      "file": "Role.md",
+      "x": 3520,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_index_security_event_labels",
+      "type": "file",
+      "file": "SECURITY_EVENT_LABELS.md",
+      "x": 3120,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_index_securityeventtype",
+      "type": "file",
+      "file": "SecurityEventType.md",
+      "x": 3320,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_index_userstatus",
+      "type": "file",
+      "file": "UserStatus.md",
+      "x": 3520,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_packages_shared_src_index_ts",
+      "type": "file",
+      "file": "index.ts.md",
+      "x": 3120,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Shared Package Config",
+      "x": 0,
+      "y": 1500,
+      "width": 660,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_shared_package_main",
+      "type": "file",
+      "file": "main.md",
+      "x": 20,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_package_name",
+      "type": "file",
+      "file": "name_2.md",
+      "x": 220,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_packages_shared_package_json",
+      "type": "file",
+      "file": "package.json_2.md",
+      "x": 420,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_package_types",
+      "type": "file",
+      "file": "types_1.md",
+      "x": 20,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_package_version",
+      "type": "file",
+      "file": "version_2.md",
+      "x": 220,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Claude Tool Settings",
+      "x": 1180,
+      "y": 1500,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_claude_settings_local_permissions_allow",
+      "type": "file",
+      "file": "allow.md",
+      "x": 1200,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claude_settings_local_permissions",
+      "type": "file",
+      "file": "permissions.md",
+      "x": 1400,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claude_settings_local_json",
+      "type": "file",
+      "file": "settings.local.json.md",
+      "x": 1600,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_package_json_toananhthanh_package_name",
+      "fromNode": "n_package_json",
+      "toNode": "n_toananhthanh_package_name",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_toananhthanh_package_private",
+      "fromNode": "n_package_json",
+      "toNode": "n_toananhthanh_package_private",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_toananhthanh_package_version",
+      "fromNode": "n_package_json",
+      "toNode": "n_toananhthanh_package_version",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_toananhthanh_package_workspaces",
+      "fromNode": "n_package_json",
+      "toNode": "n_toananhthanh_package_workspaces",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_toananhthanh_package_scripts",
+      "fromNode": "n_package_json",
+      "toNode": "n_toananhthanh_package_scripts",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_json_toananhthanh_package_devdependencies",
+      "fromNode": "n_package_json",
+      "toNode": "n_toananhthanh_package_devdependencies",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_scripts_toananhthanh_package_scripts_dev",
+      "fromNode": "n_toananhthanh_package_scripts",
+      "toNode": "n_toananhthanh_package_scripts_dev",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_scripts_toananhthanh_package_scripts_dev_server",
+      "fromNode": "n_toananhthanh_package_scripts",
+      "toNode": "n_toananhthanh_package_scripts_dev_server",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_scripts_toananhthanh_package_scripts_dev_web",
+      "fromNode": "n_toananhthanh_package_scripts",
+      "toNode": "n_toananhthanh_package_scripts_dev_web",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_scripts_toananhthanh_package_scripts_desktop",
+      "fromNode": "n_toananhthanh_package_scripts",
+      "toNode": "n_toananhthanh_package_scripts_desktop",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_scripts_toananhthanh_package_scripts_test",
+      "fromNode": "n_toananhthanh_package_scripts",
+      "toNode": "n_toananhthanh_package_scripts_test",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_scripts_toananhthanh_package_scripts_seed",
+      "fromNode": "n_toananhthanh_package_scripts",
+      "toNode": "n_toananhthanh_package_scripts_seed",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_toananhthanh_package_devdependencies_toananhthanh_package_devdependencies_concurrently",
+      "fromNode": "n_toananhthanh_package_devdependencies",
+      "toNode": "n_toananhthanh_package_devdependencies_concurrently",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_claude_settings_local_json_claude_settings_local_permissions",
+      "fromNode": "n_claude_settings_local_json",
+      "toNode": "n_claude_settings_local_permissions",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_claude_settings_local_permissions_claude_settings_local_permissions_allow",
+      "fromNode": "n_claude_settings_local_permissions",
+      "toNode": "n_claude_settings_local_permissions_allow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_package_json_server_package_name",
+      "fromNode": "n_apps_server_package_json",
+      "toNode": "n_server_package_name",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_package_json_server_package_version",
+      "fromNode": "n_apps_server_package_json",
+      "toNode": "n_server_package_version",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_package_json_server_package_scripts",
+      "fromNode": "n_apps_server_package_json",
+      "toNode": "n_server_package_scripts",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_package_json_server_package_dependencies",
+      "fromNode": "n_apps_server_package_json",
+      "toNode": "n_server_package_dependencies",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_package_json_server_package_devdependencies",
+      "fromNode": "n_apps_server_package_json",
+      "toNode": "n_server_package_devdependencies",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_scripts_server_package_scripts_dev",
+      "fromNode": "n_server_package_scripts",
+      "toNode": "n_server_package_scripts_dev",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_scripts_server_package_scripts_start",
+      "fromNode": "n_server_package_scripts",
+      "toNode": "n_server_package_scripts_start",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_scripts_server_package_scripts_seed",
+      "fromNode": "n_server_package_scripts",
+      "toNode": "n_server_package_scripts_seed",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_scripts_server_package_scripts_migrate",
+      "fromNode": "n_server_package_scripts",
+      "toNode": "n_server_package_scripts_migrate",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_scripts_server_package_scripts_test",
+      "fromNode": "n_server_package_scripts",
+      "toNode": "n_server_package_scripts_test",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_scripts_server_package_scripts_fetch_media",
+      "fromNode": "n_server_package_scripts",
+      "toNode": "n_server_package_scripts_fetch_media",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_prisma_client",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_prisma_client",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_tat_shared",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_tat_shared",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_bcryptjs",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_bcryptjs",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_cors",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_cors",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_express",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_express",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_jsonwebtoken",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_jsonwebtoken",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_multer",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_multer",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_server_package_dependencies_zod",
+      "fromNode": "n_server_package_dependencies",
+      "toNode": "n_server_package_dependencies_zod",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_bcryptjs",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_bcryptjs",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_cors",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_cors",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_express",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_express",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_jsonwebtoken",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_jsonwebtoken",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_multer",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_multer",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_node",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_node",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_types_supertest",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_types_supertest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_prisma",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_prisma",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_supertest",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_supertest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_tsx",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_tsx",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_typescript",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_typescript",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_devdependencies_server_package_devdependencies_vitest",
+      "fromNode": "n_server_package_devdependencies",
+      "toNode": "n_server_package_devdependencies_vitest",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_tsconfig_json_server_tsconfig_compileroptions",
+      "fromNode": "n_apps_server_tsconfig_json",
+      "toNode": "n_server_tsconfig_compileroptions",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_tsconfig_json_server_tsconfig_include",
+      "fromNode": "n_apps_server_tsconfig_json",
+      "toNode": "n_server_tsconfig_include",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_target",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_target",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_module",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_module",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_moduleresolution",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_moduleresolution",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_strict",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_strict",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_esmoduleinterop",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_esmoduleinterop",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_skiplibcheck",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_skiplibcheck",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_resolvejsonmodule",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_resolvejsonmodule",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_tsconfig_compileroptions_server_tsconfig_compileroptions_types",
+      "fromNode": "n_server_tsconfig_compileroptions",
+      "toNode": "n_server_tsconfig_compileroptions_types",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_package_json_shared_package_name",
+      "fromNode": "n_packages_shared_package_json",
+      "toNode": "n_shared_package_name",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_package_json_shared_package_version",
+      "fromNode": "n_packages_shared_package_json",
+      "toNode": "n_shared_package_version",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_package_json_shared_package_main",
+      "fromNode": "n_packages_shared_package_json",
+      "toNode": "n_shared_package_main",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_package_json_shared_package_types",
+      "fromNode": "n_packages_shared_package_json",
+      "toNode": "n_shared_package_types",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_src_index_ts_src_index_role",
+      "fromNode": "n_packages_shared_src_index_ts",
+      "toNode": "n_src_index_role",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_src_index_ts_src_index_userstatus",
+      "fromNode": "n_packages_shared_src_index_ts",
+      "toNode": "n_src_index_userstatus",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_src_index_ts_src_index_activitytype",
+      "fromNode": "n_packages_shared_src_index_ts",
+      "toNode": "n_src_index_activitytype",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_src_index_ts_src_index_securityeventtype",
+      "fromNode": "n_packages_shared_src_index_ts",
+      "toNode": "n_src_index_securityeventtype",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_src_index_ts_src_index_security_event_labels",
+      "fromNode": "n_packages_shared_src_index_ts",
+      "toNode": "n_src_index_security_event_labels",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_packages_shared_src_index_ts_src_index_activity_labels",
+      "fromNode": "n_packages_shared_src_index_ts",
+      "toNode": "n_src_index_activity_labels",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_package_toan_anh_thanh_lms_root_package_tat_server",
+      "fromNode": "n_package_toan_anh_thanh_lms_root",
+      "toNode": "n_package_tat_server",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_package_toan_anh_thanh_lms_root_package_tat_shared",
+      "fromNode": "n_package_toan_anh_thanh_lms_root",
+      "toNode": "n_package_tat_shared",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_package_toan_anh_thanh_lms_root_plan_toan_anh_thanh_lms",
+      "fromNode": "n_package_toan_anh_thanh_lms_root",
+      "toNode": "n_plan_toan_anh_thanh_lms",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_package_tat_server_package_tat_shared",
+      "fromNode": "n_package_tat_server",
+      "toNode": "n_package_tat_shared",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_package_tat_shared_plan_toan_anh_thanh_lms",
+      "fromNode": "n_package_tat_shared",
+      "toNode": "n_plan_toan_anh_thanh_lms",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_shared_Role_design_rbac",
+      "fromNode": "n_shared_Role",
+      "toNode": "n_design_rbac",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_shared_ActivityType_shared_ACTIVITY_LABELS",
+      "fromNode": "n_shared_ActivityType",
+      "toNode": "n_shared_ACTIVITY_LABELS",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_shared_ActivityType_design_activity_logging",
+      "fromNode": "n_shared_ActivityType",
+      "toNode": "n_design_activity_logging",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_shared_SecurityEventType_shared_SECURITY_EVENT_LABELS",
+      "fromNode": "n_shared_SecurityEventType",
+      "toNode": "n_shared_SECURITY_EVENT_LABELS",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_shared_SecurityEventType_design_client_security_guard",
+      "fromNode": "n_shared_SecurityEventType",
+      "toNode": "n_design_client_security_guard",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_shared_DEFAULT_PASS_SCORE_design_quiz_gate",
+      "fromNode": "n_shared_DEFAULT_PASS_SCORE",
+      "toNode": "n_design_quiz_gate",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_toan_anh_thanh_lms",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_toan_anh_thanh_lms",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_quiz_gate",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_quiz_gate",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_stream_token",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_stream_token",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_ai_provider_interface",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_ai_provider_interface",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_storage_provider_interface",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_storage_provider_interface",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_electron_content_protection",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_electron_content_protection",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_client_security_guard",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_client_security_guard",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_plan_toan_anh_thanh_lms_design_dynamic_watermark",
+      "fromNode": "n_plan_toan_anh_thanh_lms",
+      "toNode": "n_design_dynamic_watermark",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_design_toan_anh_thanh_lms_design_adapter_pattern",
+      "fromNode": "n_design_toan_anh_thanh_lms",
+      "toNode": "n_design_adapter_pattern",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_design_toan_anh_thanh_lms_design_prisma_data_model",
+      "fromNode": "n_design_toan_anh_thanh_lms",
+      "toNode": "n_design_prisma_data_model",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_design_toan_anh_thanh_lms_design_rbac",
+      "fromNode": "n_design_toan_anh_thanh_lms",
+      "toNode": "n_design_rbac",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_design_adapter_pattern_design_ai_provider_interface",
+      "fromNode": "n_design_adapter_pattern",
+      "toNode": "n_design_ai_provider_interface",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_design_adapter_pattern_design_storage_provider_interface",
+      "fromNode": "n_design_adapter_pattern",
+      "toNode": "n_design_storage_provider_interface",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_design_ai_provider_interface_design_mock_ai_provider",
+      "fromNode": "n_design_ai_provider_interface",
+      "toNode": "n_design_mock_ai_provider",
+      "label": "implements [EXTRACTED]"
+    },
+    {
+      "id": "e_design_ai_provider_interface_design_opennotebook_provider",
+      "fromNode": "n_design_ai_provider_interface",
+      "toNode": "n_design_opennotebook_provider",
+      "label": "implements [EXTRACTED]"
+    },
+    {
+      "id": "e_design_storage_provider_interface_design_local_storage_provider",
+      "fromNode": "n_design_storage_provider_interface",
+      "toNode": "n_design_local_storage_provider",
+      "label": "implements [EXTRACTED]"
+    },
+    {
+      "id": "e_design_storage_provider_interface_design_gdrive_provider",
+      "fromNode": "n_design_storage_provider_interface",
+      "toNode": "n_design_gdrive_provider",
+      "label": "implements [EXTRACTED]"
+    },
+    {
+      "id": "e_design_storage_provider_interface_design_stream_token",
+      "fromNode": "n_design_storage_provider_interface",
+      "toNode": "n_design_stream_token",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_design_quiz_gate_design_prisma_data_model",
+      "fromNode": "n_design_quiz_gate",
+      "toNode": "n_design_prisma_data_model",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_design_client_security_guard_design_activity_logging",
+      "fromNode": "n_design_client_security_guard",
+      "toNode": "n_design_activity_logging",
+      "label": "shares_data_with [EXTRACTED]"
+    },
+    {
+      "id": "e_design_client_security_guard_design_electron_content_protection",
+      "fromNode": "n_design_client_security_guard",
+      "toNode": "n_design_electron_content_protection",
+      "label": "semantically_similar_to [INFERRED]"
+    }
+  ]
+}

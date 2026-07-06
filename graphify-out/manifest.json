@@ -1,0 +1,42 @@
+{
+  "D:\\ToanAnhThanh\\package.json": {
+    "mtime": 1783356657.100918,
+    "ast_hash": "5ca14de1f4e6952a36dd8dbf0475c176",
+    "semantic_hash": "5ca14de1f4e6952a36dd8dbf0475c176"
+  },
+  "D:\\ToanAnhThanh\\.claude\\settings.local.json": {
+    "mtime": 1783356499.954945,
+    "ast_hash": "1f00e4d8329dcf9d581446133717b0b0",
+    "semantic_hash": "1f00e4d8329dcf9d581446133717b0b0"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\package.json": {
+    "mtime": 1783356687.3407116,
+    "ast_hash": "c523992e840092f7d47a0ecf22095737",
+    "semantic_hash": "c523992e840092f7d47a0ecf22095737"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\tsconfig.json": {
+    "mtime": 1783356688.7632947,
+    "ast_hash": "6527b1e75c67c2b84808b6cd8ad013ce",
+    "semantic_hash": "6527b1e75c67c2b84808b6cd8ad013ce"
+  },
+  "D:\\ToanAnhThanh\\packages\\shared\\package.json": {
+    "mtime": 1783356663.5148253,
+    "ast_hash": "b3b3904c3d2f2076885313aeb7d7672e",
+    "semantic_hash": "b3b3904c3d2f2076885313aeb7d7672e"
+  },
+  "D:\\ToanAnhThanh\\packages\\shared\\src\\index.ts": {
+    "mtime": 1783356676.2829523,
+    "ast_hash": "1edd363492af00daca314858b3a206e7",
+    "semantic_hash": "1edd363492af00daca314858b3a206e7"
+  },
+  "D:\\ToanAnhThanh\\docs\\superpowers\\plans\\2026-07-06-toan-anh-thanh-lms.md": {
+    "mtime": 1783356623.7323153,
+    "ast_hash": "8f0eb3038c3bc5c1025ab4a41a3f012f",
+    "semantic_hash": "8f0eb3038c3bc5c1025ab4a41a3f012f"
+  },
+  "D:\\ToanAnhThanh\\docs\\superpowers\\specs\\2026-07-06-toan-anh-thanh-lms-design.md": {
+    "mtime": 1783356548.695747,
+    "ast_hash": "f244c1537a45c2c8c4bbede93ceb4f8c",
+    "semantic_hash": "f244c1537a45c2c8c4bbede93ceb4f8c"
+  }
+}

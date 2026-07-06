@@ -1,0 +1,132 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id             String          @id @default(cuid())
+  email          String          @unique
+  password       String
+  name           String
+  role           String          @default("STUDENT") // ADMIN | STUDENT
+  status         String          @default("ACTIVE") // ACTIVE | BANNED
+  createdAt      DateTime        @default(now())
+  enrollments    Enrollment[]
+  attempts       QuizAttempt[]
+  progress       Progress[]
+  activities     ActivityLog[]
+  securityEvents SecurityEvent[]
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  description String       @default("")
+  order       Int          @default(0)
+  chapters    Chapter[]
+  enrollments Enrollment[]
+}
+
+model Chapter {
+  id       String   @id @default(cuid())
+  title    String
+  order    Int      @default(0)
+  courseId String
+  course   Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  lessons  Lesson[]
+}
+
+model Lesson {
+  id          String     @id @default(cuid())
+  title       String
+  description String     @default("")
+  order       Int        @default(0)
+  videoSource String     @default("local") // local | gdrive
+  videoRef    String     @default("")
+  chapterId   String
+  chapter     Chapter    @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  quiz        Quiz?
+  progress    Progress[]
+}
+
+model Quiz {
+  id        String        @id @default(cuid())
+  lessonId  String        @unique
+  lesson    Lesson        @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  passScore Int           @default(70)
+  questions Question[]
+  attempts  QuizAttempt[]
+}
+
+model Question {
+  id          String @id @default(cuid())
+  quizId      String
+  quiz        Quiz   @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  order       Int    @default(0)
+  text        String
+  optionsJson String // JSON array of 4 strings
+  answerIndex Int
+  explanation String @default("")
+}
+
+model QuizAttempt {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quizId      String
+  quiz        Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answersJson String // JSON array of chosen indexes
+  score       Int
+  passed      Boolean
+  createdAt   DateTime @default(now())
+}
+
+model Progress {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId        String
+  lesson          Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  videoWatchedSec Int      @default(0)
+  completed       Boolean  @default(false)
+  updatedAt       DateTime @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+model Enrollment {
+  id       String @id @default(cuid())
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId String
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model ActivityLog {
+  id       String   @id @default(cuid())
+  userId   String
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type     String
+  metadata String   @default("{}")
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model SecurityEvent {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      String
+  detail    String   @default("")
+  resolved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
