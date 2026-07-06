@@ -12,12 +12,29 @@ export function signRefreshToken(user: AuthUser): string {
   return jwt.sign({ ...user, type: 'refresh' }, config.jwtSecret, { expiresIn: config.jwtRefreshTtl });
 }
 
-export async function login(email: string, password: string) {
+export async function login(email: string, password: string, deviceId?: string, deviceLabel?: string) {
   const user = await prisma.user.findUnique({ where: { email } });
   if (!user) return { error: 'Email hoặc mật khẩu không đúng' as const };
   if (user.status === 'BANNED') return { error: 'Tài khoản đã bị khóa. Liên hệ quản trị viên.' as const };
   const ok = await bcrypt.compare(password, user.password);
   if (!ok) return { error: 'Email hoặc mật khẩu không đúng' as const };
+
+  // Ràng buộc 1 thiết bị/học sinh (admin không bị giới hạn — dạy nhiều máy).
+  if (user.role === 'STUDENT') {
+    if (!deviceId) return { error: 'Không xác định được thiết bị. Vui lòng dùng trình duyệt cho phép lưu dữ liệu.' as const };
+    if (!user.boundDeviceId) {
+      // Lần đầu: khóa tài khoản vào thiết bị này
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { boundDeviceId: deviceId, boundDeviceLabel: deviceLabel ?? '', boundDeviceAt: new Date() },
+      });
+    } else if (user.boundDeviceId !== deviceId) {
+      await prisma.securityEvent.create({
+        data: { userId: user.id, type: 'SUSPICIOUS_KEY', detail: `Đăng nhập từ thiết bị lạ (khóa ở máy khác): ${deviceLabel ?? ''}` },
+      });
+      return { error: 'DEVICE_LOCKED' as const };
+    }
+  }
 
   const authUser: AuthUser = { id: user.id, email: user.email, role: user.role as AuthUser['role'] };
   await prisma.activityLog.create({ data: { userId: user.id, type: 'LOGIN' } });

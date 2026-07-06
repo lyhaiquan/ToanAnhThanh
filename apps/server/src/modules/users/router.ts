@@ -14,10 +14,24 @@ usersRouter.get('/', async (_req, res) => {
     orderBy: { createdAt: 'desc' },
     select: {
       id: true, email: true, name: true, status: true, createdAt: true,
+      boundDeviceLabel: true, boundDeviceAt: true,
+      // boundDeviceId có giá trị nghĩa là đã khóa vào 1 máy
+      boundDeviceId: true,
       _count: { select: { attempts: true, activities: true, securityEvents: true } },
     },
   });
-  res.json(users);
+  res.json(users.map((u) => ({ ...u, deviceBound: !!u.boundDeviceId, boundDeviceId: undefined })));
+});
+
+// Admin mở khóa thiết bị để học sinh đăng nhập trên máy mới
+usersRouter.patch('/:id/reset-device', async (req, res) => {
+  const user = await prisma.user.findUnique({ where: { id: req.params.id } });
+  if (!user || user.role !== 'STUDENT') return res.status(404).json({ error: 'Không tìm thấy học sinh' });
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { boundDeviceId: null, boundDeviceLabel: null, boundDeviceAt: null },
+  });
+  res.json({ ok: true });
 });
 
 const createSchema = z.object({

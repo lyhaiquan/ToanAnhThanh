@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useAuth } from './store';
+import { getDeviceId } from './device';
 
 export const api = axios.create({ baseURL: '/api' });
 
 api.interceptors.request.use((config) => {
   const token = useAuth.getState().accessToken;
   if (token) config.headers.Authorization = `Bearer ${token}`;
+  config.headers['X-Device-Id'] = getDeviceId();
   return config;
 });
 
@@ -16,6 +18,12 @@ api.interceptors.response.use(
   (res) => res,
   async (error) => {
     const original = error.config;
+    // Bị chặn vì sai thiết bị → đăng xuất ngay, đá về trang đăng nhập
+    if (error.response?.status === 403 && error.response?.data?.code === 'DEVICE_MISMATCH') {
+      useAuth.getState().logout();
+      if (!location.pathname.startsWith('/login')) location.href = '/login?reason=device';
+      return Promise.reject(error);
+    }
     if (error.response?.status === 401 && !original._retried && useAuth.getState().refreshToken) {
       original._retried = true;
       refreshing ??= doRefresh();

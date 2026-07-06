@@ -14,6 +14,9 @@ model User {
   name           String
   role           String          @default("STUDENT") // ADMIN | STUDENT
   status         String          @default("ACTIVE") // ACTIVE | BANNED
+  boundDeviceId    String?       // thiết bị được phép (khóa 1 máy/học sinh)
+  boundDeviceLabel String?       // mô tả máy (user-agent) để admin nhận biết
+  boundDeviceAt    DateTime?     // thời điểm khóa thiết bị
   createdAt      DateTime        @default(now())
   enrollments    Enrollment[]
   attempts       QuizAttempt[]

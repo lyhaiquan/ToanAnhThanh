@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../lib/store';
+import { getDeviceId } from '../lib/device';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -11,14 +12,16 @@ export default function Login() {
   const login = useAuth((s) => s.login);
   const navigate = useNavigate();
   const [params] = useSearchParams();
-  const securityKick = params.get('reason') === 'security';
+  const reason = params.get('reason');
+  const securityKick = reason === 'security';
+  const deviceKick = reason === 'device';
 
   async function submit(e: FormEvent) {
     e.preventDefault();
     setError('');
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/auth/login', { email, password });
+      const { data } = await axios.post('/api/auth/login', { email, password, deviceId: getDeviceId() });
       login(data.user, data.accessToken, data.refreshToken);
       navigate(data.user.role === 'ADMIN' ? '/admin' : '/');
     } catch (err: any) {
@@ -58,6 +61,11 @@ export default function Login() {
           <div className="mb-4 rounded-xl border-2 border-chalk-coral/40 bg-chalk-coral/10 px-4 py-3 text-sm font-medium text-chalk-coral">
             ⚠️ Phiên của bạn đã bị đăng xuất do phát hiện hành vi không được phép (DevTools / quay màn hình).
             Sự việc đã được báo cáo tới quản trị viên.
+          </div>
+        )}
+        {deviceKick && (
+          <div className="mb-4 rounded-xl border-2 border-chalk-amber/40 bg-chalk-amber/10 px-4 py-3 text-sm font-medium text-chalk-amber">
+            🔒 Tài khoản này chỉ được dùng trên thiết bị đã đăng ký. Nếu bạn cần đổi máy, hãy liên hệ giáo viên để mở khóa thiết bị.
           </div>
         )}
 

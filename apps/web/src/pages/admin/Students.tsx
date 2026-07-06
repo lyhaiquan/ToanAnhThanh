@@ -3,6 +3,7 @@ import { api } from '../../lib/api';
 
 interface Student {
   id: string; email: string; name: string; status: string; createdAt: string;
+  deviceBound: boolean; boundDeviceLabel: string | null; boundDeviceAt: string | null;
   _count: { attempts: number; activities: number; securityEvents: number };
 }
 
@@ -41,6 +42,12 @@ export default function AdminStudents() {
     load();
   }
 
+  async function resetDevice(id: string, name: string) {
+    if (!confirm(`Mở khóa thiết bị cho "${name}"? Học sinh sẽ đăng nhập được trên một máy mới (máy đầu tiên đăng nhập sau đó sẽ bị khóa lại).`)) return;
+    await api.patch(`/users/${id}/reset-device`);
+    load();
+  }
+
   return (
     <div className="animate-fade-up">
       <div className="flex items-center justify-between">
@@ -70,6 +77,7 @@ export default function AdminStudents() {
               <th className="px-4 py-3">Quiz đã làm</th>
               <th className="px-4 py-3">Hoạt động</th>
               <th className="px-4 py-3">Cảnh báo</th>
+              <th className="px-4 py-3">Thiết bị</th>
               <th className="px-4 py-3">Trạng thái</th>
               <th className="px-4 py-3 text-right">Thao tác</th>
             </tr>
@@ -91,11 +99,25 @@ export default function AdminStudents() {
                   )}
                 </td>
                 <td className="px-4 py-3">
+                  {s.deviceBound ? (
+                    <span className="badge bg-ink-500/10 text-ink-600 dark:text-chalk-sky" title={`${s.boundDeviceLabel ?? ''}\nKhóa lúc ${s.boundDeviceAt ? new Date(s.boundDeviceAt).toLocaleString('vi-VN') : ''}`}>
+                      🔒 Đã khóa
+                    </span>
+                  ) : (
+                    <span className="badge bg-slate-200 text-slate-500 dark:bg-white/10">Chưa khóa</span>
+                  )}
+                </td>
+                <td className="px-4 py-3">
                   <span className={`badge ${s.status === 'BANNED' ? 'bg-chalk-coral/15 text-chalk-coral' : 'bg-chalk-mint/15 text-chalk-mint'}`}>
                     {s.status === 'BANNED' ? 'Bị khóa' : 'Hoạt động'}
                   </span>
                 </td>
-                <td className="px-4 py-3 text-right">
+                <td className="px-4 py-3 text-right whitespace-nowrap">
+                  {s.deviceBound && (
+                    <button onClick={() => resetDevice(s.id, s.name)} className="btn-ghost text-sm" title="Mở khóa để học sinh đổi máy">
+                      📱 Đổi máy
+                    </button>
+                  )}
                   <button onClick={() => toggleBan(s.id)} className="btn-ghost text-sm">
                     {s.status === 'BANNED' ? '🔓 Mở khóa' : '🚫 Khóa'}
                   </button>

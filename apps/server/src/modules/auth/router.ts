@@ -11,8 +11,18 @@ const loginSchema = z.object({ email: z.string().email(), password: z.string().m
 authRouter.post('/login', async (req, res) => {
   const parsed = loginSchema.safeParse(req.body);
   if (!parsed.success) return res.status(400).json({ error: 'Dữ liệu không hợp lệ' });
-  const result = await login(parsed.data.email, parsed.data.password);
-  if ('error' in result) return res.status(401).json({ error: result.error });
+  const deviceId = typeof req.body?.deviceId === 'string' ? req.body.deviceId : undefined;
+  const deviceLabel = String(req.headers['user-agent'] ?? '').slice(0, 200);
+  const result = await login(parsed.data.email, parsed.data.password, deviceId, deviceLabel);
+  if ('error' in result) {
+    if (result.error === 'DEVICE_LOCKED') {
+      return res.status(403).json({
+        error: 'Tài khoản đã được đăng ký trên một thiết bị khác. Vui lòng liên hệ giáo viên để đổi thiết bị.',
+        code: 'DEVICE_LOCKED',
+      });
+    }
+    return res.status(401).json({ error: result.error });
+  }
   res.json(result);
 });
 
