@@ -1,16 +1,15 @@
 import { Router } from 'express';
 import { requireAuth, requireRole } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
+import { logActivity } from './logbuffer.js';
 
 export const securityRouter = Router();
 
-// Client ghi nhận hoạt động thường (play/pause/seek/...)
-securityRouter.post('/activity', requireAuth, async (req, res) => {
+// Client ghi nhận hoạt động thường (play/pause/seek/...) — đệm rồi ghi batch
+securityRouter.post('/activity', requireAuth, (req, res) => {
   const { type, metadata } = req.body ?? {};
   if (typeof type !== 'string') return res.status(400).json({ error: 'Thiếu type' });
-  await prisma.activityLog.create({
-    data: { userId: req.user!.id, type, metadata: JSON.stringify(metadata ?? {}) },
-  });
+  logActivity({ userId: req.user!.id, type, metadata: JSON.stringify(metadata ?? {}) });
   res.json({ ok: true });
 });
 

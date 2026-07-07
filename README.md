@@ -4,9 +4,16 @@ Nền tảng học toán trực tuyến: web + desktop, bài giảng video theo 
 
 ## Chạy demo
 
+Cần **PostgreSQL** (14+). Tạo database và file env trước:
+
 ```bash
+# 1. Tạo DB (psql):  CREATE DATABASE toananhthanh;
+# 2. Cấu hình kết nối:
+cp apps/server/.env.example apps/server/.env   # sửa DATABASE_URL (mật khẩu có @ thì encode thành %40)
+
 npm install
-npm run seed -w apps/server        # nếu chưa có dữ liệu (dev.db đã seed sẵn khi clone lần đầu thì bỏ qua)
+npx prisma migrate deploy --schema apps/server/prisma/schema.prisma  # tạo bảng
+npm run seed -w apps/server        # dữ liệu mẫu (admin + 3 HS + khóa Toán 12)
 npm run fetch-media -w apps/server # tải video mẫu (lần đầu)
 npm run dev                        # server :4000 + web :5173
 ```
@@ -46,13 +53,13 @@ Sự cố build thường gặp trên Windows:
 - `app.asar ... being used by another process`: thư mục output đang bị phần mềm khác giữ (AV,
   file watcher) — build ra chỗ khác: `electron-builder --win -c.directories.output=D:\Temp\tat-release`.
 
-**Tests:** `npm test` (24 tests: auth, RBAC, stream token, quiz gate, device binding)
+**Tests:** `npm test` (28 tests: auth, RBAC, stream token, quiz gate, device binding, resilience/batching — cần DATABASE_URL trỏ DB Postgres)
 
 ## Kiến trúc
 
 ```
 apps/web       React + Vite + Tailwind — giao diện LMS (sáng/tối, tiếng Việt)
-apps/server    Express + Prisma + SQLite — API, module hóa theo domain
+apps/server    Express + Prisma + PostgreSQL — API, module hóa theo domain
 apps/desktop   Electron — setContentProtection chống quay/chụp màn hình
 packages/shared Types + labels dùng chung
 ```
@@ -81,6 +88,14 @@ Mặc định video lưu local (`apps/server/media|uploads`). Khi có Drive:
 
 > Lưu ý trung thực: trên **web thuần**, chặn quay màn hình 100% là bất khả thi về mặt kỹ thuật —
 > các biện pháp web là "gây khó + phát hiện + báo cáo". Kênh chặn cứng là app desktop.
+
+## Chịu tải
+
+Đã load test 100 kết nối đồng thời (autocannon, 2026-07-07, sau khi chuyển PostgreSQL):
+đọc API ~730 req/s; ghi activity log ~1.500 req/s (đệm RAM, flush batch 2s — xem
+`modules/security/logbuffer.ts`); stream video ~87 MB/s. Async error trong route được
+`express-async-errors` đưa về error handler (trả 500, không chết process). Login bcrypt
+~6 req/s là điểm chậm chủ đích (chống brute-force).
 
 ## Knowledge graph
 

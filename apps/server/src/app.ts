@@ -1,4 +1,5 @@
 import express from 'express';
+import 'express-async-errors'; // vá Express 4: lỗi trong async handler đi vào error middleware thay vì giết process
 import cors from 'cors';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,7 +15,8 @@ import { streamRouter } from './modules/stream/router.js';
 import { securityRouter } from './modules/security/router.js';
 import { analyticsRouter } from './modules/analytics/router.js';
 
-export function createApp() {
+// extra: điểm chèn route trước error handler (dùng cho test)
+export function createApp(extra?: (app: express.Express) => void) {
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -41,6 +43,8 @@ export function createApp() {
       res.sendFile(path.join(webDist, 'index.html'));
     });
   }
+
+  extra?.(app);
 
   // Error handler cuối chuỗi — không lộ stack ra client
   app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
