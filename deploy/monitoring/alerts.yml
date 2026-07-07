@@ -1,0 +1,59 @@
+# Luật cảnh báo bất thường — xem trạng thái tại Prometheus /alerts hoặc gắn Alertmanager sau
+groups:
+  - name: tat-lms
+    rules:
+      - alert: ServerDown
+        expr: up{job="tat-lms"} == 0
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: 'LMS server không phản hồi (down hơn 1 phút)'
+
+      - alert: LoginBruteForce
+        expr: increase(tat_login_failures_total[5m]) > 30
+        labels: { severity: warning }
+        annotations:
+          summary: 'Hơn 30 lần đăng nhập thất bại trong 5 phút — nghi bị dò mật khẩu'
+
+      - alert: SecurityEventSpike
+        expr: increase(tat_security_events_total[10m]) > 10
+        labels: { severity: warning }
+        annotations:
+          summary: 'Nhiều sự kiện bảo mật từ client (devtools/quay màn hình) trong 10 phút'
+
+      - alert: High5xxRate
+        expr: sum(rate(tat_http_request_duration_seconds_count{status=~"5.."}[5m])) > 1
+        for: 5m
+        labels: { severity: critical }
+        annotations:
+          summary: 'Server trả lỗi 5xx liên tục — kiểm tra log ngay'
+
+      - alert: ActivityBufferStuck
+        expr: tat_activity_buffer_size > 2000
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: 'Activity log dồn ứ không ghi được DB — kiểm tra PostgreSQL'
+
+      - alert: SlowRequests
+        expr: histogram_quantile(0.95, sum(rate(tat_http_request_duration_seconds_bucket{route!~".*stream.*"}[5m])) by (le)) > 2
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: 'p95 API chậm hơn 2s trong 5 phút — server quá tải?'
+
+  - name: may-chu
+    rules:
+      - alert: DiskAlmostFull
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) < 0.1
+        for: 10m
+        labels: { severity: critical }
+        annotations:
+          summary: 'Đĩa còn dưới 10% — video upload sẽ fail'
+
+      - alert: HighMemory
+        expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) < 0.1
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: 'RAM còn dưới 10%'

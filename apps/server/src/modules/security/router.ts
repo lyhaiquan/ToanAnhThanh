@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { requireAuth, requireRole } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
 import { logActivity } from './logbuffer.js';
+import { securityEvents } from '../../metrics.js';
 
 export const securityRouter = Router();
 
@@ -17,6 +18,7 @@ securityRouter.post('/activity', requireAuth, (req, res) => {
 securityRouter.post('/security-event', requireAuth, async (req, res) => {
   const { type, detail } = req.body ?? {};
   if (typeof type !== 'string') return res.status(400).json({ error: 'Thiếu type' });
+  securityEvents.inc({ type });
   await prisma.securityEvent.create({
     data: { userId: req.user!.id, type, detail: String(detail ?? '') },
   });

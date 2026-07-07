@@ -1,4 +1,5 @@
 import { prisma } from '../../db.js';
+import { activityBufferSize } from '../../metrics.js';
 
 // Đệm activity log trong RAM rồi ghi theo batch — 100 học sinh cùng play/pause
 // chỉ còn vài lệnh INSERT mỗi chu kỳ thay vì bão ghi từng dòng.
@@ -12,6 +13,7 @@ let flushing: Promise<void> | null = null;
 
 export function logActivity(entry: Entry) {
   buffer.push(entry);
+  activityBufferSize.set(buffer.length);
   if (buffer.length >= FLUSH_THRESHOLD) void flushActivityBuffer();
 }
 
@@ -19,6 +21,7 @@ export async function flushActivityBuffer(): Promise<void> {
   if (flushing) return flushing; // không flush chồng nhau
   if (buffer.length === 0) return;
   const batch = buffer.splice(0);
+  activityBufferSize.set(0);
   flushing = prisma.activityLog
     .createMany({ data: batch })
     .then(() => undefined)

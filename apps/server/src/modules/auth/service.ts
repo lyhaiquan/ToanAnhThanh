@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import { prisma } from '../../db.js';
 import { config } from '../../config.js';
 import type { AuthUser } from '../../middleware/auth.js';
+import { loginFailures } from '../../metrics.js';
 
 export function signAccessToken(user: AuthUser): string {
   return jwt.sign({ ...user, type: 'access' }, config.jwtSecret, { expiresIn: config.jwtAccessTtl });
@@ -14,10 +15,19 @@ export function signRefreshToken(user: AuthUser): string {
 
 export async function login(email: string, password: string, deviceId?: string, deviceLabel?: string) {
   const user = await prisma.user.findUnique({ where: { email } });
-  if (!user) return { error: 'Email hoặc mật khẩu không đúng' as const };
-  if (user.status === 'BANNED') return { error: 'Tài khoản đã bị khóa. Liên hệ quản trị viên.' as const };
+  if (!user) {
+    loginFailures.inc({ reason: 'bad_credentials' });
+    return { error: 'Email hoặc mật khẩu không đúng' as const };
+  }
+  if (user.status === 'BANNED') {
+    loginFailures.inc({ reason: 'banned' });
+    return { error: 'Tài khoản đã bị khóa. Liên hệ quản trị viên.' as const };
+  }
   const ok = await bcrypt.compare(password, user.password);
-  if (!ok) return { error: 'Email hoặc mật khẩu không đúng' as const };
+  if (!ok) {
+    loginFailures.inc({ reason: 'bad_credentials' });
+    return { error: 'Email hoặc mật khẩu không đúng' as const };
+  }
 
   // Ràng buộc 1 thiết bị/học sinh (admin không bị giới hạn — dạy nhiều máy).
   if (user.role === 'STUDENT') {
@@ -32,6 +42,7 @@ export async function login(email: string, password: string, deviceId?: string, 
       await prisma.securityEvent.create({
         data: { userId: user.id, type: 'SUSPICIOUS_KEY', detail: `Đăng nhập từ thiết bị lạ (khóa ở máy khác): ${deviceLabel ?? ''}` },
       });
+      loginFailures.inc({ reason: 'device_mismatch' });
       return { error: 'DEVICE_LOCKED' as const };
     }
   }

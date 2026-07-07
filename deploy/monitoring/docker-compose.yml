@@ -1,0 +1,44 @@
+# Giám sát Toán Anh Thành LMS: Prometheus + Grafana + node-exporter
+# Chạy trên VPS:  docker compose up -d
+# Grafana: http://<vps>:3000 (đổi mật khẩu admin ngay lần đầu)
+# Tổng RAM tiêu thụ cả cụm: ~600-800MB — VPS 8GB dư sức.
+services:
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=15d
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prom-data:/prometheus
+    ports:
+      - '127.0.0.1:9090:9090' # chỉ localhost — xem qua Grafana, không mở ra ngoài
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-doi-mat-khau-nay}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./grafana-datasource.yml:/etc/grafana/provisioning/datasources/prometheus.yml:ro
+      - grafana-data:/var/lib/grafana
+    ports:
+      - '3000:3000'
+
+  node-exporter:
+    image: prom/node-exporter:v1.8.1
+    restart: unless-stopped
+    pid: host
+    volumes:
+      - /:/host:ro,rslave
+    command:
+      - --path.rootfs=/host
+    ports:
+      - '127.0.0.1:9100:9100'
+
+volumes:
+  prom-data:
+  grafana-data:

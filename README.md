@@ -53,7 +53,7 @@ Sự cố build thường gặp trên Windows:
 - `app.asar ... being used by another process`: thư mục output đang bị phần mềm khác giữ (AV,
   file watcher) — build ra chỗ khác: `electron-builder --win -c.directories.output=D:\Temp\tat-release`.
 
-**Tests:** `npm test` (28 tests: auth, RBAC, stream token, quiz gate, device binding, resilience/batching — cần DATABASE_URL trỏ DB Postgres)
+**Tests:** `npm test` (33 tests: auth, RBAC, stream token, quiz gate, device binding, resilience/batching — cần DATABASE_URL trỏ DB Postgres)
 
 ## Kiến trúc
 
@@ -88,6 +88,16 @@ Mặc định video lưu local (`apps/server/media|uploads`). Khi có Drive:
 
 > Lưu ý trung thực: trên **web thuần**, chặn quay màn hình 100% là bất khả thi về mặt kỹ thuật —
 > các biện pháp web là "gây khó + phát hiện + báo cáo". Kênh chặn cứng là app desktop.
+
+## Giám sát & chống tấn công
+
+- **Metrics Prometheus** tại `GET /metrics` (bảo vệ bằng env `METRICS_TOKEN`): request rate/latency,
+  login thất bại, sự kiện bảo mật, buffer log. Gói giám sát đầy đủ (Prometheus + Grafana +
+  node-exporter + luật cảnh báo dò mật khẩu/5xx/đĩa cạn) ở [`deploy/monitoring/`](deploy/monitoring/README.md).
+- **Chống brute-force login:** giới hạn 10 lần sai/15 phút theo cặp (IP + email) — cả lớp chung
+  NAT trường học không chặn nhầm nhau; trần 500 req/15ph/IP chống rải email.
+- **Helmet**: bộ header bảo vệ chuẩn, ẩn dấu vết Express.
+- Đã có từ trước: JWT + RBAC, bcrypt, device binding, stream token HMAC, log mọi hành vi.
 
 ## Chịu tải
 
