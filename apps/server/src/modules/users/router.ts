@@ -29,20 +29,30 @@ usersRouter.patch('/:id/reset-device', async (req, res) => {
   if (!user || user.role !== 'STUDENT') return res.status(404).json({ error: 'Không tìm thấy học sinh' });
   await prisma.user.update({
     where: { id: user.id },
-    data: { boundDeviceId: null, boundDeviceLabel: null, boundDeviceAt: null },
+    // Tăng tokenVersion: refresh token trên máy cũ hết hiệu lực, buộc đăng nhập lại
+    data: { boundDeviceId: null, boundDeviceLabel: null, boundDeviceAt: null, tokenVersion: { increment: 1 } },
   });
   res.json({ ok: true });
 });
 
+// Mật khẩu ≥ 8 ký tự, có chữ và số — chặn mật khẩu quá dễ đoán
+const passwordSchema = z
+  .string()
+  .min(8, 'Mật khẩu phải ≥ 8 ký tự')
+  .regex(/[A-Za-z]/, 'Mật khẩu phải có chữ cái')
+  .regex(/[0-9]/, 'Mật khẩu phải có chữ số');
+
 const createSchema = z.object({
   email: z.string().email(),
   name: z.string().min(1),
-  password: z.string().min(6),
+  password: passwordSchema,
 });
 
 usersRouter.post('/', async (req, res) => {
   const parsed = createSchema.safeParse(req.body);
-  if (!parsed.success) return res.status(400).json({ error: 'Dữ liệu không hợp lệ (mật khẩu ≥ 6 ký tự)' });
+  if (!parsed.success) {
+    return res.status(400).json({ error: parsed.error.issues[0]?.message ?? 'Dữ liệu không hợp lệ' });
+  }
   const exists = await prisma.user.findUnique({ where: { email: parsed.data.email } });
   if (exists) return res.status(409).json({ error: 'Email đã tồn tại' });
 
@@ -67,9 +77,14 @@ usersRouter.post('/', async (req, res) => {
 usersRouter.patch('/:id/ban', async (req, res) => {
   const user = await prisma.user.findUnique({ where: { id: req.params.id } });
   if (!user || user.role !== 'STUDENT') return res.status(404).json({ error: 'Không tìm thấy học sinh' });
+  const banning = user.status !== 'BANNED';
   const updated = await prisma.user.update({
     where: { id: user.id },
-    data: { status: user.status === 'BANNED' ? 'ACTIVE' : 'BANNED' },
+    // Khi ban: thu hồi refresh token ngay (access token tự chết trong 15' + requireAuth chặn ngay)
+    data: {
+      status: banning ? 'BANNED' : 'ACTIVE',
+      ...(banning ? { tokenVersion: { increment: 1 } } : {}),
+    },
     select: { id: true, status: true },
   });
   res.json(updated);

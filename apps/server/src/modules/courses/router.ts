@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { requireAuth, requireRole } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
 import { isLessonUnlocked } from '../quiz/service.js';
+import { ensureLessonAccess } from './access.js';
 
 export const coursesRouter = Router();
 
@@ -74,15 +75,12 @@ coursesRouter.get('/:courseId', requireAuth, async (req, res) => {
 
 // Chi tiết bài học (chỉ khi đã mở khóa)
 coursesRouter.get('/lessons/:lessonId', requireAuth, async (req, res) => {
+  if (!(await ensureLessonAccess(req, res, req.params.lessonId))) return;
   const lesson = await prisma.lesson.findUnique({
     where: { id: req.params.lessonId },
     include: { chapter: { include: { course: { select: { id: true, title: true } } } }, quiz: { select: { id: true } } },
   });
   if (!lesson) return res.status(404).json({ error: 'Không tìm thấy bài học' });
-
-  if (req.user!.role !== 'ADMIN' && !(await isLessonUnlocked(req.user!.id, lesson.id))) {
-    return res.status(403).json({ error: 'Bài học chưa mở khóa. Hãy hoàn thành quiz bài trước.' });
-  }
 
   await prisma.activityLog.create({
     data: { userId: req.user!.id, type: 'PAGE_VIEW', metadata: JSON.stringify({ lessonId: lesson.id, title: lesson.title }) },

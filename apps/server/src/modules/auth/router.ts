@@ -35,6 +35,8 @@ authRouter.post('/refresh', async (req, res) => {
 });
 
 authRouter.post('/logout', requireAuth, async (req, res) => {
+  // Thu hồi refresh token của phiên này (tăng version) — logout thật sự, không chỉ xóa phía client
+  await prisma.user.update({ where: { id: req.user!.id }, data: { tokenVersion: { increment: 1 } } });
   await prisma.activityLog.create({ data: { userId: req.user!.id, type: 'LOGOUT' } });
   res.json({ ok: true });
 });

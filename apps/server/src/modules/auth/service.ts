@@ -9,8 +9,10 @@ export function signAccessToken(user: AuthUser): string {
   return jwt.sign({ ...user, type: 'access' }, config.jwtSecret, { expiresIn: config.jwtAccessTtl });
 }
 
-export function signRefreshToken(user: AuthUser): string {
-  return jwt.sign({ ...user, type: 'refresh' }, config.jwtSecret, { expiresIn: config.jwtRefreshTtl });
+// Refresh token nhúng tokenVersion — khi version trên DB đổi, mọi refresh token
+// cũ thành vô hiệu (thu hồi tức thì sau ban / reset thiết bị / đăng xuất).
+export function signRefreshToken(user: AuthUser, tokenVersion: number): string {
+  return jwt.sign({ ...user, type: 'refresh', v: tokenVersion }, config.jwtSecret, { expiresIn: config.jwtRefreshTtl });
 }
 
 export async function login(email: string, password: string, deviceId?: string, deviceLabel?: string) {
@@ -52,19 +54,20 @@ export async function login(email: string, password: string, deviceId?: string, 
   return {
     user: { id: user.id, email: user.email, name: user.name, role: user.role },
     accessToken: signAccessToken(authUser),
-    refreshToken: signRefreshToken(authUser),
+    refreshToken: signRefreshToken(authUser, user.tokenVersion),
   };
 }
 
 export async function refresh(refreshToken: string) {
   try {
-    const payload = jwt.verify(refreshToken, config.jwtSecret) as AuthUser & { type: string };
+    const payload = jwt.verify(refreshToken, config.jwtSecret) as AuthUser & { type: string; v?: number };
     if (payload.type !== 'refresh') return null;
-    // Re-check user still active
     const user = await prisma.user.findUnique({ where: { id: payload.id } });
     if (!user || user.status === 'BANNED') return null;
+    // Token cũ hơn phiên bản hiện tại → đã bị thu hồi
+    if ((payload.v ?? -1) !== user.tokenVersion) return null;
     const authUser: AuthUser = { id: user.id, email: user.email, role: user.role as AuthUser['role'] };
-    return { accessToken: signAccessToken(authUser), refreshToken: signRefreshToken(authUser) };
+    return { accessToken: signAccessToken(authUser), refreshToken: signRefreshToken(authUser, user.tokenVersion) };
   } catch {
     return null;
   }

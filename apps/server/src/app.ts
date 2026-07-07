@@ -4,6 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
 import { metricsMiddleware, metricsHandler } from './metrics.js';
+import { config } from './config.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -25,8 +26,12 @@ export function createApp(extra?: (app: express.Express) => void) {
   app.set('trust proxy', Number(process.env.TRUST_PROXY ?? 0));
   // CSP tắt vì SPA + video cùng origin đã đủ chặt; các header còn lại của helmet giữ nguyên
   app.use(helmet({ contentSecurityPolicy: false }));
-  app.use(cors());
-  app.use(express.json());
+  // CORS: web do server phục vụ nên cùng origin (không cần CORS). Chỉ mở khi:
+  //  - dev (Vite :5173 gọi API :4000), hoặc
+  //  - production có khai báo CORS_ORIGINS (client ngoài, vd bản web tách domain).
+  if (!config.isProd) app.use(cors());
+  else if (config.corsOrigins.length) app.use(cors({ origin: config.corsOrigins }));
+  app.use(express.json({ limit: '1mb' }));
   app.use(metricsMiddleware);
 
   // Chống dò mật khẩu: giới hạn theo (IP + email) để cả lớp chung NAT trường học

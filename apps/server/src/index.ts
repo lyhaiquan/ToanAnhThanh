@@ -1,5 +1,7 @@
 import { createApp } from './app.js';
-import { config } from './config.js';
+import { config, assertProductionSecurity } from './config.js';
+
+assertProductionSecurity(); // dừng ngay nếu production mà secret yếu/thiếu
 import { flushActivityBuffer } from './modules/security/logbuffer.js';
 import { prisma } from './db.js';
 

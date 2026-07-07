@@ -24,7 +24,7 @@ export class GoogleDriveProvider implements StorageProvider {
     }
   }
 
-  save(): Promise<string> {
+  save(_tempPath: string, _originalName: string): Promise<string> {
     throw new Error('GoogleDriveProvider.save chưa được kích hoạt — cần credentials (xem hướng dẫn trong file này).');
   }
 

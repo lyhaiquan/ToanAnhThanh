@@ -2,11 +2,13 @@ import { Router } from 'express';
 import { requireAuth } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
 import { submitQuiz, isLessonUnlocked } from './service.js';
+import { ensureLessonAccess } from '../courses/access.js';
 
 export const quizRouter = Router();
 
 // Lấy quiz của bài học (không kèm đáp án!)
 quizRouter.get('/lesson/:lessonId', requireAuth, async (req, res) => {
+  if (!(await ensureLessonAccess(req, res, req.params.lessonId))) return;
   const quiz = await prisma.quiz.findUnique({
     where: { lessonId: req.params.lessonId },
     include: { questions: { orderBy: { order: 'asc' } } },
@@ -31,6 +33,11 @@ quizRouter.get('/lesson/:lessonId', requireAuth, async (req, res) => {
 quizRouter.post('/:quizId/submit', requireAuth, async (req, res) => {
   const answers = req.body?.answers;
   if (!Array.isArray(answers)) return res.status(400).json({ error: 'Thiếu đáp án' });
+  // Chỉ cho nộp quiz của bài mà học sinh được phép (ghi danh + đã mở khóa),
+  // tránh nộp quiz khóa/khác lớp để lách gate.
+  const quiz = await prisma.quiz.findUnique({ where: { id: req.params.quizId }, select: { lessonId: true } });
+  if (!quiz) return res.status(404).json({ error: 'Không tìm thấy quiz' });
+  if (!(await ensureLessonAccess(req, res, quiz.lessonId))) return;
   const result = await submitQuiz(req.user!.id, req.params.quizId, answers.map(Number));
   if (!result) return res.status(404).json({ error: 'Không tìm thấy quiz' });
   res.json(result);

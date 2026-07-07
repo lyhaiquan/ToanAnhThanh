@@ -17,6 +17,7 @@ model User {
   boundDeviceId    String?       // thiết bị được phép (khóa 1 máy/học sinh)
   boundDeviceLabel String?       // mô tả máy (user-agent) để admin nhận biết
   boundDeviceAt    DateTime?     // thời điểm khóa thiết bị
+  tokenVersion   Int             @default(0) // tăng lên để thu hồi mọi refresh token cũ (ban/reset thiết bị/logout)
   createdAt      DateTime        @default(now())
   enrollments    Enrollment[]
   attempts       QuizAttempt[]

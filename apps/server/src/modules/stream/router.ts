@@ -3,14 +3,16 @@ import { requireAuth } from '../../middleware/auth.js';
 import { signStreamToken, verifyStreamToken } from './token.js';
 import { getStorage } from '../storage/index.js';
 import { prisma } from '../../db.js';
+import { ensureLessonAccess } from '../courses/access.js';
 
 export const streamRouter = Router();
 
 // Client xin token mới trước mỗi lần play (token sống 60s).
+// Chỉ cấp token khi học sinh thực sự được xem bài (ghi danh + đã mở khóa) —
+// nếu không, gate video bị bypass bằng cách đoán lessonId.
 streamRouter.post('/token/:lessonId', requireAuth, async (req, res) => {
-  const lesson = await prisma.lesson.findUnique({ where: { id: req.params.lessonId } });
-  if (!lesson) return res.status(404).json({ error: 'Không tìm thấy bài học' });
-  res.json({ token: signStreamToken(req.user!.id, lesson.id) });
+  if (!(await ensureLessonAccess(req, res, req.params.lessonId))) return;
+  res.json({ token: signStreamToken(req.user!.id, req.params.lessonId) });
 });
 
 // <video src="/api/stream/:lessonId?token=..."> — xác thực bằng token ký, không cần header.

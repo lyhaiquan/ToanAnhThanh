@@ -17,11 +17,12 @@ export class LocalStorageProvider implements StorageProvider {
     throw Object.assign(new Error(`Không tìm thấy video: ${safe}`), { code: 'VIDEO_NOT_FOUND' });
   }
 
-  async save(file: Buffer, filename: string): Promise<string> {
+  async save(tempPath: string, originalName: string): Promise<string> {
     fs.mkdirSync(config.uploadDir, { recursive: true });
-    const ext = path.extname(filename) || '.mp4';
+    const ext = path.extname(originalName) || '.mp4';
     const name = `${Date.now()}-${crypto.randomBytes(4).toString('hex')}${ext}`;
-    fs.writeFileSync(path.join(config.uploadDir, name), file);
+    // rename trong cùng ổ đĩa là thao tác nguyên tử, không copy dữ liệu
+    fs.renameSync(tempPath, path.join(config.uploadDir, name));
     return name;
   }
 

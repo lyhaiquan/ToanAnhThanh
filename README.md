@@ -53,7 +53,7 @@ Sự cố build thường gặp trên Windows:
 - `app.asar ... being used by another process`: thư mục output đang bị phần mềm khác giữ (AV,
   file watcher) — build ra chỗ khác: `electron-builder --win -c.directories.output=D:\Temp\tat-release`.
 
-**Tests:** `npm test` (33 tests: auth, RBAC, stream token, quiz gate, device binding, resilience/batching — cần DATABASE_URL trỏ DB Postgres)
+**Tests:** `npm test` (44 tests: auth, RBAC, stream token, quiz gate, device binding, resilience/batching — cần DATABASE_URL trỏ DB Postgres)
 
 ## Kiến trúc
 
@@ -88,6 +88,19 @@ Mặc định video lưu local (`apps/server/media|uploads`). Khi có Drive:
 
 > Lưu ý trung thực: trên **web thuần**, chặn quay màn hình 100% là bất khả thi về mặt kỹ thuật —
 > các biện pháp web là "gây khó + phát hiện + báo cáo". Kênh chặn cứng là app desktop.
+
+## Kiểm soát truy cập & phòng thủ
+
+- **Một tầng quyền tập trung** ([`modules/courses/access.ts`](apps/server/src/modules/courses/access.ts)):
+  mọi route đụng tới bài học (video/quiz/AI/chi tiết bài) đều qua `checkLessonAccess` —
+  kiểm tra *ghi danh khóa* + *quiz gate* + *bài tồn tại*. Không route nào tự chế luật → hết
+  IDOR/bypass gate bằng cách đoán `lessonId`.
+- **Thu hồi token**: `User.tokenVersion` nhúng trong refresh token; ban / reset thiết bị /
+  logout đều tăng version → token cũ chết ngay (không chờ 7 ngày).
+- **Chặn cấu hình yếu khi khởi động**: production thiếu/`JWT_SECRET` yếu hoặc thiếu
+  `METRICS_TOKEN` → server **từ chối chạy** (`assertProductionSecurity`).
+- **Upload**: ghi thẳng ra đĩa (không nạp 2GB vào RAM), lọc cả mimetype lẫn đuôi file.
+- **Mật khẩu** ≥ 8 ký tự, có chữ + số. **CORS** chỉ mở ở dev hoặc theo `CORS_ORIGINS`.
 
 ## Giám sát & chống tấn công
 
