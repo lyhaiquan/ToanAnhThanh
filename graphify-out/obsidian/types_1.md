@@ -1,17 +1,17 @@
 ---
 source_file: "packages/shared/package.json"
 type: "code"
-community: "Shared Package Config"
+community: "package.json"
 location: "L5"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Shared_Package_Config
+  - community/packagejson
 ---
 
 # types
 
 ## Connections
-- [[package.json_2]] - `contains` [EXTRACTED]
+- [[package.json_4]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Shared_Package_Config
+#graphify/code #graphify/EXTRACTED #community/packagejson

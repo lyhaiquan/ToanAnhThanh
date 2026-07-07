@@ -1,17 +1,22 @@
 ---
-source_file: "docs/superpowers/specs/2026-07-06-toan-anh-thanh-lms-design.md"
-type: "rationale"
-community: "Adapter Architecture (AI + Storage)"
-location: "Nguyen tac mo rong"
+source_file: "apps/server/src/modules/storage/local.ts"
+type: "code"
+community: "Server Config & Storage"
+location: "L10"
 tags:
-  - graphify/rationale
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Adapter_Architecture_AI__Storage
+  - community/Server_Config__Storage
 ---
 
 # LocalStorageProvider
 
 ## Connections
-- [[StorageProvider Interface]] - `implements` [EXTRACTED]
+- [[.createReadStream()_1]] - `method` [EXTRACTED]
+- [[.getSize()_1]] - `method` [EXTRACTED]
+- [[.resolve()]] - `method` [EXTRACTED]
+- [[.save()_1]] - `method` [EXTRACTED]
+- [[index.ts_1]] - `imports` [EXTRACTED]
+- [[local.ts]] - `contains` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Adapter_Architecture_AI__Storage
+#graphify/code #graphify/EXTRACTED #community/Server_Config__Storage

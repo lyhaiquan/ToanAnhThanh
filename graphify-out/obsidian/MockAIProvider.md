@@ -1,17 +1,23 @@
 ---
-source_file: "docs/superpowers/specs/2026-07-06-toan-anh-thanh-lms-design.md"
-type: "rationale"
-community: "Adapter Architecture (AI + Storage)"
-location: "Quyet dinh da chot"
+source_file: "apps/server/src/modules/ai/mock.ts"
+type: "code"
+community: "Mock AI Provider"
+location: "L207"
 tags:
-  - graphify/rationale
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Adapter_Architecture_AI__Storage
+  - community/Mock_AI_Provider
 ---
 
 # MockAIProvider
 
 ## Connections
-- [[AIProvider Interface]] - `implements` [EXTRACTED]
+- [[.analyzeLecture()]] - `method` [EXTRACTED]
+- [[.chat()]] - `method` [EXTRACTED]
+- [[.generateExercises()]] - `method` [EXTRACTED]
+- [[.generateSlides()]] - `method` [EXTRACTED]
+- [[.topicFor()]] - `method` [EXTRACTED]
+- [[mock.ts]] - `contains` [EXTRACTED]
+- [[router.ts]] - `imports` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Adapter_Architecture_AI__Storage
+#graphify/code #graphify/EXTRACTED #community/Mock_AI_Provider

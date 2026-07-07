@@ -1,29 +1,18 @@
 ---
-source_file: "apps/server/package.json"
+source_file: "apps/desktop/package.json"
 type: "code"
-community: "Server Dev Dependencies"
-location: "L22"
+community: "package.json"
+location: "L9"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Server_Dev_Dependencies
+  - community/packagejson
 ---
 
 # devDependencies
 
 ## Connections
-- [[@typesbcryptjs]] - `contains` [EXTRACTED]
-- [[@typescors]] - `contains` [EXTRACTED]
-- [[@typesexpress]] - `contains` [EXTRACTED]
-- [[@typesjsonwebtoken]] - `contains` [EXTRACTED]
-- [[@typesmulter]] - `contains` [EXTRACTED]
-- [[@typesnode]] - `contains` [EXTRACTED]
-- [[@typessupertest]] - `contains` [EXTRACTED]
+- [[electron]] - `contains` [EXTRACTED]
 - [[package.json_1]] - `contains` [EXTRACTED]
-- [[prisma]] - `contains` [EXTRACTED]
-- [[supertest]] - `contains` [EXTRACTED]
-- [[tsx]] - `contains` [EXTRACTED]
-- [[typescript]] - `contains` [EXTRACTED]
-- [[vitest]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Server_Dev_Dependencies
+#graphify/code #graphify/EXTRACTED #community/packagejson

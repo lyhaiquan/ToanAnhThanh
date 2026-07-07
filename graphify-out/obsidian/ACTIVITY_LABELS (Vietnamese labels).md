@@ -1,12 +1,12 @@
 ---
 source_file: "packages/shared/src/index.ts"
 type: "code"
-community: "Security & Monitoring Design"
+community: "Design Rationale & Security"
 location: "lines 34-48"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Security__Monitoring_Design
+  - community/Design_Rationale__Security
 ---
 
 # ACTIVITY_LABELS (Vietnamese labels)
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[ActivityType Union Type]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Security__Monitoring_Design
+#graphify/code #graphify/EXTRACTED #community/Design_Rationale__Security

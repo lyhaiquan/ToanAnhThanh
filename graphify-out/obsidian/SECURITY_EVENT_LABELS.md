@@ -1,17 +1,17 @@
 ---
 source_file: "packages/shared/src/index.ts"
 type: "code"
-community: "Shared Types Module"
+community: "index.ts"
 location: "L26"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Shared_Types_Module
+  - community/indexts
 ---
 
 # SECURITY_EVENT_LABELS
 
 ## Connections
-- [[index.ts]] - `contains` [EXTRACTED]
+- [[index.ts_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Shared_Types_Module
+#graphify/code #graphify/EXTRACTED #community/indexts

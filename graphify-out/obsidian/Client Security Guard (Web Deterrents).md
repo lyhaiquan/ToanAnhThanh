@@ -1,12 +1,12 @@
 ---
 source_file: "docs/superpowers/specs/2026-07-06-toan-anh-thanh-lms-design.md"
 type: "rationale"
-community: "Security & Monitoring Design"
+community: "Design Rationale & Security"
 location: "Bao mat noi dung"
 tags:
   - graphify/rationale
   - graphify/INFERRED
-  - community/Security__Monitoring_Design
+  - community/Design_Rationale__Security
 ---
 
 # Client Security Guard (Web Deterrents)
@@ -17,4 +17,4 @@ tags:
 - [[SecurityEventType Union Type]] - `shares_data_with` [INFERRED]
 - [[Toan Anh Thanh LMS Implementation Plan]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/INFERRED #community/Security__Monitoring_Design
+#graphify/rationale #graphify/INFERRED #community/Design_Rationale__Security

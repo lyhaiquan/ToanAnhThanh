@@ -1,20 +1,21 @@
 ---
-source_file: "packages/shared/package.json"
+source_file: "apps/server/package.json"
 type: "code"
-community: "Shared Package Config"
+community: "Server Dependencies"
 location: "L1"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Shared_Package_Config
+  - community/Server_Dependencies
 ---
 
 # package.json
 
 ## Connections
-- [[main]] - `contains` [EXTRACTED]
+- [[dependencies]] - `contains` [EXTRACTED]
+- [[devDependencies_2]] - `contains` [EXTRACTED]
 - [[name_2]] - `contains` [EXTRACTED]
-- [[types_1]] - `contains` [EXTRACTED]
+- [[scripts_2]] - `contains` [EXTRACTED]
 - [[version_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Shared_Package_Config
+#graphify/code #graphify/EXTRACTED #community/Server_Dependencies

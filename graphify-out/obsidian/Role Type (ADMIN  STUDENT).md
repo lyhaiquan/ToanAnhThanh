@@ -1,12 +1,12 @@
 ---
 source_file: "packages/shared/src/index.ts"
 type: "code"
-community: "Adapter Architecture (AI + Storage)"
+community: "Design Rationale & Security"
 location: "line 1"
 tags:
   - graphify/code
   - graphify/INFERRED
-  - community/Adapter_Architecture_AI__Storage
+  - community/Design_Rationale__Security
 ---
 
 # Role Type (ADMIN | STUDENT)
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[RBAC (JWT + requireRole)]] - `shares_data_with` [INFERRED]
 
-#graphify/code #graphify/INFERRED #community/Adapter_Architecture_AI__Storage
+#graphify/code #graphify/INFERRED #community/Design_Rationale__Security

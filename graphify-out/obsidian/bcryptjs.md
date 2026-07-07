@@ -1,12 +1,12 @@
 ---
 source_file: "apps/server/package.json"
 type: "code"
-community: "Server Runtime Dependencies"
+community: "Server Dependencies"
 location: "L15"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Server_Runtime_Dependencies
+  - community/Server_Dependencies
 ---
 
 # bcryptjs
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[dependencies]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Server_Runtime_Dependencies
+#graphify/code #graphify/EXTRACTED #community/Server_Dependencies

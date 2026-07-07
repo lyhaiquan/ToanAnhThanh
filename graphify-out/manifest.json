@@ -38,5 +38,305 @@
     "mtime": 1783356548.695747,
     "ast_hash": "f244c1537a45c2c8c4bbede93ceb4f8c",
     "semantic_hash": "f244c1537a45c2c8c4bbede93ceb4f8c"
+  },
+  "D:\\ToanAnhThanh\\apps\\desktop\\main.js": {
+    "mtime": 1783358037.4918468,
+    "ast_hash": "967af0121d29b2282ea289973461e21c",
+    "semantic_hash": "967af0121d29b2282ea289973461e21c"
+  },
+  "D:\\ToanAnhThanh\\apps\\desktop\\package.json": {
+    "mtime": 1783358023.4501336,
+    "ast_hash": "09fabc49c960a575fb3e4ed4d25ff3a5",
+    "semantic_hash": "09fabc49c960a575fb3e4ed4d25ff3a5"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\prisma\\seed.ts": {
+    "mtime": 1783356900.288396,
+    "ast_hash": "dcadf1b42b452b417d07f7214f47dffa",
+    "semantic_hash": "dcadf1b42b452b417d07f7214f47dffa"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\prisma\\migrations\\20260706165925_init\\migration.sql": {
+    "mtime": 1783357165.4985764,
+    "ast_hash": "335c5b807fc1a8a11cc7d3104ca86cf8",
+    "semantic_hash": "335c5b807fc1a8a11cc7d3104ca86cf8"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\prisma\\migrations\\20260706174607_device_binding\\migration.sql": {
+    "mtime": 1783359967.989182,
+    "ast_hash": "215ad5f63cf6fe01c9a22e179730aca2",
+    "semantic_hash": "215ad5f63cf6fe01c9a22e179730aca2"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\scripts\\fetch-media.ts": {
+    "mtime": 1783357234.2433085,
+    "ast_hash": "75e6fb5a887f1c6b3501bc4ba992ead6",
+    "semantic_hash": "75e6fb5a887f1c6b3501bc4ba992ead6"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\app.ts": {
+    "mtime": 1783357495.1433523,
+    "ast_hash": "6853efe01e805cd40a36f155d15ea80f",
+    "semantic_hash": "6853efe01e805cd40a36f155d15ea80f"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\config.ts": {
+    "mtime": 1783356929.8832552,
+    "ast_hash": "8f2db7d5c45f78a814dcf30feb661bad",
+    "semantic_hash": "8f2db7d5c45f78a814dcf30feb661bad"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\db.ts": {
+    "mtime": 1783356935.1122084,
+    "ast_hash": "d8c0ab838c40f2061bc956d27edb2997",
+    "semantic_hash": "d8c0ab838c40f2061bc956d27edb2997"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\index.ts": {
+    "mtime": 1783357496.4164095,
+    "ast_hash": "c59f5738bb9b5f2de5bdaf8af27da777",
+    "semantic_hash": "c59f5738bb9b5f2de5bdaf8af27da777"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\middleware\\auth.ts": {
+    "mtime": 1783359805.0356092,
+    "ast_hash": "03b86788dc7653fea8390d33cdaca5b7",
+    "semantic_hash": "03b86788dc7653fea8390d33cdaca5b7"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\ai\\mock.ts": {
+    "mtime": 1783357460.6054308,
+    "ast_hash": "7622ca48547bd02a342d5f692f52f0e6",
+    "semantic_hash": "7622ca48547bd02a342d5f692f52f0e6"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\ai\\opennotebook.ts": {
+    "mtime": 1783357335.256764,
+    "ast_hash": "bf165241409f2e4552cea0d5508f47df",
+    "semantic_hash": "bf165241409f2e4552cea0d5508f47df"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\ai\\provider.ts": {
+    "mtime": 1783357314.4087203,
+    "ast_hash": "69e99f5dcbc60bb546a1c0d01db1bccf",
+    "semantic_hash": "69e99f5dcbc60bb546a1c0d01db1bccf"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\ai\\router.ts": {
+    "mtime": 1783357475.6756613,
+    "ast_hash": "bb2f9fc15326bd05e93ae1de0399e67c",
+    "semantic_hash": "bb2f9fc15326bd05e93ae1de0399e67c"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\analytics\\router.ts": {
+    "mtime": 1783357305.3523054,
+    "ast_hash": "ba05352e9b10715f7689b213349f0153",
+    "semantic_hash": "ba05352e9b10715f7689b213349f0153"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\auth\\router.ts": {
+    "mtime": 1783359785.4724672,
+    "ast_hash": "3b12e0dead03addaac55e90f4c741c8b",
+    "semantic_hash": "3b12e0dead03addaac55e90f4c741c8b"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\auth\\service.ts": {
+    "mtime": 1783359774.4355254,
+    "ast_hash": "13d21a3c81a85483da32fc7a68f24e20",
+    "semantic_hash": "13d21a3c81a85483da32fc7a68f24e20"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\courses\\router.ts": {
+    "mtime": 1783357258.2794316,
+    "ast_hash": "886e3c6c96a90f639358f93c154a2161",
+    "semantic_hash": "886e3c6c96a90f639358f93c154a2161"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\progress\\router.ts": {
+    "mtime": 1783357480.0170588,
+    "ast_hash": "8c7797e7ab54d4e70aba7b9a371455f2",
+    "semantic_hash": "8c7797e7ab54d4e70aba7b9a371455f2"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\quiz\\router.ts": {
+    "mtime": 1783357199.0951169,
+    "ast_hash": "5a65dd51fe303b7752f66edb6ef220bb",
+    "semantic_hash": "5a65dd51fe303b7752f66edb6ef220bb"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\quiz\\service.ts": {
+    "mtime": 1783357025.8558679,
+    "ast_hash": "7f7525037f2ff2f317c3623e350a298b",
+    "semantic_hash": "7f7525037f2ff2f317c3623e350a298b"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\security\\router.ts": {
+    "mtime": 1783357298.159592,
+    "ast_hash": "f2dc19870964c9d25ef4e86343a97303",
+    "semantic_hash": "f2dc19870964c9d25ef4e86343a97303"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\storage\\gdrive.ts": {
+    "mtime": 1783356997.5998805,
+    "ast_hash": "3b49fa484fd9cf980b03b2a27b4a9f79",
+    "semantic_hash": "3b49fa484fd9cf980b03b2a27b4a9f79"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\storage\\index.ts": {
+    "mtime": 1783356999.4487736,
+    "ast_hash": "3ef4412ec59bffa0005bd12c36e8b993",
+    "semantic_hash": "3ef4412ec59bffa0005bd12c36e8b993"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\storage\\local.ts": {
+    "mtime": 1783356988.6100006,
+    "ast_hash": "cb787a81ef903599a0df2a54f1c32737",
+    "semantic_hash": "cb787a81ef903599a0df2a54f1c32737"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\storage\\provider.ts": {
+    "mtime": 1783356982.0645306,
+    "ast_hash": "608a0bcbed0ae227dfafef6b4c566346",
+    "semantic_hash": "608a0bcbed0ae227dfafef6b4c566346"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\storage\\router.ts": {
+    "mtime": 1783357272.8363438,
+    "ast_hash": "f87e0f793d9aaaacae29232dfd6a54c1",
+    "semantic_hash": "f87e0f793d9aaaacae29232dfd6a54c1"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\stream\\router.ts": {
+    "mtime": 1783357015.0345812,
+    "ast_hash": "77440a6153f93a1bf0ac9ff83d467352",
+    "semantic_hash": "77440a6153f93a1bf0ac9ff83d467352"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\src\\modules\\users\\router.ts": {
+    "mtime": 1783359818.1198635,
+    "ast_hash": "0dd0baef5102d5561e259976ec454314",
+    "semantic_hash": "0dd0baef5102d5561e259976ec454314"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\test\\auth.test.ts": {
+    "mtime": 1783359941.670341,
+    "ast_hash": "701a68006369db54b1ee5969f617a7c4",
+    "semantic_hash": "701a68006369db54b1ee5969f617a7c4"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\test\\device.test.ts": {
+    "mtime": 1783359955.8458872,
+    "ast_hash": "1cb3e6202abc2d6b07103278e824844d",
+    "semantic_hash": "1cb3e6202abc2d6b07103278e824844d"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\test\\gate.test.ts": {
+    "mtime": 1783357545.1002457,
+    "ast_hash": "0b2bf4e7bdc45a26558b3f0e534df2aa",
+    "semantic_hash": "0b2bf4e7bdc45a26558b3f0e534df2aa"
+  },
+  "D:\\ToanAnhThanh\\apps\\server\\test\\streamtoken.test.ts": {
+    "mtime": 1783357511.6370947,
+    "ast_hash": "9694febe10be1aae1e477e4d172d3562",
+    "semantic_hash": "9694febe10be1aae1e477e4d172d3562"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\package.json": {
+    "mtime": 1783357647.5331671,
+    "ast_hash": "dd0248414f734924bbf271d8dd8231b5",
+    "semantic_hash": "dd0248414f734924bbf271d8dd8231b5"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\postcss.config.js": {
+    "mtime": 1783357651.3613997,
+    "ast_hash": "c735540bb63936a123bc867d950c9f69",
+    "semantic_hash": "c735540bb63936a123bc867d950c9f69"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\tailwind.config.js": {
+    "mtime": 1783357666.5708773,
+    "ast_hash": "84721ceb32c91daefc6896262682f305",
+    "semantic_hash": "84721ceb32c91daefc6896262682f305"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\tsconfig.json": {
+    "mtime": 1783357650.8076735,
+    "ast_hash": "780b05c3006487098aa3098d632b7797",
+    "semantic_hash": "780b05c3006487098aa3098d632b7797"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\vite.config.ts": {
+    "mtime": 1783357648.8283265,
+    "ast_hash": "7b63bb5c71781b9479c2c2ce662fa6e9",
+    "semantic_hash": "7b63bb5c71781b9479c2c2ce662fa6e9"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\App.tsx": {
+    "mtime": 1783357733.773895,
+    "ast_hash": "23e4bb52219f5f4f3d65a604778d89ee",
+    "semantic_hash": "23e4bb52219f5f4f3d65a604778d89ee"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\main.tsx": {
+    "mtime": 1783357727.6063805,
+    "ast_hash": "9d760aff2b327fd5043d678021b8f36a",
+    "semantic_hash": "9d760aff2b327fd5043d678021b8f36a"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\components\\AIPanel.tsx": {
+    "mtime": 1783357865.109853,
+    "ast_hash": "1b80f727a09c05f97cfa9912065d66af",
+    "semantic_hash": "1b80f727a09c05f97cfa9912065d66af"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\components\\Layout.tsx": {
+    "mtime": 1783357754.6779733,
+    "ast_hash": "8284fecd202be3c5e3c7a6a451a67dac",
+    "semantic_hash": "8284fecd202be3c5e3c7a6a451a67dac"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\components\\QuizPanel.tsx": {
+    "mtime": 1783357887.760585,
+    "ast_hash": "8a8a5a344c372173ea01d596638d5d01",
+    "semantic_hash": "8a8a5a344c372173ea01d596638d5d01"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\components\\VideoPlayer.tsx": {
+    "mtime": 1783357829.27254,
+    "ast_hash": "77f5bbfd0137adfe9822c28811ee1607",
+    "semantic_hash": "77f5bbfd0137adfe9822c28811ee1607"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\lib\\api.ts": {
+    "mtime": 1783359844.883358,
+    "ast_hash": "0a7ec2c81e9c2cb8c5086b0cb49b4a43",
+    "semantic_hash": "0a7ec2c81e9c2cb8c5086b0cb49b4a43"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\lib\\device.ts": {
+    "mtime": 1783359829.0833595,
+    "ast_hash": "97030e612320deed966acbf31b5b3df8",
+    "semantic_hash": "97030e612320deed966acbf31b5b3df8"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\lib\\store.ts": {
+    "mtime": 1783357703.10262,
+    "ast_hash": "1d3147cdd2a502103720cb8ac1def243",
+    "semantic_hash": "1d3147cdd2a502103720cb8ac1def243"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\CourseDetail.tsx": {
+    "mtime": 1783357807.7034326,
+    "ast_hash": "8ab376aa2dd1753312f427651a004d36",
+    "semantic_hash": "8ab376aa2dd1753312f427651a004d36"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\Home.tsx": {
+    "mtime": 1783357796.2260027,
+    "ast_hash": "dc35349c34eca6966f014e67ce3ca0ba",
+    "semantic_hash": "dc35349c34eca6966f014e67ce3ca0ba"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\LessonPage.tsx": {
+    "mtime": 1783357904.4298267,
+    "ast_hash": "78d1ff7bf4580588728749f258831e2f",
+    "semantic_hash": "78d1ff7bf4580588728749f258831e2f"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\Login.tsx": {
+    "mtime": 1783359871.898458,
+    "ast_hash": "6beafab16c793d6e92012e9a62f6b3bb",
+    "semantic_hash": "6beafab16c793d6e92012e9a62f6b3bb"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\MyProgress.tsx": {
+    "mtime": 1783357914.6741126,
+    "ast_hash": "d39f7c1e5e5ac36dcf00db5480603958",
+    "semantic_hash": "d39f7c1e5e5ac36dcf00db5480603958"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\admin\\Content.tsx": {
+    "mtime": 1783357988.2893598,
+    "ast_hash": "18e5ca8354fccd7e129897cb13f5369d",
+    "semantic_hash": "18e5ca8354fccd7e129897cb13f5369d"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\admin\\Dashboard.tsx": {
+    "mtime": 1783357938.9044971,
+    "ast_hash": "2d309666ad1e55823aa8bb414d69f3aa",
+    "semantic_hash": "2d309666ad1e55823aa8bb414d69f3aa"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\admin\\Monitor.tsx": {
+    "mtime": 1783358014.0870507,
+    "ast_hash": "1b31eb2a18bb04b0dead7d60f23cb181",
+    "semantic_hash": "1b31eb2a18bb04b0dead7d60f23cb181"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\pages\\admin\\Students.tsx": {
+    "mtime": 1783359912.2555363,
+    "ast_hash": "2139295876e61e455029ad6e4157e3e3",
+    "semantic_hash": "2139295876e61e455029ad6e4157e3e3"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\src\\security\\guard.ts": {
+    "mtime": 1783358239.5891974,
+    "ast_hash": "eec1c470964889c2ad5c8142819dba6c",
+    "semantic_hash": "eec1c470964889c2ad5c8142819dba6c"
+  },
+  "D:\\ToanAnhThanh\\README.md": {
+    "mtime": 1783358061.9724886,
+    "ast_hash": "15a42c37146062682ec9584ae9df52ea",
+    "semantic_hash": "15a42c37146062682ec9584ae9df52ea"
+  },
+  "D:\\ToanAnhThanh\\apps\\web\\index.html": {
+    "mtime": 1783357670.6061332,
+    "ast_hash": "ea295cba0aebddaf80fdbc2a682bbb5e",
+    "semantic_hash": "ea295cba0aebddaf80fdbc2a682bbb5e"
   }
 }

@@ -1,11 +1,11 @@
 ---
 source_file: "apps/server/package.json"
 type: "code"
-community: "Adapter Architecture (AI + Storage)"
+community: "Design Rationale & Security"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Adapter_Architecture_AI__Storage
+  - community/Design_Rationale__Security
 ---
 
 # Server Package (@tat/server)
@@ -14,4 +14,4 @@ tags:
 - [[Root Monorepo Package (toan-anh-thanh-lms)]] - `references` [EXTRACTED]
 - [[Shared Package (@tatshared)]] - `references` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Adapter_Architecture_AI__Storage
+#graphify/code #graphify/EXTRACTED #community/Design_Rationale__Security

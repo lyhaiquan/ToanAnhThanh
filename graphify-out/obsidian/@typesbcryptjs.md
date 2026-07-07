@@ -1,17 +1,17 @@
 ---
 source_file: "apps/server/package.json"
 type: "code"
-community: "Server Dev Dependencies"
+community: "Server Dependencies"
 location: "L23"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Server_Dev_Dependencies
+  - community/Server_Dependencies
 ---
 
 # @types/bcryptjs
 
 ## Connections
-- [[devDependencies_1]] - `contains` [EXTRACTED]
+- [[devDependencies_2]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Server_Dev_Dependencies
+#graphify/code #graphify/EXTRACTED #community/Server_Dependencies

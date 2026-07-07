@@ -1,11 +1,11 @@
 ---
 source_file: "docs/superpowers/specs/2026-07-06-toan-anh-thanh-lms-design.md"
 type: "document"
-community: "Adapter Architecture (AI + Storage)"
+community: "Design Rationale & Security"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Adapter_Architecture_AI__Storage
+  - community/Design_Rationale__Security
 ---
 
 # Toan Anh Thanh LMS Design Spec
@@ -16,4 +16,4 @@ tags:
 - [[RBAC (JWT + requireRole)]] - `references` [EXTRACTED]
 - [[Toan Anh Thanh LMS Implementation Plan]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Adapter_Architecture_AI__Storage
+#graphify/document #graphify/EXTRACTED #community/Design_Rationale__Security

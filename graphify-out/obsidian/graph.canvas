@@ -3,335 +3,1524 @@
     {
       "id": "g0",
       "type": "group",
-      "label": "Adapter Architecture (AI + Storage)",
+      "label": "Server Core & Routers",
       "x": 0,
       "y": 0,
-      "width": 1100,
-      "height": 820,
+      "width": 1980,
+      "height": 2320,
       "color": "1"
     },
     {
-      "id": "n_design_ai_provider_interface",
+      "id": "n_middleware_auth_authuser",
       "type": "file",
-      "file": "AIProvider Interface.md",
+      "file": "AuthUser.md",
       "x": 20,
       "y": 80,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_adapter_pattern",
+      "id": "n_middleware_auth_request",
       "type": "file",
-      "file": "Adapter Pattern for Volatile Subsystems.md",
+      "file": "Request.md",
       "x": 220,
       "y": 80,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_shared_DEFAULT_PASS_SCORE",
+      "id": "n_ai_router_airouter",
       "type": "file",
-      "file": "DEFAULT_PASS_SCORE = 70.md",
+      "file": "aiRouter.md",
       "x": 420,
       "y": 80,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_dynamic_watermark",
+      "id": "n_analytics_router_analyticsrouter",
       "type": "file",
-      "file": "Dynamic Moving Watermark.md",
+      "file": "analyticsRouter.md",
       "x": 20,
       "y": 160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_gdrive_provider",
+      "id": "n_test_auth_test_app",
       "type": "file",
-      "file": "GoogleDriveProvider (stub).md",
+      "file": "app_1.md",
       "x": 220,
       "y": 160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_stream_token",
+      "id": "n_test_device_test_app",
       "type": "file",
-      "file": "HMAC Signed Stream Token.md",
+      "file": "app_2.md",
       "x": 420,
       "y": 160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_local_storage_provider",
+      "id": "n_apps_server_src_app_ts",
       "type": "file",
-      "file": "LocalStorageProvider.md",
+      "file": "app.ts.md",
       "x": 20,
       "y": 240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_mock_ai_provider",
+      "id": "n_apps_server_test_auth_test_ts",
       "type": "file",
-      "file": "MockAIProvider.md",
+      "file": "auth.test.ts.md",
       "x": 220,
       "y": 240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_opennotebook_provider",
+      "id": "n_apps_server_src_middleware_auth_ts",
       "type": "file",
-      "file": "OpenNotebookProvider.md",
+      "file": "auth.ts.md",
       "x": 420,
       "y": 240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_prisma_data_model",
+      "id": "n_auth_router_authrouter",
       "type": "file",
-      "file": "Prisma Data Model (UserCourseChapterLessonQuizProgress).md",
+      "file": "authRouter.md",
       "x": 20,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_quiz_gate",
+      "id": "n_courses_router_chapters",
       "type": "file",
-      "file": "Quiz Gate (Sequential Unlock).md",
+      "file": "chapters.md",
       "x": 220,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_rbac",
+      "id": "n_courses_router_courseschema",
       "type": "file",
-      "file": "RBAC (JWT + requireRole).md",
+      "file": "courseSchema.md",
       "x": 420,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_shared_Role",
+      "id": "n_courses_router_coursesrouter",
       "type": "file",
-      "file": "Role Type (ADMIN  STUDENT).md",
+      "file": "coursesRouter.md",
       "x": 20,
       "y": 400,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_package_toan_anh_thanh_lms_root",
+      "id": "n_users_router_createschema",
       "type": "file",
-      "file": "Root Monorepo Package (toan-anh-thanh-lms).md",
+      "file": "createSchema.md",
       "x": 220,
       "y": 400,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_package_tat_server",
+      "id": "n_apps_server_src_db_ts",
       "type": "file",
-      "file": "Server Package (@tatserver).md",
+      "file": "db.ts.md",
       "x": 420,
       "y": 400,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_package_tat_shared",
+      "id": "n_apps_server_test_device_test_ts",
       "type": "file",
-      "file": "Shared Package (@tatshared).md",
+      "file": "device.test.ts.md",
       "x": 20,
       "y": 480,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_storage_provider_interface",
+      "id": "n_auth_router_devicelabel",
       "type": "file",
-      "file": "StorageProvider Interface.md",
+      "file": "deviceLabel.md",
       "x": 220,
       "y": 480,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_design_toan_anh_thanh_lms",
+      "id": "n_courses_router_done",
       "type": "file",
-      "file": "Toan Anh Thanh LMS Design Spec.md",
+      "file": "done.md",
       "x": 420,
       "y": 480,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_plan_toan_anh_thanh_lms",
+      "id": "n_apps_server_test_gate_test_ts",
       "type": "file",
-      "file": "Toan Anh Thanh LMS Implementation Plan.md",
+      "file": "gate.test.ts.md",
       "x": 20,
       "y": 560,
       "width": 180,
       "height": 60
     },
     {
+      "id": "n_quiz_service_getorderedlessons",
+      "type": "file",
+      "file": "getOrderedLessons().md",
+      "x": 220,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_index_getstorage",
+      "type": "file",
+      "file": "getStorage().md",
+      "x": 420,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quiz_service_islessoncompleted",
+      "type": "file",
+      "file": "isLessonCompleted().md",
+      "x": 20,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quiz_service_islessonunlocked",
+      "type": "file",
+      "file": "isLessonUnlocked().md",
+      "x": 220,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_courses_router_lessonids",
+      "type": "file",
+      "file": "lessonIds.md",
+      "x": 420,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_courses_router_lessons",
+      "type": "file",
+      "file": "lessons.md",
+      "x": 20,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_service_login",
+      "type": "file",
+      "file": "login().md",
+      "x": 220,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_test_device_test_login",
+      "type": "file",
+      "file": "login()_1.md",
+      "x": 420,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_router_loginschema",
+      "type": "file",
+      "file": "loginSchema.md",
+      "x": 20,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_router_match",
+      "type": "file",
+      "file": "match.md",
+      "x": 220,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_router_parsed",
+      "type": "file",
+      "file": "parsed.md",
+      "x": 420,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_courses_router_parsed",
+      "type": "file",
+      "file": "parsed_1.md",
+      "x": 20,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_router_parsed",
+      "type": "file",
+      "file": "parsed_2.md",
+      "x": 220,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_router_payload",
+      "type": "file",
+      "file": "payload.md",
+      "x": 420,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_db_prisma",
+      "type": "file",
+      "file": "prisma_2.md",
+      "x": 20,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_courses_router_progressmap",
+      "type": "file",
+      "file": "progressMap.md",
+      "x": 220,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_progress_router_progressrouter",
+      "type": "file",
+      "file": "progressRouter.md",
+      "x": 420,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quiz_router_quizrouter",
+      "type": "file",
+      "file": "quizRouter.md",
+      "x": 20,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_service_refresh",
+      "type": "file",
+      "file": "refresh().md",
+      "x": 220,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_middleware_auth_requireauth",
+      "type": "file",
+      "file": "requireAuth().md",
+      "x": 420,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_middleware_auth_requirerole",
+      "type": "file",
+      "file": "requireRole().md",
+      "x": 20,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_analytics_router_ts",
+      "type": "file",
+      "file": "router.ts_1.md",
+      "x": 220,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_auth_router_ts",
+      "type": "file",
+      "file": "router.ts_2.md",
+      "x": 420,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_courses_router_ts",
+      "type": "file",
+      "file": "router.ts_3.md",
+      "x": 20,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_progress_router_ts",
+      "type": "file",
+      "file": "router.ts_4.md",
+      "x": 220,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_quiz_router_ts",
+      "type": "file",
+      "file": "router.ts_5.md",
+      "x": 420,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_security_router_ts",
+      "type": "file",
+      "file": "router.ts_6.md",
+      "x": 20,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_storage_router_ts",
+      "type": "file",
+      "file": "router.ts_7.md",
+      "x": 220,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_stream_router_ts",
+      "type": "file",
+      "file": "router.ts_8.md",
+      "x": 420,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_users_router_ts",
+      "type": "file",
+      "file": "router.ts_9.md",
+      "x": 20,
+      "y": 1360,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_progress_router_sec",
+      "type": "file",
+      "file": "sec.md",
+      "x": 220,
+      "y": 1360,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_security_router_securityrouter",
+      "type": "file",
+      "file": "securityRouter.md",
+      "x": 420,
+      "y": 1360,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_auth_service_ts",
+      "type": "file",
+      "file": "service.ts.md",
+      "x": 20,
+      "y": 1440,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_quiz_service_ts",
+      "type": "file",
+      "file": "service.ts_1.md",
+      "x": 220,
+      "y": 1440,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_analytics_router_sevendaysago",
+      "type": "file",
+      "file": "sevenDaysAgo.md",
+      "x": 420,
+      "y": 1440,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_service_signaccesstoken",
+      "type": "file",
+      "file": "signAccessToken().md",
+      "x": 20,
+      "y": 1520,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_service_signrefreshtoken",
+      "type": "file",
+      "file": "signRefreshToken().md",
+      "x": 220,
+      "y": 1520,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_router_storage",
+      "type": "file",
+      "file": "storage.md",
+      "x": 420,
+      "y": 1520,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_router_storagerouter",
+      "type": "file",
+      "file": "storageRouter.md",
+      "x": 20,
+      "y": 1600,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_router_streamrouter",
+      "type": "file",
+      "file": "streamRouter.md",
+      "x": 220,
+      "y": 1600,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quiz_service_submitquiz",
+      "type": "file",
+      "file": "submitQuiz().md",
+      "x": 420,
+      "y": 1600,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_router_token",
+      "type": "file",
+      "file": "token.md",
+      "x": 20,
+      "y": 1680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_router_upload",
+      "type": "file",
+      "file": "upload.md",
+      "x": 220,
+      "y": 1680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_security_router_userid",
+      "type": "file",
+      "file": "userId.md",
+      "x": 420,
+      "y": 1680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_users_router_usersrouter",
+      "type": "file",
+      "file": "usersRouter.md",
+      "x": 20,
+      "y": 1760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_router_stream_contenttype",
+      "type": "file",
+      "file": "{ stream, contentType }.md",
+      "x": 220,
+      "y": 1760,
+      "width": 180,
+      "height": 60
+    },
+    {
       "id": "g1",
       "type": "group",
-      "label": "Root Monorepo Config",
-      "x": 1180,
+      "label": "Admin Web Pages",
+      "x": 2060,
       "y": 0,
-      "width": 880,
-      "height": 620,
+      "width": 1760,
+      "height": 2220,
       "color": "2"
     },
     {
-      "id": "n_toananhthanh_package_devdependencies_concurrently",
+      "id": "n_admin_monitor_activity",
       "type": "file",
-      "file": "concurrently.md",
-      "x": 1200,
+      "file": "Activity.md",
+      "x": 2080,
       "y": 80,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts_desktop",
+      "id": "n_admin_content_admincontent",
       "type": "file",
-      "file": "desktop.md",
-      "x": 1400,
+      "file": "AdminContent().md",
+      "x": 2280,
       "y": 80,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts_dev",
+      "id": "n_admin_dashboard_admindashboard",
       "type": "file",
-      "file": "dev.md",
-      "x": 1600,
+      "file": "AdminDashboard().md",
+      "x": 2480,
       "y": 80,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts_dev_server",
+      "id": "n_admin_monitor_adminmonitor",
       "type": "file",
-      "file": "devserver.md",
-      "x": 1200,
+      "file": "AdminMonitor().md",
+      "x": 2080,
       "y": 160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts_dev_web",
+      "id": "n_admin_students_adminstudents",
       "type": "file",
-      "file": "devweb.md",
-      "x": 1400,
+      "file": "AdminStudents().md",
+      "x": 2280,
       "y": 160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_devdependencies",
+      "id": "n_src_app_app",
       "type": "file",
-      "file": "devDependencies.md",
-      "x": 1600,
+      "file": "App().md",
+      "x": 2480,
       "y": 160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_name",
+      "id": "n_apps_web_src_app_tsx",
       "type": "file",
-      "file": "name.md",
-      "x": 1200,
+      "file": "App.tsx.md",
+      "x": 2080,
       "y": 240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_package_json",
+      "id": "n_pages_myprogress_attempt",
       "type": "file",
-      "file": "package.json.md",
-      "x": 1400,
+      "file": "Attempt.md",
+      "x": 2280,
       "y": 240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_private",
+      "id": "n_lib_store_authstate",
       "type": "file",
-      "file": "private.md",
-      "x": 1600,
+      "file": "AuthState.md",
+      "x": 2480,
       "y": 240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts",
+      "id": "n_admin_content_chapterrow",
       "type": "file",
-      "file": "scripts.md",
-      "x": 1200,
+      "file": "ChapterRow_1.md",
+      "x": 2080,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts_seed",
+      "id": "n_pages_coursedetail_chapterrow",
       "type": "file",
-      "file": "seed.md",
-      "x": 1400,
+      "file": "ChapterRow.md",
+      "x": 2280,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_scripts_test",
+      "id": "n_apps_web_src_pages_admin_content_tsx",
       "type": "file",
-      "file": "test.md",
-      "x": 1600,
+      "file": "Content.tsx.md",
+      "x": 2480,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_version",
+      "id": "n_pages_home_coursecard",
       "type": "file",
-      "file": "version.md",
-      "x": 1200,
+      "file": "CourseCard.md",
+      "x": 2080,
       "y": 400,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_toananhthanh_package_workspaces",
+      "id": "n_pages_coursedetail_coursedetail",
       "type": "file",
-      "file": "workspaces.md",
-      "x": 1400,
+      "file": "CourseDetail().md",
+      "x": 2280,
       "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_coursedetail_tsx",
+      "type": "file",
+      "file": "CourseDetail.tsx.md",
+      "x": 2480,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_admin_content_coursetree",
+      "type": "file",
+      "file": "CourseTree_1.md",
+      "x": 2080,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_coursedetail_coursetree",
+      "type": "file",
+      "file": "CourseTree.md",
+      "x": 2280,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_admin_dashboard_dash",
+      "type": "file",
+      "file": "Dash.md",
+      "x": 2480,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_admin_dashboard_tsx",
+      "type": "file",
+      "file": "Dashboard.tsx.md",
+      "x": 2080,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_home_home",
+      "type": "file",
+      "file": "Home().md",
+      "x": 2280,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_home_tsx",
+      "type": "file",
+      "file": "Home.tsx.md",
+      "x": 2480,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_layout_layout",
+      "type": "file",
+      "file": "Layout().md",
+      "x": 2080,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_components_layout_tsx",
+      "type": "file",
+      "file": "Layout.tsx.md",
+      "x": 2280,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_lessonpage_lessoninfo",
+      "type": "file",
+      "file": "LessonInfo.md",
+      "x": 2480,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_lessonpage_lessonpage",
+      "type": "file",
+      "file": "LessonPage().md",
+      "x": 2080,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_lessonpage_tsx",
+      "type": "file",
+      "file": "LessonPage.tsx.md",
+      "x": 2280,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_admin_content_lessonrow",
+      "type": "file",
+      "file": "LessonRow_1.md",
+      "x": 2480,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_coursedetail_lessonrow",
+      "type": "file",
+      "file": "LessonRow.md",
+      "x": 2080,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_login_login",
+      "type": "file",
+      "file": "Login().md",
+      "x": 2280,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_login_tsx",
+      "type": "file",
+      "file": "Login.tsx.md",
+      "x": 2480,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_admin_monitor_tsx",
+      "type": "file",
+      "file": "Monitor.tsx.md",
+      "x": 2080,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_myprogress_myprogress",
+      "type": "file",
+      "file": "MyProgress().md",
+      "x": 2280,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_myprogress_tsx",
+      "type": "file",
+      "file": "MyProgress.tsx.md",
+      "x": 2480,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_quizpanel_quizdata",
+      "type": "file",
+      "file": "QuizData.md",
+      "x": 2080,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_quizpanel_quizpanel",
+      "type": "file",
+      "file": "QuizPanel().md",
+      "x": 2280,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_components_quizpanel_tsx",
+      "type": "file",
+      "file": "QuizPanel.tsx.md",
+      "x": 2480,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_requireauth",
+      "type": "file",
+      "file": "RequireAuth().md",
+      "x": 2080,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_quizpanel_result",
+      "type": "file",
+      "file": "Result.md",
+      "x": 2280,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_pages_myprogress_row",
+      "type": "file",
+      "file": "Row.md",
+      "x": 2480,
+      "y": 1040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_admin_monitor_secevent",
+      "type": "file",
+      "file": "SecEvent.md",
+      "x": 2080,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_admin_students_student",
+      "type": "file",
+      "file": "Student.md",
+      "x": 2280,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_admin_dashboard_studentrow",
+      "type": "file",
+      "file": "StudentRow.md",
+      "x": 2480,
+      "y": 1120,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_pages_admin_students_tsx",
+      "type": "file",
+      "file": "Students.tsx.md",
+      "x": 2080,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_store_themestate",
+      "type": "file",
+      "file": "ThemeState.md",
+      "x": 2280,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_store_user",
+      "type": "file",
+      "file": "User.md",
+      "x": 2480,
+      "y": 1200,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_videoplayer_videoplayer",
+      "type": "file",
+      "file": "VideoPlayer().md",
+      "x": 2080,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_components_videoplayer_tsx",
+      "type": "file",
+      "file": "VideoPlayer.tsx.md",
+      "x": 2280,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_layout_adminlinks",
+      "type": "file",
+      "file": "adminLinks.md",
+      "x": 2480,
+      "y": 1280,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_api_api",
+      "type": "file",
+      "file": "api.md",
+      "x": 2080,
+      "y": 1360,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_lib_api_ts",
+      "type": "file",
+      "file": "api.ts.md",
+      "x": 2280,
+      "y": 1360,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_lib_device_ts",
+      "type": "file",
+      "file": "device.ts.md",
+      "x": 2480,
+      "y": 1360,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_api_dorefresh",
+      "type": "file",
+      "file": "doRefresh().md",
+      "x": 2080,
+      "y": 1440,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_device_getdeviceid",
+      "type": "file",
+      "file": "getDeviceId().md",
+      "x": 2280,
+      "y": 1440,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_security_guard_ts",
+      "type": "file",
+      "file": "guard.ts.md",
+      "x": 2480,
+      "y": 1440,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_security_guard_installguard",
+      "type": "file",
+      "file": "installGuard().md",
+      "x": 2080,
+      "y": 1520,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_main_tsx",
+      "type": "file",
+      "file": "main.tsx.md",
+      "x": 2280,
+      "y": 1520,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_security_guard_punish",
+      "type": "file",
+      "file": "punish().md",
+      "x": 2480,
+      "y": 1520,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_api_reportactivity",
+      "type": "file",
+      "file": "reportActivity().md",
+      "x": 2080,
+      "y": 1600,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_api_reportsecurityevent",
+      "type": "file",
+      "file": "reportSecurityEvent().md",
+      "x": 2280,
+      "y": 1600,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_lib_store_ts",
+      "type": "file",
+      "file": "store.ts.md",
+      "x": 2480,
+      "y": 1600,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_layout_studentlinks",
+      "type": "file",
+      "file": "studentLinks.md",
+      "x": 2080,
+      "y": 1680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_store_useauth",
+      "type": "file",
+      "file": "useAuth.md",
+      "x": 2280,
+      "y": 1680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lib_store_usetheme",
+      "type": "file",
+      "file": "useTheme.md",
+      "x": 2480,
+      "y": 1680,
       "width": 180,
       "height": 60
     },
     {
       "id": "g2",
       "type": "group",
-      "label": "Server Dev Dependencies",
-      "x": 2140,
+      "label": "AI Panel (Web)",
+      "x": 3900,
       "y": 0,
-      "width": 880,
-      "height": 620,
+      "width": 1320,
+      "height": 1320,
       "color": "3"
+    },
+    {
+      "id": "n_shared_labels",
+      "type": "file",
+      "file": "@tatshared (ACTIVITY_LABELS, SECURITY_EVENT_LABELS).md",
+      "x": 3920,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_aipanel_component",
+      "type": "file",
+      "file": "AIPanel.md",
+      "x": 4120,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_content_admincontent",
+      "type": "file",
+      "file": "AdminContent.md",
+      "x": 4320,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_dashboard_admindashboard",
+      "type": "file",
+      "file": "AdminDashboard.md",
+      "x": 3920,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_monitor_adminmonitor",
+      "type": "file",
+      "file": "AdminMonitor.md",
+      "x": 4120,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_students_adminstudents",
+      "type": "file",
+      "file": "AdminStudents.md",
+      "x": 4320,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_aipanel_analyzetab",
+      "type": "file",
+      "file": "AnalyzeTab.md",
+      "x": 3920,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_aipanel_chattab",
+      "type": "file",
+      "file": "ChatTab.md",
+      "x": 4120,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_security_guard",
+      "type": "file",
+      "file": "Client Security Guard (ch\u1ed1ng F12quay m\u00e0n h\u00ecnh).md",
+      "x": 4320,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coursedetail_page",
+      "type": "file",
+      "file": "CourseDetail.md",
+      "x": 3920,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_dark_light_mode",
+      "type": "file",
+      "file": "DarkLight mode.md",
+      "x": 4120,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_device_binding",
+      "type": "file",
+      "file": "Device Binding (1 thi\u1ebft b\u1ecbh\u1ecdc sinh).md",
+      "x": 4320,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_aipanel_exercisestab",
+      "type": "file",
+      "file": "ExercisesTab.md",
+      "x": 3920,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_home_page",
+      "type": "file",
+      "file": "Home.md",
+      "x": 4120,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_dragdrop_upload",
+      "type": "file",
+      "file": "K\u00e9o-th\u1ea3 upload video v\u00e0o ch\u01b0\u01a1ng.md",
+      "x": 4320,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_layout_component",
+      "type": "file",
+      "file": "Layout.md",
+      "x": 3920,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_lessonpage_page",
+      "type": "file",
+      "file": "LessonPage.md",
+      "x": 4120,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_login_page",
+      "type": "file",
+      "file": "Login.md",
+      "x": 4320,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_myprogress_page",
+      "type": "file",
+      "file": "MyProgress.md",
+      "x": 3920,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_quiz_gate",
+      "type": "file",
+      "file": "Quiz Gate (m\u1edf kh\u00f3a b\u00e0i ti\u1ebfp theo).md",
+      "x": 4120,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quizpanel_component",
+      "type": "file",
+      "file": "QuizPanel.md",
+      "x": 4320,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_readme_doc",
+      "type": "file",
+      "file": "README \u2014 To\u00e1n Anh Th\u00e0nh LMS.md",
+      "x": 3920,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_aipanel_slidestab",
+      "type": "file",
+      "file": "SlidesTab.md",
+      "x": 4120,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_concept_video_watermark",
+      "type": "file",
+      "file": "Video Streaming b\u1ea3o m\u1eadt + watermark \u0111\u1ed9ng.md",
+      "x": 4320,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_videoplayer_component",
+      "type": "file",
+      "file": "VideoPlayer.md",
+      "x": 3920,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_client",
+      "type": "file",
+      "file": "api (axios client).md",
+      "x": 4120,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_dorefresh",
+      "type": "file",
+      "file": "doRefresh (token refresh interceptor).md",
+      "x": 4320,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_device_getdeviceid",
+      "type": "file",
+      "file": "getDeviceId.md",
+      "x": 3920,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_guard_installguard",
+      "type": "file",
+      "file": "installGuard.md",
+      "x": 4120,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_guard_punish",
+      "type": "file",
+      "file": "punish (logout + report).md",
+      "x": 4320,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_reportactivity",
+      "type": "file",
+      "file": "reportActivity.md",
+      "x": 3920,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_reportsecurityevent",
+      "type": "file",
+      "file": "reportSecurityEvent.md",
+      "x": 4120,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_store_useauth",
+      "type": "file",
+      "file": "useAuth (Zustand auth store).md",
+      "x": 4320,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_store_usetheme",
+      "type": "file",
+      "file": "useTheme (Zustand theme store).md",
+      "x": 3920,
+      "y": 960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Server Dependencies",
+      "x": 5300,
+      "y": 0,
+      "width": 1320,
+      "height": 1220,
+      "color": "4"
+    },
+    {
+      "id": "n_server_package_dependencies_prisma_client",
+      "type": "file",
+      "file": "@prismaclient.md",
+      "x": 5320,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_dependencies_tat_shared",
+      "type": "file",
+      "file": "@tatshared.md",
+      "x": 5520,
+      "y": 80,
+      "width": 180,
+      "height": 60
     },
     {
       "id": "n_server_package_devdependencies_types_bcryptjs",
       "type": "file",
       "file": "@typesbcryptjs.md",
-      "x": 2160,
+      "x": 5720,
       "y": 80,
       "width": 180,
       "height": 60
@@ -340,8 +1529,8 @@
       "id": "n_server_package_devdependencies_types_cors",
       "type": "file",
       "file": "@typescors.md",
-      "x": 2360,
-      "y": 80,
+      "x": 5320,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -349,8 +1538,8 @@
       "id": "n_server_package_devdependencies_types_express",
       "type": "file",
       "file": "@typesexpress.md",
-      "x": 2560,
-      "y": 80,
+      "x": 5520,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -358,7 +1547,7 @@
       "id": "n_server_package_devdependencies_types_jsonwebtoken",
       "type": "file",
       "file": "@typesjsonwebtoken.md",
-      "x": 2160,
+      "x": 5720,
       "y": 160,
       "width": 180,
       "height": 60
@@ -367,8 +1556,8 @@
       "id": "n_server_package_devdependencies_types_multer",
       "type": "file",
       "file": "@typesmulter.md",
-      "x": 2360,
-      "y": 160,
+      "x": 5320,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -376,8 +1565,8 @@
       "id": "n_server_package_devdependencies_types_node",
       "type": "file",
       "file": "@typesnode.md",
-      "x": 2560,
-      "y": 160,
+      "x": 5520,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -385,299 +1574,8 @@
       "id": "n_server_package_devdependencies_types_supertest",
       "type": "file",
       "file": "@typessupertest.md",
-      "x": 2160,
+      "x": 5720,
       "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_devdependencies",
-      "type": "file",
-      "file": "devDependencies_1.md",
-      "x": 2360,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_devdependencies_prisma",
-      "type": "file",
-      "file": "prisma.md",
-      "x": 2560,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_devdependencies_supertest",
-      "type": "file",
-      "file": "supertest.md",
-      "x": 2160,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_devdependencies_tsx",
-      "type": "file",
-      "file": "tsx.md",
-      "x": 2360,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_devdependencies_typescript",
-      "type": "file",
-      "file": "typescript.md",
-      "x": 2560,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_devdependencies_vitest",
-      "type": "file",
-      "file": "vitest.md",
-      "x": 2160,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g3",
-      "type": "group",
-      "label": "TypeScript Config",
-      "x": 3100,
-      "y": 0,
-      "width": 880,
-      "height": 520,
-      "color": "4"
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions",
-      "type": "file",
-      "file": "compilerOptions.md",
-      "x": 3120,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_esmoduleinterop",
-      "type": "file",
-      "file": "esModuleInterop.md",
-      "x": 3320,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_include",
-      "type": "file",
-      "file": "include.md",
-      "x": 3520,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_module",
-      "type": "file",
-      "file": "module.md",
-      "x": 3120,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_moduleresolution",
-      "type": "file",
-      "file": "moduleResolution.md",
-      "x": 3320,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_resolvejsonmodule",
-      "type": "file",
-      "file": "resolveJsonModule.md",
-      "x": 3520,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_skiplibcheck",
-      "type": "file",
-      "file": "skipLibCheck.md",
-      "x": 3120,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_strict",
-      "type": "file",
-      "file": "strict.md",
-      "x": 3320,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_target",
-      "type": "file",
-      "file": "target.md",
-      "x": 3520,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_apps_server_tsconfig_json",
-      "type": "file",
-      "file": "tsconfig.json.md",
-      "x": 3120,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_tsconfig_compileroptions_types",
-      "type": "file",
-      "file": "types.md",
-      "x": 3320,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g4",
-      "type": "group",
-      "label": "Server Package Scripts",
-      "x": 0,
-      "y": 900,
-      "width": 880,
-      "height": 520,
-      "color": "5"
-    },
-    {
-      "id": "n_server_package_scripts_dev",
-      "type": "file",
-      "file": "dev_1.md",
-      "x": 20,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_scripts_fetch_media",
-      "type": "file",
-      "file": "fetch-media.md",
-      "x": 220,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_scripts_migrate",
-      "type": "file",
-      "file": "migrate.md",
-      "x": 420,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_name",
-      "type": "file",
-      "file": "name_1.md",
-      "x": 20,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_apps_server_package_json",
-      "type": "file",
-      "file": "package.json_1.md",
-      "x": 220,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_scripts",
-      "type": "file",
-      "file": "scripts_1.md",
-      "x": 420,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_scripts_seed",
-      "type": "file",
-      "file": "seed_1.md",
-      "x": 20,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_scripts_start",
-      "type": "file",
-      "file": "start.md",
-      "x": 220,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_scripts_test",
-      "type": "file",
-      "file": "test_1.md",
-      "x": 420,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_version",
-      "type": "file",
-      "file": "version_1.md",
-      "x": 20,
-      "y": 1220,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g5",
-      "type": "group",
-      "label": "Server Runtime Dependencies",
-      "x": 1180,
-      "y": 900,
-      "width": 660,
-      "height": 420,
-      "color": "6"
-    },
-    {
-      "id": "n_server_package_dependencies_prisma_client",
-      "type": "file",
-      "file": "@prismaclient.md",
-      "x": 1200,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_server_package_dependencies_tat_shared",
-      "type": "file",
-      "file": "@tatshared.md",
-      "x": 1400,
-      "y": 980,
       "width": 180,
       "height": 60
     },
@@ -685,8 +1583,8 @@
       "id": "n_server_package_dependencies_bcryptjs",
       "type": "file",
       "file": "bcryptjs.md",
-      "x": 1600,
-      "y": 980,
+      "x": 5320,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -694,8 +1592,17 @@
       "id": "n_server_package_dependencies_cors",
       "type": "file",
       "file": "cors.md",
-      "x": 1200,
-      "y": 1060,
+      "x": 5520,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_app_createapp",
+      "type": "file",
+      "file": "createApp().md",
+      "x": 5720,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -703,8 +1610,26 @@
       "id": "n_server_package_dependencies",
       "type": "file",
       "file": "dependencies.md",
-      "x": 1400,
-      "y": 1060,
+      "x": 5320,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_dev",
+      "type": "file",
+      "file": "dev_1.md",
+      "x": 5520,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies_2.md",
+      "x": 5720,
+      "y": 400,
       "width": 180,
       "height": 60
     },
@@ -712,8 +1637,17 @@
       "id": "n_server_package_dependencies_express",
       "type": "file",
       "file": "express.md",
-      "x": 1600,
-      "y": 1060,
+      "x": 5320,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_fetch_media",
+      "type": "file",
+      "file": "fetch-media.md",
+      "x": 5520,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -721,8 +1655,17 @@
       "id": "n_server_package_dependencies_jsonwebtoken",
       "type": "file",
       "file": "jsonwebtoken.md",
-      "x": 1200,
-      "y": 1140,
+      "x": 5720,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_migrate",
+      "type": "file",
+      "file": "migrate.md",
+      "x": 5320,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -730,8 +1673,116 @@
       "id": "n_server_package_dependencies_multer",
       "type": "file",
       "file": "multer.md",
-      "x": 1400,
-      "y": 1140,
+      "x": 5520,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_name",
+      "type": "file",
+      "file": "name_2.md",
+      "x": 5720,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_package_json",
+      "type": "file",
+      "file": "package.json_2.md",
+      "x": 5320,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_prisma",
+      "type": "file",
+      "file": "prisma.md",
+      "x": 5520,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts",
+      "type": "file",
+      "file": "scripts_2.md",
+      "x": 5720,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_seed",
+      "type": "file",
+      "file": "seed_1.md",
+      "x": 5320,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_start",
+      "type": "file",
+      "file": "start_1.md",
+      "x": 5520,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_supertest",
+      "type": "file",
+      "file": "supertest.md",
+      "x": 5720,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_scripts_test",
+      "type": "file",
+      "file": "test_1.md",
+      "x": 5320,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_tsx",
+      "type": "file",
+      "file": "tsx.md",
+      "x": 5520,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_typescript",
+      "type": "file",
+      "file": "typescript.md",
+      "x": 5720,
+      "y": 800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_version",
+      "type": "file",
+      "file": "version_2.md",
+      "x": 5320,
+      "y": 880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_package_devdependencies_vitest",
+      "type": "file",
+      "file": "vitest.md",
+      "x": 5520,
+      "y": 880,
       "width": 180,
       "height": 60
     },
@@ -739,27 +1790,36 @@
       "id": "n_server_package_dependencies_zod",
       "type": "file",
       "file": "zod.md",
-      "x": 1600,
-      "y": 1140,
+      "x": 5720,
+      "y": 880,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g6",
+      "id": "g4",
       "type": "group",
-      "label": "Security & Monitoring Design",
-      "x": 2140,
-      "y": 900,
-      "width": 660,
-      "height": 420,
-      "color": "1"
+      "label": "Design Rationale & Security",
+      "x": 6700,
+      "y": 0,
+      "width": 1320,
+      "height": 1020,
+      "color": "5"
     },
     {
       "id": "n_shared_ACTIVITY_LABELS",
       "type": "file",
       "file": "ACTIVITY_LABELS (Vietnamese labels).md",
-      "x": 2160,
-      "y": 980,
+      "x": 6720,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_ai_provider_interface",
+      "type": "file",
+      "file": "AIProvider Interface.md",
+      "x": 6920,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -767,8 +1827,8 @@
       "id": "n_design_activity_logging",
       "type": "file",
       "file": "ActivityLog  SecurityEvent Monitoring.md",
-      "x": 2360,
-      "y": 980,
+      "x": 7120,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -776,8 +1836,17 @@
       "id": "n_shared_ActivityType",
       "type": "file",
       "file": "ActivityType Union Type.md",
-      "x": 2560,
-      "y": 980,
+      "x": 6720,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_adapter_pattern",
+      "type": "file",
+      "file": "Adapter Pattern for Volatile Subsystems.md",
+      "x": 6920,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -785,8 +1854,26 @@
       "id": "n_design_client_security_guard",
       "type": "file",
       "file": "Client Security Guard (Web Deterrents).md",
-      "x": 2160,
-      "y": 1060,
+      "x": 7120,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_DEFAULT_PASS_SCORE",
+      "type": "file",
+      "file": "DEFAULT_PASS_SCORE = 70.md",
+      "x": 6720,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_dynamic_watermark",
+      "type": "file",
+      "file": "Dynamic Moving Watermark.md",
+      "x": 6920,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -794,8 +1881,98 @@
       "id": "n_design_electron_content_protection",
       "type": "file",
       "file": "Electron setContentProtection.md",
-      "x": 2360,
-      "y": 1060,
+      "x": 7120,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_gdrive_provider",
+      "type": "file",
+      "file": "GoogleDriveProvider (stub).md",
+      "x": 6720,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_stream_token",
+      "type": "file",
+      "file": "HMAC Signed Stream Token.md",
+      "x": 6920,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_local_storage_provider",
+      "type": "file",
+      "file": "LocalStorageProvider_1.md",
+      "x": 7120,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_mock_ai_provider",
+      "type": "file",
+      "file": "MockAIProvider_1.md",
+      "x": 6720,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_opennotebook_provider",
+      "type": "file",
+      "file": "OpenNotebookProvider_1.md",
+      "x": 6920,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_prisma_data_model",
+      "type": "file",
+      "file": "Prisma Data Model (UserCourseChapterLessonQuizProgress).md",
+      "x": 7120,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_quiz_gate",
+      "type": "file",
+      "file": "Quiz Gate (Sequential Unlock).md",
+      "x": 6720,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_rbac",
+      "type": "file",
+      "file": "RBAC (JWT + requireRole).md",
+      "x": 6920,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_shared_Role",
+      "type": "file",
+      "file": "Role Type (ADMIN  STUDENT).md",
+      "x": 7120,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_toan_anh_thanh_lms_root",
+      "type": "file",
+      "file": "Root Monorepo Package (toan-anh-thanh-lms).md",
+      "x": 6720,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -803,8 +1980,8 @@
       "id": "n_shared_SECURITY_EVENT_LABELS",
       "type": "file",
       "file": "SECURITY_EVENT_LABELS (Vietnamese labels).md",
-      "x": 2560,
-      "y": 1060,
+      "x": 6920,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -812,27 +1989,1676 @@
       "id": "n_shared_SecurityEventType",
       "type": "file",
       "file": "SecurityEventType Union Type.md",
-      "x": 2160,
-      "y": 1140,
+      "x": 7120,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_tat_server",
+      "type": "file",
+      "file": "Server Package (@tatserver).md",
+      "x": 6720,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_tat_shared",
+      "type": "file",
+      "file": "Shared Package (@tatshared).md",
+      "x": 6920,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_storage_provider_interface",
+      "type": "file",
+      "file": "StorageProvider Interface.md",
+      "x": 7120,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_design_toan_anh_thanh_lms",
+      "type": "file",
+      "file": "Toan Anh Thanh LMS Design Spec.md",
+      "x": 6720,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_plan_toan_anh_thanh_lms",
+      "type": "file",
+      "file": "Toan Anh Thanh LMS Implementation Plan.md",
+      "x": 6920,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Server Module Wiring",
+      "x": 8100,
+      "y": 0,
+      "width": 1100,
+      "height": 1020,
+      "color": "6"
+    },
+    {
+      "id": "n_aiProvider_adapterPattern",
+      "type": "file",
+      "file": "AI Provider Adapter Pattern.md",
+      "x": 8120,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_aiRouter_router",
+      "type": "file",
+      "file": "AI Router.md",
+      "x": 8320,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_provider_AIProvider",
+      "type": "file",
+      "file": "AIProvider Interface_1.md",
+      "x": 8520,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_activityLog",
+      "type": "file",
+      "file": "ActivityLog Model.md",
+      "x": 8120,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_analyticsRouter_router",
+      "type": "file",
+      "file": "Analytics Router.md",
+      "x": 8320,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_authRouter_router",
+      "type": "file",
+      "file": "Auth Router.md",
+      "x": 8520,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_coursesRouter_router",
+      "type": "file",
+      "file": "Courses Router.md",
+      "x": 8120,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_deviceBinding_rationale",
+      "type": "file",
+      "file": "Device Binding (ch\u1ed1ng chia s\u1ebb t\u00e0i kho\u1ea3n).md",
+      "x": 8320,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_migration_deviceBinding",
+      "type": "file",
+      "file": "Device Binding Migration.md",
+      "x": 8520,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_app_createApp",
+      "type": "file",
+      "file": "Express App Factory.md",
+      "x": 8120,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_fetchMedia_script",
+      "type": "file",
+      "file": "Fetch Sample Media Script.md",
+      "x": 8320,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_authService_signTokens",
+      "type": "file",
+      "file": "JWT Token Signing.md",
+      "x": 8520,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_mock_MockAIProvider",
+      "type": "file",
+      "file": "MockAIProvider_2.md",
+      "x": 8120,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_opennotebook_OpenNotebookProvider",
+      "type": "file",
+      "file": "OpenNotebookProvider_2.md",
+      "x": 8320,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_deviceGuard_rationale",
+      "type": "file",
+      "file": "Per-request device guard for students.md",
+      "x": 8520,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_seed_seedScript",
+      "type": "file",
+      "file": "Prisma Seed Script.md",
+      "x": 8120,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_progressRouter_router",
+      "type": "file",
+      "file": "Progress Router.md",
+      "x": 8320,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_securityEvent",
+      "type": "file",
+      "file": "SecurityEvent Model.md",
+      "x": 8520,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_config_config",
+      "type": "file",
+      "file": "Server Config.md",
+      "x": 8120,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_userModel",
+      "type": "file",
+      "file": "User Model.md",
+      "x": 8320,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quiz_isLessonUnlocked",
+      "type": "file",
+      "file": "isLessonUnlocked (quiz gate).md",
+      "x": 8520,
+      "y": 560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_authService_login",
+      "type": "file",
+      "file": "login Service.md",
+      "x": 8120,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_authService_refresh",
+      "type": "file",
+      "file": "refresh Service.md",
+      "x": 8320,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_requireAuth",
+      "type": "file",
+      "file": "requireAuth Middleware.md",
+      "x": 8520,
+      "y": 640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_auth_requireRole",
+      "type": "file",
+      "file": "requireRole Middleware.md",
+      "x": 8120,
+      "y": 720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Web Dependencies",
+      "x": 0,
+      "y": 2400,
+      "width": 1100,
+      "height": 1020,
+      "color": "1"
+    },
+    {
+      "id": "n_web_package_dependencies_tat_shared",
+      "type": "file",
+      "file": "@tatshared_1.md",
+      "x": 20,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_types_react",
+      "type": "file",
+      "file": "@typesreact.md",
+      "x": 220,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_types_react_dom",
+      "type": "file",
+      "file": "@typesreact-dom.md",
+      "x": 420,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_vitejs_plugin_react",
+      "type": "file",
+      "file": "@vitejsplugin-react.md",
+      "x": 20,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_autoprefixer",
+      "type": "file",
+      "file": "autoprefixer.md",
+      "x": 220,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_dependencies_axios",
+      "type": "file",
+      "file": "axios.md",
+      "x": 420,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_scripts_build",
+      "type": "file",
+      "file": "build.md",
+      "x": 20,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_dependencies",
+      "type": "file",
+      "file": "dependencies_1.md",
+      "x": 220,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_scripts_dev",
+      "type": "file",
+      "file": "dev_2.md",
+      "x": 420,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies_3.md",
+      "x": 20,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_name",
+      "type": "file",
+      "file": "name_3.md",
+      "x": 220,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_package_json",
+      "type": "file",
+      "file": "package.json_3.md",
+      "x": 420,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_postcss",
+      "type": "file",
+      "file": "postcss.md",
+      "x": 20,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_scripts_preview",
+      "type": "file",
+      "file": "preview.md",
+      "x": 220,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_private",
+      "type": "file",
+      "file": "private_2.md",
+      "x": 420,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_dependencies_react",
+      "type": "file",
+      "file": "react.md",
+      "x": 20,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_dependencies_react_dom",
+      "type": "file",
+      "file": "react-dom.md",
+      "x": 220,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_dependencies_react_router_dom",
+      "type": "file",
+      "file": "react-router-dom.md",
+      "x": 420,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_scripts",
+      "type": "file",
+      "file": "scripts_3.md",
+      "x": 20,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_tailwindcss",
+      "type": "file",
+      "file": "tailwindcss.md",
+      "x": 220,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_type",
+      "type": "file",
+      "file": "type.md",
+      "x": 420,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_typescript",
+      "type": "file",
+      "file": "typescript_1.md",
+      "x": 20,
+      "y": 3040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_version",
+      "type": "file",
+      "file": "version_3.md",
+      "x": 220,
+      "y": 3040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_devdependencies_vite",
+      "type": "file",
+      "file": "vite.md",
+      "x": 420,
+      "y": 3040,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_package_dependencies_zustand",
+      "type": "file",
+      "file": "zustand.md",
+      "x": 20,
+      "y": 3120,
       "width": 180,
       "height": 60
     },
     {
       "id": "g7",
       "type": "group",
-      "label": "Shared Types Module",
-      "x": 3100,
-      "y": 900,
+      "label": "Mock AI Provider",
+      "x": 2060,
+      "y": 2400,
+      "width": 1100,
+      "height": 820,
+      "color": "2"
+    },
+    {
+      "id": "n_ai_mock_mockaiprovider_analyzelecture",
+      "type": "file",
+      "file": ".analyzeLecture().md",
+      "x": 2080,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_mockaiprovider_chat",
+      "type": "file",
+      "file": ".chat().md",
+      "x": 2280,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_mockaiprovider_generateexercises",
+      "type": "file",
+      "file": ".generateExercises().md",
+      "x": 2480,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_mockaiprovider_generateslides",
+      "type": "file",
+      "file": ".generateSlides().md",
+      "x": 2080,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_mockaiprovider_topicfor",
+      "type": "file",
+      "file": ".topicFor().md",
+      "x": 2280,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_provider_aiprovider",
+      "type": "file",
+      "file": "AIProvider.md",
+      "x": 2480,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_provider_chatmessage",
+      "type": "file",
+      "file": "ChatMessage.md",
+      "x": 2080,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_provider_exercise",
+      "type": "file",
+      "file": "Exercise.md",
+      "x": 2280,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_generic",
+      "type": "file",
+      "file": "GENERIC.md",
+      "x": 2480,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_provider_lectureanalysis",
+      "type": "file",
+      "file": "LectureAnalysis.md",
+      "x": 2080,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_mockaiprovider",
+      "type": "file",
+      "file": "MockAIProvider.md",
+      "x": 2280,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_provider_slide",
+      "type": "file",
+      "file": "Slide.md",
+      "x": 2480,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_topics",
+      "type": "file",
+      "file": "TOPICS.md",
+      "x": 2080,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_topic",
+      "type": "file",
+      "file": "Topic.md",
+      "x": 2280,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_mock_findtopic",
+      "type": "file",
+      "file": "findTopic().md",
+      "x": 2480,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_router_getai",
+      "type": "file",
+      "file": "getAI().md",
+      "x": 2080,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_router_log",
+      "type": "file",
+      "file": "log().md",
+      "x": 2280,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_ai_mock_ts",
+      "type": "file",
+      "file": "mock.ts.md",
+      "x": 2480,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_ai_opennotebook_ts",
+      "type": "file",
+      "file": "opennotebook.ts.md",
+      "x": 2080,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_ai_provider_ts",
+      "type": "file",
+      "file": "provider.ts.md",
+      "x": 2280,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_ai_router_ts",
+      "type": "file",
+      "file": "router.ts.md",
+      "x": 2480,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Server Config & Storage",
+      "x": 3900,
+      "y": 2400,
+      "width": 1100,
+      "height": 820,
+      "color": "3"
+    },
+    {
+      "id": "n_storage_gdrive_googledriveprovider_constructor",
+      "type": "file",
+      "file": ".constructor()_1.md",
+      "x": 3920,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_gdrive_googledriveprovider_createreadstream",
+      "type": "file",
+      "file": ".createReadStream().md",
+      "x": 4120,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_local_localstorageprovider_createreadstream",
+      "type": "file",
+      "file": ".createReadStream()_1.md",
+      "x": 4320,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_gdrive_googledriveprovider_getsize",
+      "type": "file",
+      "file": ".getSize().md",
+      "x": 3920,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_local_localstorageprovider_getsize",
+      "type": "file",
+      "file": ".getSize()_1.md",
+      "x": 4120,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_local_localstorageprovider_resolve",
+      "type": "file",
+      "file": ".resolve().md",
+      "x": 4320,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_gdrive_googledriveprovider_save",
+      "type": "file",
+      "file": ".save().md",
+      "x": 3920,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_local_localstorageprovider_save",
+      "type": "file",
+      "file": ".save()_1.md",
+      "x": 4120,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_gdrive_googledriveprovider",
+      "type": "file",
+      "file": "GoogleDriveProvider.md",
+      "x": 4320,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_local_localstorageprovider",
+      "type": "file",
+      "file": "LocalStorageProvider.md",
+      "x": 3920,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_provider_storageprovider",
+      "type": "file",
+      "file": "StorageProvider.md",
+      "x": 4120,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_provider_videostream",
+      "type": "file",
+      "file": "VideoStream.md",
+      "x": 4320,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_index_app",
+      "type": "file",
+      "file": "app.md",
+      "x": 3920,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_src_config_config",
+      "type": "file",
+      "file": "config.md",
+      "x": 4120,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_config_ts",
+      "type": "file",
+      "file": "config.ts.md",
+      "x": 4320,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_storage_gdrive_ts",
+      "type": "file",
+      "file": "gdrive.ts.md",
+      "x": 3920,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_index_ts",
+      "type": "file",
+      "file": "index.ts.md",
+      "x": 4120,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_storage_index_ts",
+      "type": "file",
+      "file": "index.ts_1.md",
+      "x": 4320,
+      "y": 2880,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_storage_local_ts",
+      "type": "file",
+      "file": "local.ts.md",
+      "x": 3920,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_src_modules_storage_provider_ts",
+      "type": "file",
+      "file": "provider.ts_1.md",
+      "x": 4120,
+      "y": 2960,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Root Monorepo Config",
+      "x": 5300,
+      "y": 2400,
+      "width": 880,
+      "height": 620,
+      "color": "4"
+    },
+    {
+      "id": "n_toananhthanh_package_devdependencies_concurrently",
+      "type": "file",
+      "file": "concurrently.md",
+      "x": 5320,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_desktop",
+      "type": "file",
+      "file": "desktop.md",
+      "x": 5520,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_dev",
+      "type": "file",
+      "file": "dev.md",
+      "x": 5720,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_dev_server",
+      "type": "file",
+      "file": "devserver.md",
+      "x": 5320,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_dev_web",
+      "type": "file",
+      "file": "devweb.md",
+      "x": 5520,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies.md",
+      "x": 5720,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_name",
+      "type": "file",
+      "file": "name.md",
+      "x": 5320,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_package_json",
+      "type": "file",
+      "file": "package.json.md",
+      "x": 5520,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_private",
+      "type": "file",
+      "file": "private.md",
+      "x": 5720,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts",
+      "type": "file",
+      "file": "scripts.md",
+      "x": 5320,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_seed",
+      "type": "file",
+      "file": "seed.md",
+      "x": 5520,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_scripts_test",
+      "type": "file",
+      "file": "test.md",
+      "x": 5720,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_version",
+      "type": "file",
+      "file": "version.md",
+      "x": 5320,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_toananhthanh_package_workspaces",
+      "type": "file",
+      "file": "workspaces.md",
+      "x": 5520,
+      "y": 2800,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Web TS Config",
+      "x": 6700,
+      "y": 2400,
+      "width": 880,
+      "height": 520,
+      "color": "5"
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions",
+      "type": "file",
+      "file": "compilerOptions_1.md",
+      "x": 6720,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_esmoduleinterop",
+      "type": "file",
+      "file": "esModuleInterop_1.md",
+      "x": 6920,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_include",
+      "type": "file",
+      "file": "include_1.md",
+      "x": 7120,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_jsx",
+      "type": "file",
+      "file": "jsx.md",
+      "x": 6720,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_lib",
+      "type": "file",
+      "file": "lib.md",
+      "x": 6920,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_module",
+      "type": "file",
+      "file": "module_1.md",
+      "x": 7120,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_moduleresolution",
+      "type": "file",
+      "file": "moduleResolution_1.md",
+      "x": 6720,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_noemit",
+      "type": "file",
+      "file": "noEmit.md",
+      "x": 6920,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_skiplibcheck",
+      "type": "file",
+      "file": "skipLibCheck_1.md",
+      "x": 7120,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_strict",
+      "type": "file",
+      "file": "strict_1.md",
+      "x": 6720,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_web_tsconfig_compileroptions_target",
+      "type": "file",
+      "file": "target_1.md",
+      "x": 6920,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_tsconfig_json",
+      "type": "file",
+      "file": "tsconfig.json_1.md",
+      "x": 7120,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g11",
+      "type": "group",
+      "label": "Server TS Config",
+      "x": 8100,
+      "y": 2400,
+      "width": 880,
+      "height": 520,
+      "color": "6"
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions",
+      "type": "file",
+      "file": "compilerOptions.md",
+      "x": 8120,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_esmoduleinterop",
+      "type": "file",
+      "file": "esModuleInterop.md",
+      "x": 8320,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_include",
+      "type": "file",
+      "file": "include.md",
+      "x": 8520,
+      "y": 2480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_module",
+      "type": "file",
+      "file": "module.md",
+      "x": 8120,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_moduleresolution",
+      "type": "file",
+      "file": "moduleResolution.md",
+      "x": 8320,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_resolvejsonmodule",
+      "type": "file",
+      "file": "resolveJsonModule.md",
+      "x": 8520,
+      "y": 2560,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_skiplibcheck",
+      "type": "file",
+      "file": "skipLibCheck.md",
+      "x": 8120,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_strict",
+      "type": "file",
+      "file": "strict.md",
+      "x": 8320,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_target",
+      "type": "file",
+      "file": "target.md",
+      "x": 8520,
+      "y": 2640,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_tsconfig_json",
+      "type": "file",
+      "file": "tsconfig.json.md",
+      "x": 8120,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_server_tsconfig_compileroptions_types",
+      "type": "file",
+      "file": "types.md",
+      "x": 8320,
+      "y": 2720,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g12",
+      "type": "group",
+      "label": "Storage Adapter",
+      "x": 0,
+      "y": 3500,
+      "width": 880,
+      "height": 520,
+      "color": "1"
+    },
+    {
+      "id": "n_gdrive_GoogleDriveProvider",
+      "type": "file",
+      "file": "GoogleDriveProvider_1.md",
+      "x": 20,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_local_LocalStorageProvider",
+      "type": "file",
+      "file": "LocalStorageProvider_2.md",
+      "x": 220,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storage_adapter_concept",
+      "type": "file",
+      "file": "Storage Adapter (localgdrive).md",
+      "x": 420,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_provider_StorageProvider",
+      "type": "file",
+      "file": "StorageProvider Interface_1.md",
+      "x": 20,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_stream_token_concept",
+      "type": "file",
+      "file": "Stream Token (HMAC 60s).md",
+      "x": 220,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storageindex_getStorage",
+      "type": "file",
+      "file": "getStorage.md",
+      "x": 420,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_streamtoken_signStreamToken",
+      "type": "file",
+      "file": "signStreamToken.md",
+      "x": 20,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_storagerouter_storageRouter",
+      "type": "file",
+      "file": "storageRouter (video upload).md",
+      "x": 220,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_streamrouter_streamRouter",
+      "type": "file",
+      "file": "streamRouter_1.md",
+      "x": 420,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_streamtokentest_streamtoken",
+      "type": "file",
+      "file": "streamtoken.test.ts_1.md",
+      "x": 20,
+      "y": 3820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_streamtoken_verifyStreamToken",
+      "type": "file",
+      "file": "verifyStreamToken.md",
+      "x": 220,
+      "y": 3820,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g13",
+      "type": "group",
+      "label": "OpenNotebook Provider",
+      "x": 2060,
+      "y": 3500,
       "width": 660,
       "height": 420,
       "color": "2"
     },
     {
+      "id": "n_ai_opennotebook_opennotebookprovider_analyzelecture",
+      "type": "file",
+      "file": ".analyzeLecture()_1.md",
+      "x": 2080,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_api",
+      "type": "file",
+      "file": ".api().md",
+      "x": 2280,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_ask",
+      "type": "file",
+      "file": ".ask().md",
+      "x": 2480,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_chat",
+      "type": "file",
+      "file": ".chat()_1.md",
+      "x": 2080,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_constructor",
+      "type": "file",
+      "file": ".constructor().md",
+      "x": 2280,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_ensurenotebook",
+      "type": "file",
+      "file": ".ensureNotebook().md",
+      "x": 2480,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_generateexercises",
+      "type": "file",
+      "file": ".generateExercises()_1.md",
+      "x": 2080,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider_generateslides",
+      "type": "file",
+      "file": ".generateSlides()_1.md",
+      "x": 2280,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_ai_opennotebook_opennotebookprovider",
+      "type": "file",
+      "file": "OpenNotebookProvider.md",
+      "x": 2480,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g14",
+      "type": "group",
+      "label": "AIPanel.tsx",
+      "x": 3900,
+      "y": 3500,
+      "width": 660,
+      "height": 420,
+      "color": "3"
+    },
+    {
+      "id": "n_components_aipanel_aipanel",
+      "type": "file",
+      "file": "AIPanel().md",
+      "x": 3920,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_web_src_components_aipanel_tsx",
+      "type": "file",
+      "file": "AIPanel.tsx.md",
+      "x": 4120,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_analyzetab",
+      "type": "file",
+      "file": "AnalyzeTab().md",
+      "x": 4320,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_chattab",
+      "type": "file",
+      "file": "ChatTab().md",
+      "x": 3920,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_exercisestab",
+      "type": "file",
+      "file": "ExercisesTab().md",
+      "x": 4120,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_loading",
+      "type": "file",
+      "file": "Loading().md",
+      "x": 4320,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_slidestab",
+      "type": "file",
+      "file": "SlidesTab().md",
+      "x": 3920,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_tabs",
+      "type": "file",
+      "file": "TABS.md",
+      "x": 4120,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_components_aipanel_tab",
+      "type": "file",
+      "file": "Tab.md",
+      "x": 4320,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g15",
+      "type": "group",
+      "label": "package.json",
+      "x": 5300,
+      "y": 3500,
+      "width": 660,
+      "height": 420,
+      "color": "4"
+    },
+    {
+      "id": "n_desktop_package_devdependencies",
+      "type": "file",
+      "file": "devDependencies_1.md",
+      "x": 5320,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_devdependencies_electron",
+      "type": "file",
+      "file": "electron.md",
+      "x": 5520,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_main",
+      "type": "file",
+      "file": "main.md",
+      "x": 5720,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_name",
+      "type": "file",
+      "file": "name_1.md",
+      "x": 5320,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_desktop_package_json",
+      "type": "file",
+      "file": "package.json_1.md",
+      "x": 5520,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_private",
+      "type": "file",
+      "file": "private_1.md",
+      "x": 5720,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_scripts",
+      "type": "file",
+      "file": "scripts_1.md",
+      "x": 5320,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_scripts_start",
+      "type": "file",
+      "file": "start.md",
+      "x": 5520,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_package_version",
+      "type": "file",
+      "file": "version_1.md",
+      "x": 5720,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g16",
+      "type": "group",
+      "label": "index.ts",
+      "x": 6700,
+      "y": 3500,
+      "width": 660,
+      "height": 420,
+      "color": "5"
+    },
+    {
       "id": "n_src_index_activity_labels",
       "type": "file",
       "file": "ACTIVITY_LABELS.md",
-      "x": 3120,
-      "y": 980,
+      "x": 6720,
+      "y": 3580,
       "width": 180,
       "height": 60
     },
@@ -840,8 +3666,8 @@
       "id": "n_src_index_activitytype",
       "type": "file",
       "file": "ActivityType.md",
-      "x": 3320,
-      "y": 980,
+      "x": 6920,
+      "y": 3580,
       "width": 180,
       "height": 60
     },
@@ -849,8 +3675,8 @@
       "id": "n_src_index_role",
       "type": "file",
       "file": "Role.md",
-      "x": 3520,
-      "y": 980,
+      "x": 7120,
+      "y": 3580,
       "width": 180,
       "height": 60
     },
@@ -858,8 +3684,8 @@
       "id": "n_src_index_security_event_labels",
       "type": "file",
       "file": "SECURITY_EVENT_LABELS.md",
-      "x": 3120,
-      "y": 1060,
+      "x": 6720,
+      "y": 3660,
       "width": 180,
       "height": 60
     },
@@ -867,8 +3693,8 @@
       "id": "n_src_index_securityeventtype",
       "type": "file",
       "file": "SecurityEventType.md",
-      "x": 3320,
-      "y": 1060,
+      "x": 6920,
+      "y": 3660,
       "width": 180,
       "height": 60
     },
@@ -876,54 +3702,182 @@
       "id": "n_src_index_userstatus",
       "type": "file",
       "file": "UserStatus.md",
-      "x": 3520,
-      "y": 1060,
+      "x": 7120,
+      "y": 3660,
       "width": 180,
       "height": 60
     },
     {
       "id": "n_packages_shared_src_index_ts",
       "type": "file",
-      "file": "index.ts.md",
-      "x": 3120,
-      "y": 1140,
+      "file": "index.ts_2.md",
+      "x": 6720,
+      "y": 3740,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g8",
+      "id": "g17",
       "type": "group",
-      "label": "Shared Package Config",
+      "label": "gate.test.ts",
+      "x": 8100,
+      "y": 3500,
+      "width": 660,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_quiz_gate_concept",
+      "type": "file",
+      "file": "Quiz Gate (Lesson Unlock).md",
+      "x": 8120,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_gatetest_gate",
+      "type": "file",
+      "file": "gate.test.ts_1.md",
+      "x": 8320,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quizservice_getOrderedLessons",
+      "type": "file",
+      "file": "getOrderedLessons.md",
+      "x": 8520,
+      "y": 3580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quizservice_isLessonCompleted",
+      "type": "file",
+      "file": "isLessonCompleted.md",
+      "x": 8120,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quizservice_isLessonUnlocked",
+      "type": "file",
+      "file": "isLessonUnlocked.md",
+      "x": 8320,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quizrouter_quizRouter",
+      "type": "file",
+      "file": "quizRouter_1.md",
+      "x": 8520,
+      "y": 3660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_quizservice_submitQuiz",
+      "type": "file",
+      "file": "submitQuiz.md",
+      "x": 8120,
+      "y": 3740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g18",
+      "type": "group",
+      "label": "seed.ts",
       "x": 0,
-      "y": 1500,
+      "y": 4100,
       "width": 660,
       "height": 400,
-      "color": "3"
+      "color": "1"
+    },
+    {
+      "id": "n_prisma_seed_q",
+      "type": "file",
+      "file": "Q.md",
+      "x": 20,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_seed_main",
+      "type": "file",
+      "file": "main().md",
+      "x": 220,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_seed_prisma",
+      "type": "file",
+      "file": "prisma_1.md",
+      "x": 420,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_prisma_seed_questions",
+      "type": "file",
+      "file": "questions().md",
+      "x": 20,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_prisma_seed_ts",
+      "type": "file",
+      "file": "seed.ts.md",
+      "x": 220,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g19",
+      "type": "group",
+      "label": "package.json",
+      "x": 2060,
+      "y": 4100,
+      "width": 660,
+      "height": 400,
+      "color": "2"
     },
     {
       "id": "n_shared_package_main",
       "type": "file",
-      "file": "main.md",
-      "x": 20,
-      "y": 1580,
+      "file": "main_1.md",
+      "x": 2080,
+      "y": 4180,
       "width": 180,
       "height": 60
     },
     {
       "id": "n_shared_package_name",
       "type": "file",
-      "file": "name_2.md",
-      "x": 220,
-      "y": 1580,
+      "file": "name_4.md",
+      "x": 2280,
+      "y": 4180,
       "width": 180,
       "height": 60
     },
     {
       "id": "n_packages_shared_package_json",
       "type": "file",
-      "file": "package.json_2.md",
-      "x": 420,
-      "y": 1580,
+      "file": "package.json_4.md",
+      "x": 2480,
+      "y": 4180,
       "width": 180,
       "height": 60
     },
@@ -931,54 +3885,351 @@
       "id": "n_shared_package_types",
       "type": "file",
       "file": "types_1.md",
-      "x": 20,
-      "y": 1660,
+      "x": 2080,
+      "y": 4260,
       "width": 180,
       "height": 60
     },
     {
       "id": "n_shared_package_version",
       "type": "file",
-      "file": "version_2.md",
-      "x": 220,
-      "y": 1660,
+      "file": "version_4.md",
+      "x": 2280,
+      "y": 4260,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g9",
+      "id": "g20",
       "type": "group",
-      "label": "Claude Tool Settings",
-      "x": 1180,
-      "y": 1500,
+      "label": "streamtoken.test.ts",
+      "x": 3900,
+      "y": 4100,
+      "width": 660,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_test_streamtoken_test_payload_sig",
+      "type": "file",
+      "file": "payload, sig.md",
+      "x": 3920,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_test_streamtoken_test_forged",
+      "type": "file",
+      "file": "forged.md",
+      "x": 4120,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_test_streamtoken_test_payload",
+      "type": "file",
+      "file": "payload_1.md",
+      "x": 4320,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_server_test_streamtoken_test_ts",
+      "type": "file",
+      "file": "streamtoken.test.ts.md",
+      "x": 3920,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_test_streamtoken_test_token",
+      "type": "file",
+      "file": "token_1.md",
+      "x": 4120,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g21",
+      "type": "group",
+      "label": "fetch-media.ts",
+      "x": 5300,
+      "y": 4100,
       "width": 600,
       "height": 400,
       "color": "4"
     },
     {
-      "id": "n_claude_settings_local_permissions_allow",
+      "id": "n_scripts_fetch_media_media_dir",
       "type": "file",
-      "file": "allow.md",
-      "x": 1200,
-      "y": 1580,
+      "file": "MEDIA_DIR.md",
+      "x": 5320,
+      "y": 4180,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_claude_settings_local_permissions",
+      "id": "n_scripts_fetch_media_samples",
       "type": "file",
-      "file": "permissions.md",
-      "x": 1400,
-      "y": 1580,
+      "file": "SAMPLES.md",
+      "x": 5520,
+      "y": 4180,
       "width": 180,
       "height": 60
     },
     {
-      "id": "n_claude_settings_local_json",
+      "id": "n_apps_server_scripts_fetch_media_ts",
       "type": "file",
-      "file": "settings.local.json.md",
-      "x": 1600,
-      "y": 1580,
+      "file": "fetch-media.ts.md",
+      "x": 5720,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_scripts_fetch_media_main",
+      "type": "file",
+      "file": "main()_1.md",
+      "x": 5320,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g22",
+      "type": "group",
+      "label": "auth.test.ts",
+      "x": 6700,
+      "y": 4100,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_device_binding_concept",
+      "type": "file",
+      "file": "Device Binding (1 thiet bihoc sinh).md",
+      "x": 6720,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_authtest_auth",
+      "type": "file",
+      "file": "auth.test.ts_1.md",
+      "x": 6920,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_devicetest_device",
+      "type": "file",
+      "file": "device.test.ts_1.md",
+      "x": 7120,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_usersrouter_usersRouter",
+      "type": "file",
+      "file": "usersRouter (admin).md",
+      "x": 6720,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g23",
+      "type": "group",
+      "label": "App (web root)",
+      "x": 8100,
+      "y": 4100,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_webapp_App",
+      "type": "file",
+      "file": "App (web root).md",
+      "x": 8120,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_webapp_RequireAuth",
+      "type": "file",
+      "file": "RequireAuth (route guard).md",
+      "x": 8320,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_webguard_installGuard",
+      "type": "file",
+      "file": "installGuard (security guard).md",
+      "x": 8520,
+      "y": 4180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_webmain_main",
+      "type": "file",
+      "file": "main.tsx (web entry).md",
+      "x": 8120,
+      "y": 4260,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g24",
+      "type": "group",
+      "label": "main.js",
+      "x": 0,
+      "y": 4580,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_desktop_main_createwindow",
+      "type": "file",
+      "file": "createWindow().md",
+      "x": 20,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apps_desktop_main_js",
+      "type": "file",
+      "file": "main.js.md",
+      "x": 220,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_desktop_main_app_browserwindow_session",
+      "type": "file",
+      "file": "{ app, BrowserWindow, session }.md",
+      "x": 420,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g25",
+      "type": "group",
+      "label": "Content Protection (anti scr",
+      "x": 2060,
+      "y": 4580,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_main_contentProtection",
+      "type": "file",
+      "file": "Content Protection (anti screen capture).md",
+      "x": 2080,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_main_desktopApp",
+      "type": "file",
+      "file": "Electron Desktop App.md",
+      "x": 2280,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g26",
+      "type": "group",
+      "label": "postcss.config.js",
+      "x": 3900,
+      "y": 4580,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_apps_web_postcss_config_js",
+      "type": "file",
+      "file": "postcss.config.js.md",
+      "x": 3920,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g27",
+      "type": "group",
+      "label": "tailwind.config.js",
+      "x": 5300,
+      "y": 4580,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_apps_web_tailwind_config_js",
+      "type": "file",
+      "file": "tailwind.config.js.md",
+      "x": 5320,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g28",
+      "type": "group",
+      "label": "vite.config.ts",
+      "x": 6700,
+      "y": 4580,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_apps_web_vite_config_ts",
+      "type": "file",
+      "file": "vite.config.ts.md",
+      "x": 6720,
+      "y": 4660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g29",
+      "type": "group",
+      "label": "securityRouter",
+      "x": 8100,
+      "y": 4580,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_securityrouter_securityRouter",
+      "type": "file",
+      "file": "securityRouter_1.md",
+      "x": 8120,
+      "y": 4660,
       "width": 180,
       "height": 60
     }
@@ -1063,15 +4314,63 @@
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_claude_settings_local_json_claude_settings_local_permissions",
-      "fromNode": "n_claude_settings_local_json",
-      "toNode": "n_claude_settings_local_permissions",
+      "id": "e_apps_desktop_main_js_desktop_main_app_browserwindow_session",
+      "fromNode": "n_apps_desktop_main_js",
+      "toNode": "n_desktop_main_app_browserwindow_session",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_claude_settings_local_permissions_claude_settings_local_permissions_allow",
-      "fromNode": "n_claude_settings_local_permissions",
-      "toNode": "n_claude_settings_local_permissions_allow",
+      "id": "e_apps_desktop_main_js_desktop_main_createwindow",
+      "fromNode": "n_apps_desktop_main_js",
+      "toNode": "n_desktop_main_createwindow",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_desktop_package_json_desktop_package_name",
+      "fromNode": "n_apps_desktop_package_json",
+      "toNode": "n_desktop_package_name",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_desktop_package_json_desktop_package_version",
+      "fromNode": "n_apps_desktop_package_json",
+      "toNode": "n_desktop_package_version",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_desktop_package_json_desktop_package_private",
+      "fromNode": "n_apps_desktop_package_json",
+      "toNode": "n_desktop_package_private",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_desktop_package_json_desktop_package_main",
+      "fromNode": "n_apps_desktop_package_json",
+      "toNode": "n_desktop_package_main",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_desktop_package_json_desktop_package_scripts",
+      "fromNode": "n_apps_desktop_package_json",
+      "toNode": "n_desktop_package_scripts",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_desktop_package_json_desktop_package_devdependencies",
+      "fromNode": "n_apps_desktop_package_json",
+      "toNode": "n_desktop_package_devdependencies",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_desktop_package_scripts_desktop_package_scripts_start",
+      "fromNode": "n_desktop_package_scripts",
+      "toNode": "n_desktop_package_scripts_start",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_desktop_package_devdependencies_desktop_package_devdependencies_electron",
+      "fromNode": "n_desktop_package_devdependencies",
+      "toNode": "n_desktop_package_devdependencies_electron",
       "label": "contains [EXTRACTED]"
     },
     {
@@ -1187,6 +4486,18 @@
       "fromNode": "n_server_package_dependencies",
       "toNode": "n_server_package_dependencies_zod",
       "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_server_package_dependencies_cors_src_app_createapp",
+      "fromNode": "n_server_package_dependencies_cors",
+      "toNode": "n_src_app_createapp",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_server_package_dependencies_express_src_app_createapp",
+      "fromNode": "n_server_package_dependencies_express",
+      "toNode": "n_src_app_createapp",
+      "label": "calls [INFERRED]"
     },
     {
       "id": "e_server_package_devdependencies_server_package_devdependencies_types_bcryptjs",
@@ -1321,256 +4632,808 @@
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_package_json_shared_package_name",
-      "fromNode": "n_packages_shared_package_json",
-      "toNode": "n_shared_package_name",
+      "id": "e_apps_server_prisma_seed_ts_prisma_seed_prisma",
+      "fromNode": "n_apps_server_prisma_seed_ts",
+      "toNode": "n_prisma_seed_prisma",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_package_json_shared_package_version",
-      "fromNode": "n_packages_shared_package_json",
-      "toNode": "n_shared_package_version",
+      "id": "e_apps_server_prisma_seed_ts_prisma_seed_q",
+      "fromNode": "n_apps_server_prisma_seed_ts",
+      "toNode": "n_prisma_seed_q",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_package_json_shared_package_main",
-      "fromNode": "n_packages_shared_package_json",
-      "toNode": "n_shared_package_main",
+      "id": "e_apps_server_prisma_seed_ts_prisma_seed_questions",
+      "fromNode": "n_apps_server_prisma_seed_ts",
+      "toNode": "n_prisma_seed_questions",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_package_json_shared_package_types",
-      "fromNode": "n_packages_shared_package_json",
-      "toNode": "n_shared_package_types",
+      "id": "e_apps_server_prisma_seed_ts_prisma_seed_main",
+      "fromNode": "n_apps_server_prisma_seed_ts",
+      "toNode": "n_prisma_seed_main",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_src_index_ts_src_index_role",
-      "fromNode": "n_packages_shared_src_index_ts",
-      "toNode": "n_src_index_role",
+      "id": "e_prisma_seed_questions_prisma_seed_main",
+      "fromNode": "n_prisma_seed_questions",
+      "toNode": "n_prisma_seed_main",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_scripts_fetch_media_ts_scripts_fetch_media_media_dir",
+      "fromNode": "n_apps_server_scripts_fetch_media_ts",
+      "toNode": "n_scripts_fetch_media_media_dir",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_src_index_ts_src_index_userstatus",
-      "fromNode": "n_packages_shared_src_index_ts",
-      "toNode": "n_src_index_userstatus",
+      "id": "e_apps_server_scripts_fetch_media_ts_scripts_fetch_media_samples",
+      "fromNode": "n_apps_server_scripts_fetch_media_ts",
+      "toNode": "n_scripts_fetch_media_samples",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_src_index_ts_src_index_activitytype",
-      "fromNode": "n_packages_shared_src_index_ts",
-      "toNode": "n_src_index_activitytype",
+      "id": "e_apps_server_scripts_fetch_media_ts_scripts_fetch_media_main",
+      "fromNode": "n_apps_server_scripts_fetch_media_ts",
+      "toNode": "n_scripts_fetch_media_main",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_src_index_ts_src_index_securityeventtype",
-      "fromNode": "n_packages_shared_src_index_ts",
-      "toNode": "n_src_index_securityeventtype",
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_auth_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_auth_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_auth_router_authrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_auth_router_authrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_users_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_users_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_users_router_usersrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_users_router_usersrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_courses_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_courses_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_courses_router_coursesrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_courses_router_coursesrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_quiz_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_quiz_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_quiz_router_quizrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_quiz_router_quizrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_progress_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_progress_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_progress_router_progressrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_progress_router_progressrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_ai_router_airouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_ai_router_airouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_storage_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_storage_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_storage_router_storagerouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_storage_router_storagerouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_stream_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_stream_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_stream_router_streamrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_stream_router_streamrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_security_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_security_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_security_router_securityrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_security_router_securityrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_src_modules_analytics_router_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_modules_analytics_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_analytics_router_analyticsrouter",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_analytics_router_analyticsrouter",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_src_app_createapp",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_src_app_createapp",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_src_index_ts_src_index_security_event_labels",
-      "fromNode": "n_packages_shared_src_index_ts",
-      "toNode": "n_src_index_security_event_labels",
+      "id": "e_apps_server_src_app_ts_apps_server_src_index_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_src_index_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_test_auth_test_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_test_auth_test_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_app_ts_apps_server_test_device_test_ts",
+      "fromNode": "n_apps_server_src_app_ts",
+      "toNode": "n_apps_server_test_device_test_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_createapp_apps_server_src_index_ts",
+      "fromNode": "n_src_app_createapp",
+      "toNode": "n_apps_server_src_index_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_createapp_apps_server_test_auth_test_ts",
+      "fromNode": "n_src_app_createapp",
+      "toNode": "n_apps_server_test_auth_test_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_app_createapp_apps_server_test_device_test_ts",
+      "fromNode": "n_src_app_createapp",
+      "toNode": "n_apps_server_test_device_test_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_src_config_config",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_src_config_config",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_packages_shared_src_index_ts_src_index_activity_labels",
-      "fromNode": "n_packages_shared_src_index_ts",
-      "toNode": "n_src_index_activity_labels",
+      "id": "e_apps_server_src_config_ts_apps_server_src_index_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_index_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_apps_server_src_middleware_auth_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_middleware_auth_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_apps_server_src_modules_ai_opennotebook_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_modules_ai_opennotebook_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_apps_server_src_modules_auth_service_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_modules_auth_service_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_apps_server_src_modules_storage_index_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_modules_storage_index_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_config_ts_apps_server_src_modules_storage_local_ts",
+      "fromNode": "n_apps_server_src_config_ts",
+      "toNode": "n_apps_server_src_modules_storage_local_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_index_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_index_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_middleware_auth_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_middleware_auth_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_modules_ai_opennotebook_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_modules_ai_opennotebook_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_modules_auth_service_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_modules_auth_service_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_modules_storage_index_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_modules_storage_index_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_config_config_apps_server_src_modules_storage_local_ts",
+      "fromNode": "n_src_config_config",
+      "toNode": "n_apps_server_src_modules_storage_local_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_db_ts_src_db_prisma",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_src_db_prisma",
       "label": "contains [EXTRACTED]"
     },
     {
-      "id": "e_package_toan_anh_thanh_lms_root_package_tat_server",
-      "fromNode": "n_package_toan_anh_thanh_lms_root",
-      "toNode": "n_package_tat_server",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_middleware_auth_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_middleware_auth_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_package_toan_anh_thanh_lms_root_package_tat_shared",
-      "fromNode": "n_package_toan_anh_thanh_lms_root",
-      "toNode": "n_package_tat_shared",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_ai_mock_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_ai_mock_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_package_toan_anh_thanh_lms_root_plan_toan_anh_thanh_lms",
-      "fromNode": "n_package_toan_anh_thanh_lms_root",
-      "toNode": "n_plan_toan_anh_thanh_lms",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_ai_opennotebook_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_ai_opennotebook_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_package_tat_server_package_tat_shared",
-      "fromNode": "n_package_tat_server",
-      "toNode": "n_package_tat_shared",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_package_tat_shared_plan_toan_anh_thanh_lms",
-      "fromNode": "n_package_tat_shared",
-      "toNode": "n_plan_toan_anh_thanh_lms",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_analytics_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_analytics_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_shared_Role_design_rbac",
-      "fromNode": "n_shared_Role",
-      "toNode": "n_design_rbac",
-      "label": "shares_data_with [INFERRED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_auth_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_auth_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_shared_ActivityType_shared_ACTIVITY_LABELS",
-      "fromNode": "n_shared_ActivityType",
-      "toNode": "n_shared_ACTIVITY_LABELS",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_auth_service_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_auth_service_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_shared_ActivityType_design_activity_logging",
-      "fromNode": "n_shared_ActivityType",
-      "toNode": "n_design_activity_logging",
-      "label": "shares_data_with [INFERRED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_courses_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_courses_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_shared_SecurityEventType_shared_SECURITY_EVENT_LABELS",
-      "fromNode": "n_shared_SecurityEventType",
-      "toNode": "n_shared_SECURITY_EVENT_LABELS",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_progress_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_progress_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_shared_SecurityEventType_design_client_security_guard",
-      "fromNode": "n_shared_SecurityEventType",
-      "toNode": "n_design_client_security_guard",
-      "label": "shares_data_with [INFERRED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_quiz_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_quiz_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_shared_DEFAULT_PASS_SCORE_design_quiz_gate",
-      "fromNode": "n_shared_DEFAULT_PASS_SCORE",
-      "toNode": "n_design_quiz_gate",
-      "label": "shares_data_with [INFERRED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_quiz_service_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_quiz_service_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_toan_anh_thanh_lms",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_toan_anh_thanh_lms",
-      "label": "references [INFERRED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_security_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_security_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_quiz_gate",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_quiz_gate",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_storage_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_storage_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_stream_token",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_stream_token",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_stream_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_stream_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_ai_provider_interface",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_ai_provider_interface",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_src_modules_users_router_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_src_modules_users_router_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_storage_provider_interface",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_storage_provider_interface",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_test_auth_test_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_test_auth_test_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_electron_content_protection",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_electron_content_protection",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_test_device_test_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_test_device_test_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_client_security_guard",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_client_security_guard",
-      "label": "references [EXTRACTED]"
+      "id": "e_apps_server_src_db_ts_apps_server_test_gate_test_ts",
+      "fromNode": "n_apps_server_src_db_ts",
+      "toNode": "n_apps_server_test_gate_test_ts",
+      "label": "imports_from [EXTRACTED]"
     },
     {
-      "id": "e_plan_toan_anh_thanh_lms_design_dynamic_watermark",
-      "fromNode": "n_plan_toan_anh_thanh_lms",
-      "toNode": "n_design_dynamic_watermark",
-      "label": "references [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_middleware_auth_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_middleware_auth_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_toan_anh_thanh_lms_design_adapter_pattern",
-      "fromNode": "n_design_toan_anh_thanh_lms",
-      "toNode": "n_design_adapter_pattern",
-      "label": "references [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_ai_mock_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_ai_mock_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_toan_anh_thanh_lms_design_prisma_data_model",
-      "fromNode": "n_design_toan_anh_thanh_lms",
-      "toNode": "n_design_prisma_data_model",
-      "label": "references [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_ai_opennotebook_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_ai_opennotebook_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_toan_anh_thanh_lms_design_rbac",
-      "fromNode": "n_design_toan_anh_thanh_lms",
-      "toNode": "n_design_rbac",
-      "label": "references [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_adapter_pattern_design_ai_provider_interface",
-      "fromNode": "n_design_adapter_pattern",
-      "toNode": "n_design_ai_provider_interface",
-      "label": "rationale_for [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_analytics_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_analytics_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_adapter_pattern_design_storage_provider_interface",
-      "fromNode": "n_design_adapter_pattern",
-      "toNode": "n_design_storage_provider_interface",
-      "label": "rationale_for [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_auth_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_auth_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_ai_provider_interface_design_mock_ai_provider",
-      "fromNode": "n_design_ai_provider_interface",
-      "toNode": "n_design_mock_ai_provider",
-      "label": "implements [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_auth_service_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_auth_service_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_ai_provider_interface_design_opennotebook_provider",
-      "fromNode": "n_design_ai_provider_interface",
-      "toNode": "n_design_opennotebook_provider",
-      "label": "implements [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_courses_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_courses_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_storage_provider_interface_design_local_storage_provider",
-      "fromNode": "n_design_storage_provider_interface",
-      "toNode": "n_design_local_storage_provider",
-      "label": "implements [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_progress_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_progress_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_storage_provider_interface_design_gdrive_provider",
-      "fromNode": "n_design_storage_provider_interface",
-      "toNode": "n_design_gdrive_provider",
-      "label": "implements [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_quiz_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_quiz_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_storage_provider_interface_design_stream_token",
-      "fromNode": "n_design_storage_provider_interface",
-      "toNode": "n_design_stream_token",
-      "label": "conceptually_related_to [INFERRED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_quiz_service_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_quiz_service_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_quiz_gate_design_prisma_data_model",
-      "fromNode": "n_design_quiz_gate",
-      "toNode": "n_design_prisma_data_model",
-      "label": "references [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_security_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_security_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_client_security_guard_design_activity_logging",
-      "fromNode": "n_design_client_security_guard",
-      "toNode": "n_design_activity_logging",
-      "label": "shares_data_with [EXTRACTED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_storage_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_storage_router_ts",
+      "label": "imports [EXTRACTED]"
     },
     {
-      "id": "e_design_client_security_guard_design_electron_content_protection",
-      "fromNode": "n_design_client_security_guard",
-      "toNode": "n_design_electron_content_protection",
-      "label": "semantically_similar_to [INFERRED]"
+      "id": "e_src_db_prisma_apps_server_src_modules_stream_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_stream_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_db_prisma_apps_server_src_modules_users_router_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_src_modules_users_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_db_prisma_apps_server_test_auth_test_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_test_auth_test_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_db_prisma_apps_server_test_device_test_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_test_device_test_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_src_db_prisma_apps_server_test_gate_test_ts",
+      "fromNode": "n_src_db_prisma",
+      "toNode": "n_apps_server_test_gate_test_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_index_ts_src_index_app",
+      "fromNode": "n_apps_server_src_index_ts",
+      "toNode": "n_src_index_app",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_middleware_auth_authuser",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_middleware_auth_authuser",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_middleware_auth_request",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_middleware_auth_request",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_middleware_auth_requireauth",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_middleware_auth_requireauth",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_middleware_auth_requirerole",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_middleware_auth_requirerole",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_analytics_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_analytics_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_auth_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_auth_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_auth_service_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_auth_service_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_courses_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_courses_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_progress_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_progress_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_quiz_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_quiz_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_security_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_security_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_storage_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_storage_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_stream_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_stream_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_middleware_auth_ts_apps_server_src_modules_users_router_ts",
+      "fromNode": "n_apps_server_src_middleware_auth_ts",
+      "toNode": "n_apps_server_src_modules_users_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_authuser_apps_server_src_modules_auth_service_ts",
+      "fromNode": "n_middleware_auth_authuser",
+      "toNode": "n_apps_server_src_modules_auth_service_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_request_test_device_test_login",
+      "fromNode": "n_middleware_auth_request",
+      "toNode": "n_test_device_test_login",
+      "label": "calls [INFERRED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_analytics_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_analytics_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_auth_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_auth_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_courses_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_courses_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_progress_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_progress_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_quiz_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_quiz_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_security_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_security_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_storage_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_storage_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_stream_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_stream_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requireauth_apps_server_src_modules_users_router_ts",
+      "fromNode": "n_middleware_auth_requireauth",
+      "toNode": "n_apps_server_src_modules_users_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requirerole_apps_server_src_modules_analytics_router_ts",
+      "fromNode": "n_middleware_auth_requirerole",
+      "toNode": "n_apps_server_src_modules_analytics_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requirerole_apps_server_src_modules_courses_router_ts",
+      "fromNode": "n_middleware_auth_requirerole",
+      "toNode": "n_apps_server_src_modules_courses_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requirerole_apps_server_src_modules_security_router_ts",
+      "fromNode": "n_middleware_auth_requirerole",
+      "toNode": "n_apps_server_src_modules_security_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requirerole_apps_server_src_modules_storage_router_ts",
+      "fromNode": "n_middleware_auth_requirerole",
+      "toNode": "n_apps_server_src_modules_storage_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_middleware_auth_requirerole_apps_server_src_modules_users_router_ts",
+      "fromNode": "n_middleware_auth_requirerole",
+      "toNode": "n_apps_server_src_modules_users_router_ts",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_apps_server_src_modules_ai_provider_ts",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_apps_server_src_modules_ai_provider_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_provider_aiprovider",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_provider_aiprovider",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_provider_chatmessage",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_provider_chatmessage",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_provider_exercise",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_provider_exercise",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_provider_lectureanalysis",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_provider_lectureanalysis",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_provider_slide",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_provider_slide",
+      "label": "imports [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_mock_topic",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_mock_topic",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_mock_topics",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_mock_topics",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_mock_generic",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_mock_generic",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_mock_findtopic",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_mock_findtopic",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_ai_mock_mockaiprovider",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_ai_mock_mockaiprovider",
+      "label": "contains [EXTRACTED]"
+    },
+    {
+      "id": "e_apps_server_src_modules_ai_mock_ts_apps_server_src_modules_ai_router_ts",
+      "fromNode": "n_apps_server_src_modules_ai_mock_ts",
+      "toNode": "n_apps_server_src_modules_ai_router_ts",
+      "label": "imports_from [EXTRACTED]"
+    },
+    {
+      "id": "e_ai_mock_findtopic_ai_mock_mockaiprovider_topicfor",
+      "fromNode": "n_ai_mock_findtopic",
+      "toNode": "n_ai_mock_mockaiprovider_topicfor",
+      "label": "calls [EXTRACTED]"
+    },
+    {
+      "id": "e_ai_mock_mockaiprovider_ai_mock_mockaiprovider_topicfor",
+      "fromNode": "n_ai_mock_mockaiprovider",
+      "toNode": "n_ai_mock_mockaiprovider_topicfor",
+      "label": "method [EXTRACTED]"
     }
   ]
 }

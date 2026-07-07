@@ -1,12 +1,12 @@
 ---
-source_file: "apps/server/package.json"
+source_file: "apps/desktop/package.json"
 type: "code"
-community: "Server Package Scripts"
-location: "L6"
+community: "package.json"
+location: "L7"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Server_Package_Scripts
+  - community/packagejson
 ---
 
 # start
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[scripts_1]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Server_Package_Scripts
+#graphify/code #graphify/EXTRACTED #community/packagejson

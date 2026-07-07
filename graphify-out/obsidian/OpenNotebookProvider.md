@@ -1,17 +1,26 @@
 ---
-source_file: "docs/superpowers/specs/2026-07-06-toan-anh-thanh-lms-design.md"
-type: "rationale"
-community: "Adapter Architecture (AI + Storage)"
-location: "Nguyen tac mo rong"
+source_file: "apps/server/src/modules/ai/opennotebook.ts"
+type: "code"
+community: "OpenNotebook Provider"
+location: "L19"
 tags:
-  - graphify/rationale
+  - graphify/code
   - graphify/EXTRACTED
-  - community/Adapter_Architecture_AI__Storage
+  - community/OpenNotebook_Provider
 ---
 
 # OpenNotebookProvider
 
 ## Connections
-- [[AIProvider Interface]] - `implements` [EXTRACTED]
+- [[.analyzeLecture()_1]] - `method` [EXTRACTED]
+- [[.api()]] - `method` [EXTRACTED]
+- [[.ask()]] - `method` [EXTRACTED]
+- [[.chat()_1]] - `method` [EXTRACTED]
+- [[.constructor()]] - `method` [EXTRACTED]
+- [[.ensureNotebook()]] - `method` [EXTRACTED]
+- [[.generateExercises()_1]] - `method` [EXTRACTED]
+- [[.generateSlides()_1]] - `method` [EXTRACTED]
+- [[opennotebook.ts]] - `contains` [EXTRACTED]
+- [[router.ts]] - `imports` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Adapter_Architecture_AI__Storage
+#graphify/code #graphify/EXTRACTED #community/OpenNotebook_Provider

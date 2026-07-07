@@ -1,12 +1,12 @@
 ---
 source_file: "docs/superpowers/specs/2026-07-06-toan-anh-thanh-lms-design.md"
 type: "rationale"
-community: "Adapter Architecture (AI + Storage)"
+community: "Design Rationale & Security"
 location: "Bao mat noi dung"
 tags:
   - graphify/rationale
   - graphify/INFERRED
-  - community/Adapter_Architecture_AI__Storage
+  - community/Design_Rationale__Security
 ---
 
 # HMAC Signed Stream Token
@@ -15,4 +15,4 @@ tags:
 - [[StorageProvider Interface]] - `conceptually_related_to` [INFERRED]
 - [[Toan Anh Thanh LMS Implementation Plan]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/INFERRED #community/Adapter_Architecture_AI__Storage
+#graphify/rationale #graphify/INFERRED #community/Design_Rationale__Security

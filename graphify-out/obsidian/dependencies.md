@@ -1,12 +1,12 @@
 ---
 source_file: "apps/server/package.json"
 type: "code"
-community: "Server Runtime Dependencies"
+community: "Server Dependencies"
 location: "L12"
 tags:
   - graphify/code
   - graphify/EXTRACTED
-  - community/Server_Runtime_Dependencies
+  - community/Server_Dependencies
 ---
 
 # dependencies
@@ -19,7 +19,7 @@ tags:
 - [[express]] - `contains` [EXTRACTED]
 - [[jsonwebtoken]] - `contains` [EXTRACTED]
 - [[multer]] - `contains` [EXTRACTED]
-- [[package.json_1]] - `contains` [EXTRACTED]
+- [[package.json_2]] - `contains` [EXTRACTED]
 - [[zod]] - `contains` [EXTRACTED]
 
-#graphify/code #graphify/EXTRACTED #community/Server_Runtime_Dependencies
+#graphify/code #graphify/EXTRACTED #community/Server_Dependencies
