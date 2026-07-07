@@ -3,10 +3,43 @@
   "version": "1.0.0",
   "private": true,
   "main": "main.js",
+  "productName": "Toan Anh Thanh",
+  "description": "Toán Anh Thành LMS — ứng dụng học tập desktop (chống quay màn hình)",
+  "author": "Toán Anh Thành",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win"
   },
   "devDependencies": {
-    "electron": "^31.1.0"
+    "electron": "^31.1.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "vn.toananhthanh.lms",
+    "electronVersion": "31.7.7",
+    "npmRebuild": false,
+    "productName": "Toan Anh Thanh",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "settings.html"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "runAfterFinish": true,
+      "artifactName": "Toan-Anh-Thanh-Setup-${version}.${ext}",
+      "shortcutName": "Toán Anh Thành"
+    }
   }
 }

@@ -21,10 +21,32 @@ Mở http://localhost:5173
 **Desktop (chống quay màn hình thật):**
 
 ```bash
-npm run desktop   # cần server + web đang chạy
+npm run desktop   # chế độ dev: cần server + web đang chạy
 ```
 
-**Tests:** `npm test` (17 tests: auth, RBAC, stream token, quiz gate)
+## Đóng gói desktop cho học sinh
+
+```bash
+npm run desktop:dist   # build web + đóng gói installer Windows (NSIS)
+```
+
+Kết quả: `apps/desktop/release/Toan-Anh-Thanh-Setup-1.0.0.exe` — phát file này cho học sinh.
+Học sinh cài xong, lần đầu mở app sẽ nhập **địa chỉ server** (VD `http://192.168.1.10:4000`
+hoặc domain đã deploy) — app kiểm tra kết nối rồi lưu lại; đổi server bằng **Ctrl+Alt+S**.
+
+App đóng gói là "vỏ mỏng": giao diện web do server phục vụ (server tự serve `apps/web/dist`
+khi đã build), nên **cập nhật giao diện chỉ cần deploy lại server**, không phải phát lại installer.
+
+Sự cố build thường gặp trên Windows:
+- `7za.exe` biến mất (Defender xóa nhầm): copy `7z.exe`+`7z.dll` từ 7-Zip hệ thống vào
+  `node_modules/7zip-bin/win/x64/` (đổi tên thành `7za.exe`), hoặc thêm exclusion cho thư mục dự án.
+- `Cannot create symbolic link` khi giải nén winCodeSign: bật Developer Mode, hoặc tự giải nén
+  file 7z đó vào `%LOCALAPPDATA%\electron-builder\Cache\winCodeSign\winCodeSign-2.6.0` (2 symlink
+  macOS lỗi thì kệ).
+- `app.asar ... being used by another process`: thư mục output đang bị phần mềm khác giữ (AV,
+  file watcher) — build ra chỗ khác: `electron-builder --win -c.directories.output=D:\Temp\tat-release`.
+
+**Tests:** `npm test` (24 tests: auth, RBAC, stream token, quiz gate, device binding)
 
 ## Kiến trúc
 

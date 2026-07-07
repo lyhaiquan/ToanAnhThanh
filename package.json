@@ -11,6 +11,7 @@
     "dev:server": "npm run dev -w apps/server",
     "dev:web": "npm run dev -w apps/web",
     "desktop": "npm run start -w apps/desktop",
+    "desktop:dist": "npm run build -w apps/web && npm run dist -w apps/desktop",
     "test": "npm run test -w apps/server",
     "seed": "npm run seed -w apps/server"
   },

@@ -5,4 +5,6 @@ dist/
 apps/server/prisma/dev.db*
 apps/server/media/*.mp4
 apps/server/uploads/
+apps/desktop/release/
+*.tsbuildinfo
 .DS_Store

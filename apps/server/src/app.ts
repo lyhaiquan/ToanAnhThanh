@@ -1,5 +1,8 @@
 import express from 'express';
 import cors from 'cors';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { authRouter } from './modules/auth/router.js';
 import { usersRouter } from './modules/users/router.js';
 import { coursesRouter } from './modules/courses/router.js';
@@ -28,6 +31,16 @@ export function createApp() {
   app.use('/api/analytics', analyticsRouter);
 
   app.get('/api/health', (_req, res) => res.json({ ok: true, name: 'Toán Anh Thành LMS' }));
+
+  // Phục vụ web build (SPA) cùng origin — desktop/browser chỉ cần 1 địa chỉ server
+  const webDist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../web/dist');
+  if (fs.existsSync(webDist)) {
+    app.use(express.static(webDist));
+    app.get('*', (req, res, next) => {
+      if (req.path.startsWith('/api/')) return next();
+      res.sendFile(path.join(webDist, 'index.html'));
+    });
+  }
 
   // Error handler cuối chuỗi — không lộ stack ra client
   app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {

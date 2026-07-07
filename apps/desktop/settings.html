@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Toán Anh Thành — Cấu hình server</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh; display: grid; place-items: center;
+      background: linear-gradient(160deg, #0f172a, #1e3a5f);
+      color: #e2e8f0;
+    }
+    .card {
+      width: min(460px, 92vw); padding: 40px 36px; border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+    }
+    h1 { font-size: 22px; margin-bottom: 6px; }
+    h1 span { color: #38bdf8; }
+    p.sub { font-size: 13px; color: #94a3b8; margin-bottom: 24px; line-height: 1.5; }
+    label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 8px; }
+    input {
+      width: 100%; padding: 12px 14px; border-radius: 10px; font-size: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(15, 23, 42, 0.6);
+      color: #f1f5f9; outline: none;
+    }
+    input:focus { border-color: #38bdf8; }
+    button {
+      width: 100%; margin-top: 16px; padding: 12px; border: 0; border-radius: 10px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      background: #0ea5e9; color: #fff;
+    }
+    button:disabled { opacity: 0.6; cursor: wait; }
+    #status { margin-top: 14px; font-size: 13px; min-height: 20px; line-height: 1.5; }
+    #status.err { color: #f87171; }
+    #status.ok { color: #4ade80; }
+    .hint { margin-top: 20px; font-size: 12px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>📐 Toán <span>Anh Thành</span></h1>
+    <p class="sub">Nhập địa chỉ server học tập do thầy/cô cung cấp để bắt đầu.</p>
+    <label for="url">Địa chỉ server</label>
+    <input id="url" type="text" placeholder="VD: http://192.168.1.10:4000" spellcheck="false" autofocus />
+    <button id="save">Kết nối</button>
+    <div id="status"></div>
+    <p class="hint">Mẹo: trong app, nhấn <b>Ctrl+Alt+S</b> để mở lại trang này khi cần đổi server.</p>
+  </main>
+  <script>
+    const input = document.getElementById('url');
+    const btn = document.getElementById('save');
+    const status = document.getElementById('status');
+
+    window.tat.getServerUrl().then((url) => { if (url && !input.value) input.value = url; });
+
+    async function connect() {
+      btn.disabled = true;
+      status.className = '';
+      status.textContent = 'Đang kiểm tra kết nối…';
+      const res = await window.tat.saveServerUrl(input.value);
+      if (res && res.ok) {
+        status.className = 'ok';
+        status.textContent = '✓ Kết nối thành công — đang mở trang học…';
+      } else {
+        status.className = 'err';
+        status.textContent = (res && res.error) || 'Có lỗi xảy ra, thử lại nhé.';
+        btn.disabled = false;
+      }
+    }
+    btn.addEventListener('click', connect);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') connect(); });
+  </script>
+</body>
+</html>
