@@ -18,6 +18,7 @@ import { storageRouter } from './modules/storage/router.js';
 import { streamRouter } from './modules/stream/router.js';
 import { securityRouter } from './modules/security/router.js';
 import { analyticsRouter } from './modules/analytics/router.js';
+import { liveRouter } from './modules/live/router.js';
 
 // extra: điểm chèn route trước error handler (dùng cho test)
 export function createApp(extra?: (app: express.Express) => void) {
@@ -66,6 +67,7 @@ export function createApp(extra?: (app: express.Express) => void) {
   app.use('/api/stream', streamRouter);
   app.use('/api/security', securityRouter);
   app.use('/api/analytics', analyticsRouter);
+  app.use('/api/live-sessions', liveRouter);
 
   app.get('/api/health', (_req, res) => res.json({ ok: true, name: 'Toán Anh Thành LMS' }));
 

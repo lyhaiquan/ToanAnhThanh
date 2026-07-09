@@ -7,10 +7,12 @@ import Home from './pages/Home';
 import CourseDetail from './pages/CourseDetail';
 import LessonPage from './pages/LessonPage';
 import MyProgress from './pages/MyProgress';
+import LiveClasses from './pages/LiveClasses';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminStudents from './pages/admin/Students';
 import AdminContent from './pages/admin/Content';
 import AdminMonitor from './pages/admin/Monitor';
+import AdminLiveSessions from './pages/admin/LiveSessions';
 
 function RequireAuth({ children, admin }: { children: JSX.Element; admin?: boolean }) {
   const user = useAuth((s) => s.user);
@@ -33,12 +35,14 @@ export default function App() {
         <Route path="/courses/:courseId" element={<CourseDetail />} />
         <Route path="/lessons/:lessonId" element={<LessonPage />} />
         <Route path="/progress" element={<MyProgress />} />
+        <Route path="/live" element={<LiveClasses />} />
       </Route>
       <Route element={<RequireAuth admin><Layout /></RequireAuth>}>
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/students" element={<AdminStudents />} />
         <Route path="/admin/content" element={<AdminContent />} />
         <Route path="/admin/monitor" element={<AdminMonitor />} />
+        <Route path="/admin/live" element={<AdminLiveSessions />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

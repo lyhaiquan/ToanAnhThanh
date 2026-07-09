@@ -4,6 +4,7 @@ import { api } from '../lib/api';
 
 const studentLinks = [
   { to: '/', label: 'Khóa học', icon: '📚' },
+  { to: '/live', label: 'Lớp học live', icon: '🎥' },
   { to: '/progress', label: 'Tiến độ của tôi', icon: '📈' },
 ];
 
@@ -11,6 +12,7 @@ const adminLinks = [
   { to: '/admin', label: 'Dashboard', icon: '📊' },
   { to: '/admin/students', label: 'Học sinh', icon: '🧑‍🎓' },
   { to: '/admin/content', label: 'Nội dung', icon: '🎬' },
+  { to: '/admin/live', label: 'Lớp học live', icon: '🎥' },
   { to: '/admin/monitor', label: 'Giám sát', icon: '🕵️' },
 ];
 

@@ -24,6 +24,8 @@ model User {
   progress       Progress[]
   activities     ActivityLog[]
   securityEvents SecurityEvent[]
+  liveSessionsCreated LiveSession[]       @relation("LiveSessionCreator")
+  liveSessionInvites  LiveSessionInvite[]
 }
 
 model Course {
@@ -121,6 +123,33 @@ model ActivityLog {
   createdAt DateTime @default(now())
 
   @@index([userId, createdAt])
+}
+
+model LiveSession {
+  id              String   @id @default(cuid())
+  title           String
+  description     String   @default("")
+  scheduledAt     DateTime
+  durationMinutes Int      @default(60)
+  meetingLink     String
+  status          String   @default("SCHEDULED") // SCHEDULED | CANCELLED
+  createdById     String
+  createdBy       User     @relation("LiveSessionCreator", fields: [createdById], references: [id])
+  invites         LiveSessionInvite[]
+  createdAt       DateTime @default(now())
+
+  @@index([scheduledAt])
+}
+
+model LiveSessionInvite {
+  id            String      @id @default(cuid())
+  liveSessionId String
+  liveSession   LiveSession @relation(fields: [liveSessionId], references: [id], onDelete: Cascade)
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  joinedAt      DateTime?   // điểm danh: null = chưa bấm "Vào lớp"
+
+  @@unique([liveSessionId, userId])
 }
 
 model SecurityEvent {
