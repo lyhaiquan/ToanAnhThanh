@@ -1,0 +1,51 @@
+# CI: chạy toàn bộ test server (vitest, cần PostgreSQL) + typecheck web
+# trên mọi push/PR. Đẩy repo lên GitHub là chạy được ngay, không cần cấu hình thêm.
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_PASSWORD: ci
+          POSTGRES_DB: toananhthanh_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      DATABASE_URL: postgresql://postgres:ci@localhost:5432/toananhthanh_ci
+      JWT_SECRET: ci-secret-khong-dung-production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Cài dependencies
+        run: npm ci
+
+      - name: Tạo schema DB test
+        working-directory: apps/server
+        run: npx prisma migrate deploy
+
+      - name: Test server (vitest)
+        working-directory: apps/server
+        run: npx vitest run
+
+      - name: Typecheck web
+        working-directory: apps/web
+        run: npx tsc --noEmit

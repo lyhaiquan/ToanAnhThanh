@@ -3,6 +3,7 @@ import { z } from 'zod';
 import bcrypt from 'bcryptjs';
 import { requireAuth, requireRole } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
+import { passwordSchema, generatePassword } from './password.js';
 
 export const usersRouter = Router();
 
@@ -35,13 +36,6 @@ usersRouter.patch('/:id/reset-device', async (req, res) => {
   res.json({ ok: true });
 });
 
-// Mật khẩu ≥ 8 ký tự, có chữ và số — chặn mật khẩu quá dễ đoán
-const passwordSchema = z
-  .string()
-  .min(8, 'Mật khẩu phải ≥ 8 ký tự')
-  .regex(/[A-Za-z]/, 'Mật khẩu phải có chữ cái')
-  .regex(/[0-9]/, 'Mật khẩu phải có chữ số');
-
 const createSchema = z.object({
   email: z.string().email(),
   name: z.string().min(1),
@@ -72,6 +66,54 @@ usersRouter.post('/', async (req, res) => {
     await prisma.enrollment.create({ data: { userId: user.id, courseId: c.id } });
   }
   res.status(201).json(user);
+});
+
+// Admin đặt lại mật khẩu học sinh (quên mật khẩu). Thu hồi refresh token cũ.
+usersRouter.patch('/:id/password', async (req, res) => {
+  const parsed = passwordSchema.safeParse(req.body?.password);
+  if (!parsed.success) {
+    return res.status(400).json({ error: parsed.error.issues[0]?.message ?? 'Mật khẩu không hợp lệ' });
+  }
+  const user = await prisma.user.findUnique({ where: { id: req.params.id } });
+  if (!user || user.role !== 'STUDENT') return res.status(404).json({ error: 'Không tìm thấy học sinh' });
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { password: await bcrypt.hash(parsed.data, 10), tokenVersion: { increment: 1 } },
+  });
+  res.json({ ok: true });
+});
+
+// Tạo học sinh hàng loạt (dán danh sách lớp). Bỏ trống mật khẩu → tự sinh và
+// trả về để giáo viên phát cho học sinh. Email trùng thì bỏ qua có báo.
+const bulkSchema = z.object({
+  students: z
+    .array(z.object({ name: z.string().min(1), email: z.string().email(), password: passwordSchema.optional() }))
+    .min(1)
+    .max(100),
+});
+
+usersRouter.post('/bulk', async (req, res) => {
+  const parsed = bulkSchema.safeParse(req.body);
+  if (!parsed.success) return res.status(400).json({ error: 'Danh sách không hợp lệ (cần tên + email đúng định dạng, tối đa 100 em)' });
+
+  const courses = await prisma.course.findMany({ select: { id: true } });
+  const created: { name: string; email: string; password: string }[] = [];
+  const skipped: { email: string; reason: string }[] = [];
+
+  for (const s of parsed.data.students) {
+    const exists = await prisma.user.findUnique({ where: { email: s.email } });
+    if (exists) {
+      skipped.push({ email: s.email, reason: 'Email đã tồn tại' });
+      continue;
+    }
+    const password = s.password ?? generatePassword();
+    const user = await prisma.user.create({
+      data: { email: s.email, name: s.name, password: await bcrypt.hash(password, 10), role: 'STUDENT' },
+    });
+    await prisma.enrollment.createMany({ data: courses.map((c) => ({ userId: user.id, courseId: c.id })) });
+    created.push({ name: s.name, email: s.email, password });
+  }
+  res.status(201).json({ created, skipped });
 });
 
 usersRouter.patch('/:id/ban', async (req, res) => {

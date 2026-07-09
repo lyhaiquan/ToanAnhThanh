@@ -120,6 +120,25 @@ coursesRouter.post('/:courseId/chapters', requireAuth, requireRole('ADMIN'), asy
   res.status(201).json(chapter);
 });
 
+// Sửa / xóa khóa học (trang quản lý nội dung)
+coursesRouter.patch('/:courseId', requireAuth, requireRole('ADMIN'), async (req, res) => {
+  const parsed = z
+    .object({ title: z.string().min(1).optional(), description: z.string().optional() })
+    .safeParse(req.body);
+  if (!parsed.success) return res.status(400).json({ error: 'Dữ liệu không hợp lệ' });
+  const course = await prisma.course.findUnique({ where: { id: req.params.courseId }, select: { id: true } });
+  if (!course) return res.status(404).json({ error: 'Không tìm thấy khóa học' });
+  const updated = await prisma.course.update({ where: { id: course.id }, data: parsed.data });
+  res.json(updated);
+});
+
+coursesRouter.delete('/:courseId', requireAuth, requireRole('ADMIN'), async (req, res) => {
+  const course = await prisma.course.findUnique({ where: { id: req.params.courseId }, select: { id: true } });
+  if (!course) return res.status(404).json({ error: 'Không tìm thấy khóa học' });
+  await prisma.course.delete({ where: { id: course.id } }); // cascade chương/bài/ghi danh
+  res.json({ ok: true });
+});
+
 // Đổi tên từ trang quản lý nội dung (bút chì ✏️ cạnh tên)
 coursesRouter.patch('/lessons/:lessonId', requireAuth, requireRole('ADMIN'), async (req, res) => {
   const title = req.body?.title;

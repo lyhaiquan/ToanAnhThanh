@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import { z } from 'zod';
+import bcrypt from 'bcryptjs';
 import { login, refresh } from './service.js';
 import { requireAuth } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
+import { passwordSchema } from '../users/password.js';
 
 export const authRouter = Router();
 
@@ -38,6 +40,26 @@ authRouter.post('/logout', requireAuth, async (req, res) => {
   // Thu hồi refresh token của phiên này (tăng version) — logout thật sự, không chỉ xóa phía client
   await prisma.user.update({ where: { id: req.user!.id }, data: { tokenVersion: { increment: 1 } } });
   await prisma.activityLog.create({ data: { userId: req.user!.id, type: 'LOGOUT' } });
+  res.json({ ok: true });
+});
+
+// Tự đổi mật khẩu (mọi vai trò). Đổi xong thu hồi mọi refresh token cũ —
+// các phiên khác phải đăng nhập lại (chống trường hợp mật khẩu bị lộ).
+const changePwSchema = z.object({ oldPassword: z.string().min(1), newPassword: passwordSchema });
+
+authRouter.post('/change-password', requireAuth, async (req, res) => {
+  const parsed = changePwSchema.safeParse(req.body);
+  if (!parsed.success) {
+    return res.status(400).json({ error: parsed.error.issues[0]?.message ?? 'Dữ liệu không hợp lệ' });
+  }
+  const user = await prisma.user.findUnique({ where: { id: req.user!.id } });
+  if (!user || !(await bcrypt.compare(parsed.data.oldPassword, user.password))) {
+    return res.status(400).json({ error: 'Mật khẩu hiện tại không đúng' });
+  }
+  await prisma.user.update({
+    where: { id: user.id },
+    data: { password: await bcrypt.hash(parsed.data.newPassword, 10), tokenVersion: { increment: 1 } },
+  });
   res.json({ ok: true });
 });
 

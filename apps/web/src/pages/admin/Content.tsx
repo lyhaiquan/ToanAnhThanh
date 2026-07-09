@@ -1,5 +1,6 @@
 import { DragEvent, FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { api } from '../../lib/api';
+import QuizEditor from '../../components/QuizEditor';
 
 interface LessonRow { id: string; title: string; hasQuiz: boolean }
 interface ChapterRow { id: string; title: string; lessons: LessonRow[] }
@@ -24,7 +25,9 @@ export default function AdminContent() {
   const [msgs, setMsgs] = useState<Record<string, ChapterMsg | undefined>>({});
   const [dragOver, setDragOver] = useState<string | null>(null);
   const [newChapter, setNewChapter] = useState<Record<string, string>>({});
-  const [editing, setEditing] = useState<{ type: 'lesson' | 'chapter'; id: string; value: string } | null>(null);
+  const [editing, setEditing] = useState<{ type: 'lesson' | 'chapter' | 'course'; id: string; value: string } | null>(null);
+  const [quizFor, setQuizFor] = useState<{ lessonId: string; title: string; hasQuiz: boolean } | null>(null);
+  const [newCourse, setNewCourse] = useState('');
   const fileInputs = useRef<Record<string, HTMLInputElement | null>>({});
 
   async function load() {
@@ -106,7 +109,24 @@ export default function AdminContent() {
     const { type, id } = editing;
     setEditing(null);
     if (!title) return;
-    await api.patch(type === 'lesson' ? `/courses/lessons/${id}` : `/courses/chapters/${id}`, { title });
+    const path =
+      type === 'lesson' ? `/courses/lessons/${id}` : type === 'chapter' ? `/courses/chapters/${id}` : `/courses/${id}`;
+    await api.patch(path, { title });
+    await load();
+  }
+
+  async function addCourse(e: FormEvent) {
+    e.preventDefault();
+    const title = newCourse.trim();
+    if (!title) return;
+    await api.post('/courses', { title });
+    setNewCourse('');
+    await load();
+  }
+
+  async function removeCourse(id: string, title: string) {
+    if (!confirm(`Xóa khóa học "${title}"? Toàn bộ chương, bài giảng và tiến độ học sinh trong khóa sẽ mất.`)) return;
+    await api.delete(`/courses/${id}`);
     await load();
   }
 
@@ -133,9 +153,35 @@ export default function AdminContent() {
         Kéo-thả video vào chương hoặc bấm vào ô để chọn file. Đổi tên bài/chương bằng nút ✏️.
       </p>
 
+      <form onSubmit={addCourse} className="mt-4 flex gap-2">
+        <input
+          className="input flex-1"
+          placeholder="Tên khóa học mới (VD: Toán 11)"
+          value={newCourse}
+          onChange={(e) => setNewCourse(e.target.value)}
+        />
+        <button className="btn-primary shrink-0">+ Thêm khóa học</button>
+      </form>
+
       {courses.map((course) => (
         <div key={course.id} className="mt-6">
-          <h2 className="font-display text-xl font-bold">{course.title}</h2>
+          {editing?.type === 'course' && editing.id === course.id ? (
+            editInput
+          ) : (
+            <h2 className="flex items-center gap-2 font-display text-xl font-bold">
+              {course.title}
+              <button
+                onClick={() => setEditing({ type: 'course', id: course.id, value: course.title })}
+                className="opacity-40 hover:opacity-100 text-base"
+                title="Đổi tên khóa học"
+              >✏️</button>
+              <button
+                onClick={() => removeCourse(course.id, course.title)}
+                className="text-sm font-normal text-chalk-coral opacity-40 hover:opacity-100"
+                title="Xóa khóa học"
+              >Xóa</button>
+            </h2>
+          )}
           <div className="mt-3 space-y-4">
             {course.chapters.map((ch) => {
               const up = uploads[ch.id];
@@ -182,7 +228,13 @@ export default function AdminContent() {
                             >✏️</button>
                           </span>
                         )}
-                        {l.hasQuiz && <span className="badge bg-chalk-amber/15 text-chalk-amber">Quiz</span>}
+                        <button
+                          onClick={() => setQuizFor({ lessonId: l.id, title: l.title, hasQuiz: l.hasQuiz })}
+                          className={`badge ${l.hasQuiz ? 'bg-chalk-amber/15 text-chalk-amber' : 'bg-slate-200 text-slate-500 dark:bg-white/10'} hover:ring-2 hover:ring-chalk-amber/40`}
+                          title={l.hasQuiz ? 'Sửa quiz của bài này' : 'Bài chưa có quiz — bấm để soạn'}
+                        >
+                          {l.hasQuiz ? '📝 Quiz' : '+ Quiz'}
+                        </button>
                         <button onClick={() => removeLesson(l.id, l.title)} className="text-chalk-coral hover:underline">Xóa</button>
                       </li>
                     ))}
@@ -253,6 +305,18 @@ export default function AdminContent() {
           </div>
         </div>
       ))}
+
+      {quizFor && (
+        <QuizEditor
+          lessonId={quizFor.lessonId}
+          lessonTitle={quizFor.title}
+          hasQuiz={quizFor.hasQuiz}
+          onClose={(changed) => {
+            setQuizFor(null);
+            if (changed) load();
+          }}
+        />
+      )}
     </div>
   );
 }
