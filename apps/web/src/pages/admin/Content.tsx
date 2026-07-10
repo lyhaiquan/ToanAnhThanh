@@ -1,6 +1,7 @@
 import { DragEvent, FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { api } from '../../lib/api';
 import QuizEditor from '../../components/QuizEditor';
+import MaterialsEditor from '../../components/MaterialsEditor';
 
 interface LessonRow { id: string; title: string; hasQuiz: boolean }
 interface ChapterRow { id: string; title: string; lessons: LessonRow[] }
@@ -27,6 +28,7 @@ export default function AdminContent() {
   const [newChapter, setNewChapter] = useState<Record<string, string>>({});
   const [editing, setEditing] = useState<{ type: 'lesson' | 'chapter' | 'course'; id: string; value: string } | null>(null);
   const [quizFor, setQuizFor] = useState<{ lessonId: string; title: string; hasQuiz: boolean } | null>(null);
+  const [materialsFor, setMaterialsFor] = useState<{ lessonId: string; title: string } | null>(null);
   const [newCourse, setNewCourse] = useState('');
   const fileInputs = useRef<Record<string, HTMLInputElement | null>>({});
 
@@ -229,6 +231,13 @@ export default function AdminContent() {
                           </span>
                         )}
                         <button
+                          onClick={() => setMaterialsFor({ lessonId: l.id, title: l.title })}
+                          className="badge bg-ink-500/10 text-ink-600 dark:text-chalk-sky hover:ring-2 hover:ring-ink-500/40"
+                          title="Soạn Bài tập & Slide cho bài này (hoặc để AI tự sinh)"
+                        >
+                          📚 BT/Slide
+                        </button>
+                        <button
                           onClick={() => setQuizFor({ lessonId: l.id, title: l.title, hasQuiz: l.hasQuiz })}
                           className={`badge ${l.hasQuiz ? 'bg-chalk-amber/15 text-chalk-amber' : 'bg-slate-200 text-slate-500 dark:bg-white/10'} hover:ring-2 hover:ring-chalk-amber/40`}
                           title={l.hasQuiz ? 'Sửa quiz của bài này' : 'Bài chưa có quiz — bấm để soạn'}
@@ -305,6 +314,14 @@ export default function AdminContent() {
           </div>
         </div>
       ))}
+
+      {materialsFor && (
+        <MaterialsEditor
+          lessonId={materialsFor.lessonId}
+          lessonTitle={materialsFor.title}
+          onClose={() => setMaterialsFor(null)}
+        />
+      )}
 
       {quizFor && (
         <QuizEditor

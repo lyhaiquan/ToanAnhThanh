@@ -65,6 +65,12 @@ const adminSteps: Step[] = [
     target: 'nav-students',
   },
   {
+    icon: '💬',
+    title: 'Hỏi đáp với học sinh',
+    body: 'Câu hỏi học sinh gửi từ trong bài học đổ về đây. Có câu chưa trả lời thì mục này hiện số đỏ.',
+    target: 'nav-qa',
+  },
+  {
     icon: '🎥',
     title: 'Lớp học trực tuyến',
     body: 'Tạo buổi dạy, dán link Zoom/Meet, mời học sinh, và xem điểm danh ai đã vào lớp.',

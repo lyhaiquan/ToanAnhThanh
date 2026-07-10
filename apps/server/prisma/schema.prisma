@@ -26,6 +26,7 @@ model User {
   securityEvents SecurityEvent[]
   liveSessionsCreated LiveSession[]       @relation("LiveSessionCreator")
   liveSessionInvites  LiveSessionInvite[]
+  lessonQuestions     LessonQuestion[]
 }
 
 model Course {
@@ -47,16 +48,37 @@ model Chapter {
 }
 
 model Lesson {
-  id          String     @id @default(cuid())
-  title       String
-  description String     @default("")
-  order       Int        @default(0)
-  videoSource String     @default("local") // local | gdrive
-  videoRef    String     @default("")
-  chapterId   String
-  chapter     Chapter    @relation(fields: [chapterId], references: [id], onDelete: Cascade)
-  quiz        Quiz?
-  progress    Progress[]
+  id            String     @id @default(cuid())
+  title         String
+  description   String     @default("")
+  order         Int        @default(0)
+  videoSource   String     @default("local") // local | gdrive
+  videoRef      String     @default("")
+  exerciseMode  String     @default("ai") // ai | teacher — nguồn tab Bài tập
+  slideMode     String     @default("ai") // ai | teacher — nguồn tab Slide
+  exercisesJson String     @default("") // bài tập thầy soạn [{question,hint,solution}]
+  slidesJson    String     @default("") // slide thầy soạn [{title,bullets[]}]
+  chapterId     String
+  chapter       Chapter    @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+  quiz          Quiz?
+  progress      Progress[]
+  questions     LessonQuestion[]
+}
+
+// Hỏi đáp trực tiếp với giáo viên — riêng tư: mỗi học sinh chỉ thấy câu hỏi của mình
+model LessonQuestion {
+  id         String    @id @default(cuid())
+  lessonId   String
+  lesson     Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  content    String
+  answer     String    @default("")
+  answeredAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([lessonId, userId])
+  @@index([answeredAt])
 }
 
 model Quiz {

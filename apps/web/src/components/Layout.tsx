@@ -14,6 +14,7 @@ const adminLinks = [
   { to: '/admin', label: 'Dashboard', icon: '📊', tour: 'nav-dashboard' },
   { to: '/admin/students', label: 'Học sinh', icon: '🧑‍🎓', tour: 'nav-students' },
   { to: '/admin/content', label: 'Nội dung', icon: '🎬', tour: 'nav-content' },
+  { to: '/admin/qa', label: 'Hỏi đáp', icon: '💬', tour: 'nav-qa' },
   { to: '/admin/live', label: 'Lớp học live', icon: '🎥', tour: 'nav-admin-live' },
   { to: '/admin/monitor', label: 'Giám sát', icon: '🕵️', tour: 'nav-monitor' },
 ];
@@ -24,11 +25,30 @@ export default function Layout() {
   const navigate = useNavigate();
   const links = user?.role === 'ADMIN' ? [...adminLinks, ...studentLinks] : studentLinks;
   const [liveSoon, setLiveSoon] = useState(false);
+  const [unanswered, setUnanswered] = useState(0);
+  const [sideHidden, setSideHidden] = useState(() => localStorage.getItem('tat_sidebar_hidden') === '1');
   const [showPw, setShowPw] = useState(false);
   const [pwForm, setPwForm] = useState({ oldPassword: '', newPassword: '' });
   const [pwError, setPwError] = useState('');
   const [pwSaving, setPwSaving] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
+
+  function toggleSidebar() {
+    setSideHidden((h) => {
+      localStorage.setItem('tat_sidebar_hidden', h ? '0' : '1');
+      return !h;
+    });
+  }
+
+  // Chấm đỏ Hỏi đáp: số câu học sinh hỏi mà thầy chưa trả lời (cập nhật mỗi phút)
+  useEffect(() => {
+    if (user?.role !== 'ADMIN') return;
+    const fetchCount = () =>
+      api.get('/qa/admin/unanswered-count').then((r) => setUnanswered(r.data.count)).catch(() => {});
+    fetchCount();
+    const id = setInterval(fetchCount, 60000);
+    return () => clearInterval(id);
+  }, [user?.role]);
 
   // Hiện hướng dẫn tự động lần đầu mỗi tài khoản đăng nhập (nhớ trong localStorage)
   const guideKey = user ? `tat_guide_seen_${user.id}` : '';
@@ -82,15 +102,38 @@ export default function Layout() {
     }
   }
 
+  // Tour hướng dẫn chỉ vào các mục sidebar → đang ẩn thì tạm hiện ra
+  const showSidebar = !sideHidden || showGuide;
+
   return (
     <div className="flex min-h-screen">
-      <aside className="fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r-2 border-ink-900/10 dark:border-white/10 bg-white/80 dark:bg-boardcard/80 backdrop-blur-md">
+      {!showSidebar && (
+        <button
+          onClick={toggleSidebar}
+          className="fixed left-3 top-3 z-50 flex h-10 w-10 items-center justify-center rounded-xl border-2 border-ink-900/10 dark:border-white/10 bg-white/90 dark:bg-boardcard/90 text-lg shadow-note backdrop-blur-md hover:bg-ink-500/10"
+          title="Mở menu"
+        >
+          ☰
+        </button>
+      )}
+      <aside
+        className={`fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r-2 border-ink-900/10 dark:border-white/10 bg-white/80 dark:bg-boardcard/80 backdrop-blur-md transition-transform duration-300 ${
+          showSidebar ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
         <div className="flex items-center gap-3 px-6 py-6">
           <div className="flex h-11 w-11 rotate-3 items-center justify-center rounded-xl bg-ink-500 text-2xl shadow-note">📐</div>
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="font-display text-lg font-bold leading-tight">Toán Anh Thành</div>
             <div className="text-xs text-slate-500 dark:text-slate-400">Học toán cùng thầy</div>
           </div>
+          <button
+            onClick={toggleSidebar}
+            className="rounded-lg px-1.5 py-1 text-slate-400 hover:bg-ink-500/10 hover:text-ink-600 dark:hover:text-chalk-sky"
+            title="Ẩn menu"
+          >
+            ⟨
+          </button>
         </div>
 
         <nav className="flex-1 space-y-1 px-3">
@@ -111,6 +154,14 @@ export default function Layout() {
               <span>{l.icon}</span> {l.label}
               {l.to === '/live' && liveSoon && (
                 <span className="ml-auto h-2.5 w-2.5 animate-pulse rounded-full bg-chalk-coral" title="Có buổi học sắp diễn ra" />
+              )}
+              {l.to === '/admin/qa' && unanswered > 0 && (
+                <span
+                  className="ml-auto flex h-5 min-w-[20px] items-center justify-center rounded-full bg-chalk-coral px-1.5 text-xs font-bold text-white"
+                  title={`${unanswered} câu hỏi chưa trả lời`}
+                >
+                  {unanswered > 99 ? '99+' : unanswered}
+                </span>
               )}
             </NavLink>
           ))}
@@ -143,7 +194,7 @@ export default function Layout() {
         </div>
       </aside>
 
-      <main className="ml-64 flex-1 px-8 py-8">
+      <main className={`flex-1 px-8 py-8 transition-[margin] duration-300 ${showSidebar ? 'ml-64' : 'ml-0'}`}>
         <Outlet />
       </main>
 

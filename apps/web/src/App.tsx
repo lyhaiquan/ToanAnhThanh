@@ -13,6 +13,7 @@ import AdminStudents from './pages/admin/Students';
 import AdminContent from './pages/admin/Content';
 import AdminMonitor from './pages/admin/Monitor';
 import AdminLiveSessions from './pages/admin/LiveSessions';
+import AdminQA from './pages/admin/QA';
 
 function RequireAuth({ children, admin }: { children: JSX.Element; admin?: boolean }) {
   const user = useAuth((s) => s.user);
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/admin/content" element={<AdminContent />} />
         <Route path="/admin/monitor" element={<AdminMonitor />} />
         <Route path="/admin/live" element={<AdminLiveSessions />} />
+        <Route path="/admin/qa" element={<AdminQA />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

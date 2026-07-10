@@ -104,60 +104,91 @@ function ExercisesTab({ lessonId }: { lessonId: string }) {
   );
 }
 
+interface MyQuestion {
+  id: string;
+  content: string;
+  answer: string;
+  answeredAt: string | null;
+  createdAt: string;
+}
+
+// Hỏi đáp trực tiếp với giáo viên (không phải AI): câu hỏi gửi về trang admin,
+// thầy trả lời thì hiện ở đây. Riêng tư — mỗi em chỉ thấy câu hỏi của mình.
 function ChatTab({ lessonId }: { lessonId: string }) {
-  const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; content: string }[]>([
-    { role: 'assistant', content: 'Chào bạn! Mình là trợ giảng AI. Hỏi mình bất cứ điều gì về bài học này nhé 📚' },
-  ]);
+  const [items, setItems] = useState<MyQuestion[] | null>(null);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
 
+  async function load() {
+    const { data } = await api.get(`/qa/lessons/${lessonId}/mine`);
+    setItems(data);
+  }
+  useEffect(() => { setItems(null); load(); }, [lessonId]);
+
+  // Chỉ cuộn KHUNG chat, không đụng đến cuộn của cả trang
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    const el = listRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [items]);
 
   async function send(e: FormEvent) {
     e.preventDefault();
-    if (!input.trim() || busy) return;
-    const history = [...messages, { role: 'user' as const, content: input.trim() }];
-    setMessages(history);
-    setInput('');
+    const content = input.trim();
+    if (!content || busy) return;
     setBusy(true);
     try {
-      const { data } = await api.post(`/ai/chat/${lessonId}`, { history });
-      setMessages([...history, { role: 'assistant', content: data.reply }]);
-    } catch {
-      setMessages([...history, { role: 'assistant', content: 'Xin lỗi, mình gặp lỗi. Thử lại nhé!' }]);
+      const { data } = await api.post(`/qa/lessons/${lessonId}`, { content });
+      setItems((cur) => [...(cur ?? []), data]);
+      setInput('');
     } finally {
       setBusy(false);
     }
   }
 
+  if (!items) return <div className="py-8 text-center text-slate-400">Đang tải…</div>;
+
   return (
     <div className="flex h-[380px] flex-col">
-      <div className="flex-1 space-y-3 overflow-y-auto pr-1">
-        {messages.map((m, i) => (
-          <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div
-              className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
-                m.role === 'user'
-                  ? 'rounded-br-md bg-ink-500 text-white'
-                  : 'rounded-bl-md bg-ink-500/8 dark:bg-white/10'
-              }`}
-            >
-              {m.content}
+      <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto pr-1">
+        <div className="flex justify-start">
+          <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-ink-500/8 dark:bg-white/10 px-4 py-2.5 text-sm leading-relaxed">
+            Chỗ này để hỏi thầy trực tiếp về bài học. Em cứ gửi câu hỏi, thầy sẽ trả lời sớm nhất có thể nhé 👨‍🏫
+          </div>
+        </div>
+        {items.map((q) => (
+          <div key={q.id} className="space-y-3">
+            <div className="flex justify-end">
+              <div className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-ink-500 px-4 py-2.5 text-sm leading-relaxed text-white">
+                {q.content}
+              </div>
             </div>
+            {q.answer ? (
+              <div className="flex justify-start">
+                <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-ink-500/8 dark:bg-white/10 px-4 py-2.5 text-sm leading-relaxed">
+                  <div className="mb-1 text-xs font-semibold text-chalk-amber">👨‍🏫 Thầy trả lời</div>
+                  <div className="whitespace-pre-wrap">{q.answer}</div>
+                </div>
+              </div>
+            ) : (
+              <div className="pl-1 text-xs text-slate-400">⏳ Thầy chưa trả lời — em chờ chút nhé</div>
+            )}
           </div>
         ))}
-        {busy && <div className="text-sm text-slate-400">Trợ giảng đang gõ…</div>}
-        <div ref={bottomRef} />
       </div>
-      <form onSubmit={send} className="mt-3 flex gap-2">
+      <div className="mt-2 flex items-center justify-between">
+        <span className="text-xs text-slate-400">Câu hỏi được gửi thẳng đến thầy</span>
+        <button type="button" onClick={load} className="text-xs font-semibold text-ink-500 dark:text-chalk-sky hover:underline">
+          ↻ Xem thầy trả lời chưa
+        </button>
+      </div>
+      <form onSubmit={send} className="mt-2 flex gap-2">
         <input
           className="input flex-1"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Hỏi về bài học…"
+          placeholder="Hỏi thầy về bài học…"
+          maxLength={2000}
         />
         <button className="btn-primary" disabled={busy}>Gửi</button>
       </form>

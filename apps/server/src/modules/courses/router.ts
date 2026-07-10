@@ -163,6 +163,52 @@ coursesRouter.patch('/chapters/:chapterId', requireAuth, requireRole('ADMIN'), a
   res.json(updated);
 });
 
+// ===== Tài liệu bài học: nguồn tab Bài tập / Slide (ai sinh | thầy soạn) =====
+
+const materialsSchema = z.object({
+  exerciseMode: z.enum(['ai', 'teacher']),
+  exercises: z
+    .array(z.object({ question: z.string().trim().min(1), hint: z.string().default(''), solution: z.string().default('') }))
+    .max(30),
+  slideMode: z.enum(['ai', 'teacher']),
+  slides: z
+    .array(z.object({ title: z.string().trim().min(1), bullets: z.array(z.string().trim().min(1)).max(12) }))
+    .max(40),
+});
+
+coursesRouter.get('/lessons/:lessonId/materials', requireAuth, requireRole('ADMIN'), async (req, res) => {
+  const lesson = await prisma.lesson.findUnique({
+    where: { id: req.params.lessonId },
+    select: { exerciseMode: true, slideMode: true, exercisesJson: true, slidesJson: true },
+  });
+  if (!lesson) return res.status(404).json({ error: 'Không tìm thấy bài học' });
+  const parse = (s: string) => { try { const v = JSON.parse(s); return Array.isArray(v) ? v : []; } catch { return []; } };
+  res.json({
+    exerciseMode: lesson.exerciseMode,
+    exercises: parse(lesson.exercisesJson),
+    slideMode: lesson.slideMode,
+    slides: parse(lesson.slidesJson),
+  });
+});
+
+coursesRouter.put('/lessons/:lessonId/materials', requireAuth, requireRole('ADMIN'), async (req, res) => {
+  const parsed = materialsSchema.safeParse(req.body);
+  if (!parsed.success) return res.status(400).json({ error: 'Dữ liệu tài liệu không hợp lệ' });
+  const lesson = await prisma.lesson.findUnique({ where: { id: req.params.lessonId }, select: { id: true } });
+  if (!lesson) return res.status(404).json({ error: 'Không tìm thấy bài học' });
+  const { exerciseMode, exercises, slideMode, slides } = parsed.data;
+  await prisma.lesson.update({
+    where: { id: lesson.id },
+    data: {
+      exerciseMode,
+      slideMode,
+      exercisesJson: exercises.length ? JSON.stringify(exercises) : '',
+      slidesJson: slides.length ? JSON.stringify(slides) : '',
+    },
+  });
+  res.json({ ok: true });
+});
+
 coursesRouter.delete('/lessons/:lessonId', requireAuth, requireRole('ADMIN'), async (req, res) => {
   await prisma.lesson.delete({ where: { id: req.params.lessonId } });
   res.json({ ok: true });
