@@ -50,11 +50,16 @@ export default {
           '0%, 100%': { transform: 'translate(0, 0)' },
           '50%': { transform: 'translate(8px, -6px)' },
         },
+        'arrow-nudge': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-8px)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.5s ease-out both',
         'pop-in': 'pop-in 0.35s ease-out both',
         drift: 'drift 7s ease-in-out infinite',
+        'arrow-nudge': 'arrow-nudge 0.9s ease-in-out infinite',
       },
     },
   },

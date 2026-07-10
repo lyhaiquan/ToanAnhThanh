@@ -5,17 +5,17 @@ import { api } from '../lib/api';
 import OnboardingGuide from './OnboardingGuide';
 
 const studentLinks = [
-  { to: '/', label: 'Khóa học', icon: '📚' },
-  { to: '/live', label: 'Lớp học live', icon: '🎥' },
-  { to: '/progress', label: 'Tiến độ của tôi', icon: '📈' },
+  { to: '/', label: 'Khóa học', icon: '📚', tour: 'nav-courses' },
+  { to: '/live', label: 'Lớp học live', icon: '🎥', tour: 'nav-live' },
+  { to: '/progress', label: 'Tiến độ của tôi', icon: '📈', tour: 'nav-progress' },
 ];
 
 const adminLinks = [
-  { to: '/admin', label: 'Dashboard', icon: '📊' },
-  { to: '/admin/students', label: 'Học sinh', icon: '🧑‍🎓' },
-  { to: '/admin/content', label: 'Nội dung', icon: '🎬' },
-  { to: '/admin/live', label: 'Lớp học live', icon: '🎥' },
-  { to: '/admin/monitor', label: 'Giám sát', icon: '🕵️' },
+  { to: '/admin', label: 'Dashboard', icon: '📊', tour: 'nav-dashboard' },
+  { to: '/admin/students', label: 'Học sinh', icon: '🧑‍🎓', tour: 'nav-students' },
+  { to: '/admin/content', label: 'Nội dung', icon: '🎬', tour: 'nav-content' },
+  { to: '/admin/live', label: 'Lớp học live', icon: '🎥', tour: 'nav-admin-live' },
+  { to: '/admin/monitor', label: 'Giám sát', icon: '🕵️', tour: 'nav-monitor' },
 ];
 
 export default function Layout() {
@@ -98,6 +98,7 @@ export default function Layout() {
             <NavLink
               key={l.to}
               to={l.to}
+              data-tour={l.tour}
               end={l.to === '/' || l.to === '/admin'}
               className={({ isActive }) =>
                 `flex items-center gap-3 rounded-xl px-4 py-2.5 font-medium transition-colors ${
@@ -125,14 +126,14 @@ export default function Layout() {
               <div className="text-xs text-slate-500">{user?.role === 'ADMIN' ? 'Quản trị viên' : 'Học sinh'}</div>
             </div>
           </div>
-          <button onClick={() => setShowGuide(true)} className="btn-ghost w-full text-sm" title="Xem lại hướng dẫn sử dụng">
+          <button onClick={() => setShowGuide(true)} data-tour="btn-guide" className="btn-ghost w-full text-sm" title="Xem lại hướng dẫn sử dụng">
             ❓ Hướng dẫn sử dụng
           </button>
           <div className="flex gap-2">
             <button onClick={toggle} className="btn-ghost flex-1 text-sm" title="Đổi giao diện sáng/tối">
               {dark ? '☀️ Sáng' : '🌙 Tối'}
             </button>
-            <button onClick={() => { setShowPw(true); setPwForm({ oldPassword: '', newPassword: '' }); setPwError(''); }} className="btn-ghost flex-1 text-sm" title="Đổi mật khẩu tài khoản">
+            <button onClick={() => { setShowPw(true); setPwForm({ oldPassword: '', newPassword: '' }); setPwError(''); }} data-tour="btn-password" className="btn-ghost flex-1 text-sm" title="Đổi mật khẩu tài khoản">
               🔑 Mật khẩu
             </button>
             <button onClick={handleLogout} className="btn-ghost flex-1 text-sm text-chalk-coral">
