@@ -13,11 +13,15 @@ export default function VideoPlayer({ lessonId }: { lessonId: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const user = useAuth((s) => s.user);
   const [src, setSrc] = useState('');
+  const [failed, setFailed] = useState(false);
+  const errorCount = useRef(0);
   const [wmPos, setWmPos] = useState({ top: '10%', left: '8%' });
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
     let alive = true;
+    errorCount.current = 0;
+    setFailed(false);
     api.post(`/stream/token/${lessonId}`).then((r) => {
       if (alive) setSrc(`/api/stream/${lessonId}?token=${r.data.token}`);
     });
@@ -44,6 +48,32 @@ export default function VideoPlayer({ lessonId }: { lessonId: string }) {
     return () => clearInterval(id);
   }, [lessonId]);
 
+  async function retryWithFreshToken() {
+    const v = videoRef.current;
+    if (!v || !src) return;
+    const t = v.currentTime;
+    const r = await api.post(`/stream/token/${lessonId}`);
+    v.src = `/api/stream/${lessonId}?token=${r.data.token}`;
+    v.currentTime = t;
+    v.play().catch(() => {});
+  }
+
+  if (failed)
+    return (
+      <div className="flex aspect-video w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-ink-900/10 dark:border-white/10 bg-black/90 text-center shadow-note">
+        <div className="text-5xl">📼</div>
+        <p className="max-w-sm px-4 text-slate-300">
+          Video bài này hiện chưa xem được. Em thử lại sau, hoặc báo thầy kiểm tra giúp nhé.
+        </p>
+        <button
+          onClick={() => { errorCount.current = 0; setFailed(false); retryWithFreshToken(); }}
+          className="btn-primary text-sm"
+        >
+          ↻ Thử lại
+        </button>
+      </div>
+    );
+
   return (
     <div className="relative overflow-hidden rounded-2xl border-2 border-ink-900/10 dark:border-white/10 bg-black shadow-note">
       <video
@@ -54,19 +84,22 @@ export default function VideoPlayer({ lessonId }: { lessonId: string }) {
         disablePictureInPicture
         className="aspect-video w-full"
         onContextMenu={(e) => e.preventDefault()}
+        onPlaying={() => { errorCount.current = 0; }}
         onPlay={() => reportActivity('VIDEO_PLAY', { lessonId })}
         onPause={() => reportActivity('VIDEO_PAUSE', { lessonId })}
         onSeeked={() => reportActivity('VIDEO_SEEK', { lessonId, at: videoRef.current?.currentTime })}
         onEnded={() => reportActivity('VIDEO_ENDED', { lessonId })}
-        onError={async () => {
-          // Token hết hạn giữa chừng → xin token mới, giữ vị trí đang xem
-          const v = videoRef.current;
-          if (!v || !src) return;
-          const t = v.currentTime;
-          const r = await api.post(`/stream/token/${lessonId}`);
-          v.src = `/api/stream/${lessonId}?token=${r.data.token}`;
-          v.currentTime = t;
-          v.play().catch(() => {});
+        onError={() => {
+          // Token stream sống 60s nên hết hạn giữa chừng là bình thường → xin token
+          // mới, giữ vị trí đang xem. Nhưng nếu lỗi liên tiếp (file mất, server lỗi)
+          // thì dừng lại báo người dùng — retry vô hạn làm player nhấp nháy.
+          if (!videoRef.current || !src) return;
+          errorCount.current += 1;
+          if (errorCount.current > 2) {
+            setFailed(true);
+            return;
+          }
+          retryWithFreshToken().catch(() => setFailed(true));
         }}
       />
       <div className="watermark" style={wmPos}>

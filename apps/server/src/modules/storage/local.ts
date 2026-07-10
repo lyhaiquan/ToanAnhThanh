@@ -30,6 +30,15 @@ export class LocalStorageProvider implements StorageProvider {
     return fs.statSync(this.resolve(videoRef)).size;
   }
 
+  exists(videoRef: string): boolean {
+    try {
+      this.resolve(videoRef);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
   createReadStream(videoRef: string, range?: { start: number; end: number }): VideoStream {
     const filePath = this.resolve(videoRef);
     const size = fs.statSync(filePath).size;

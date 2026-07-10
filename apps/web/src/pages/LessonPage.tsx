@@ -10,6 +10,7 @@ interface LessonInfo {
   title: string;
   description: string;
   hasVideo: boolean;
+  videoPending: boolean;
   hasQuiz: boolean;
   chapterTitle: string;
   courseId: string;
@@ -57,6 +58,12 @@ export default function LessonPage() {
       <div className="mt-6 grid gap-6 xl:grid-cols-[1.6fr,1fr]">
         <div className="space-y-6">
           {lesson.hasVideo && <VideoPlayer lessonId={lesson.id} />}
+          {lesson.videoPending && (
+            <div className="card flex items-center gap-3 p-5 text-sm text-slate-500 dark:text-slate-400">
+              <span className="text-2xl">🎬</span>
+              Video bài giảng đang được thầy cập nhật — em vẫn đọc tóm tắt và làm quiz bên dưới được nhé.
+            </div>
+          )}
           <p className="card p-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{lesson.description}</p>
           {lesson.hasQuiz && <QuizPanel lessonId={lesson.id} onPassed={() => setPassed(true)} />}
           {passed && (

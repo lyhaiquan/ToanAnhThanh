@@ -4,6 +4,7 @@ import { requireAuth, requireRole } from '../../middleware/auth.js';
 import { prisma } from '../../db.js';
 import { isLessonUnlocked } from '../quiz/service.js';
 import { ensureLessonAccess } from './access.js';
+import { getStorage } from '../storage/index.js';
 
 export const coursesRouter = Router();
 
@@ -86,11 +87,15 @@ coursesRouter.get('/lessons/:lessonId', requireAuth, async (req, res) => {
     data: { userId: req.user!.id, type: 'PAGE_VIEW', metadata: JSON.stringify({ lessonId: lesson.id, title: lesson.title }) },
   });
 
+  // videoRef có trong DB nhưng file mất trên đĩa (seed chưa kèm media, file bị xóa...)
+  // → hasVideo false để client không render player hỏng; videoPending để UI báo "đang cập nhật".
+  const videoOnDisk = !!lesson.videoRef && getStorage().exists(lesson.videoRef);
   res.json({
     id: lesson.id,
     title: lesson.title,
     description: lesson.description,
-    hasVideo: !!lesson.videoRef,
+    hasVideo: videoOnDisk,
+    videoPending: !!lesson.videoRef && !videoOnDisk,
     hasQuiz: !!lesson.quiz,
     chapterTitle: lesson.chapter.title,
     courseId: lesson.chapter.course.id,

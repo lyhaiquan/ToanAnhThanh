@@ -16,4 +16,6 @@ export interface StorageProvider {
   createReadStream(videoRef: string, range?: { start: number; end: number }): VideoStream;
   /** Kích thước file (bytes) để trả header Range. */
   getSize(videoRef: string): number;
+  /** File có thật sự tồn tại không — hasVideo của bài học dựa vào đây. */
+  exists(videoRef: string): boolean;
 }

@@ -35,4 +35,9 @@ export class GoogleDriveProvider implements StorageProvider {
   createReadStream(): VideoStream {
     throw new Error('GoogleDriveProvider.createReadStream chưa được kích hoạt — cần credentials.');
   }
+
+  exists(): boolean {
+    // Không kiểm tra được từ xa khi chưa kích hoạt; coi như có để không giấu bài học.
+    return true;
+  }
 }
