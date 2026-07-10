@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth, useTheme } from '../lib/store';
 import { api } from '../lib/api';
+import OnboardingGuide from './OnboardingGuide';
 
 const studentLinks = [
   { to: '/', label: 'Khóa học', icon: '📚' },
@@ -27,6 +28,18 @@ export default function Layout() {
   const [pwForm, setPwForm] = useState({ oldPassword: '', newPassword: '' });
   const [pwError, setPwError] = useState('');
   const [pwSaving, setPwSaving] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
+
+  // Hiện hướng dẫn tự động lần đầu mỗi tài khoản đăng nhập (nhớ trong localStorage)
+  const guideKey = user ? `tat_guide_seen_${user.id}` : '';
+  useEffect(() => {
+    if (user && !localStorage.getItem(guideKey)) setShowGuide(true);
+  }, [user, guideKey]);
+
+  function closeGuide() {
+    if (guideKey) localStorage.setItem(guideKey, '1');
+    setShowGuide(false);
+  }
 
   // Chấm đỏ nhắc lớp live: học sinh có buổi đang diễn ra hoặc bắt đầu trong 24h tới
   useEffect(() => {
@@ -112,6 +125,9 @@ export default function Layout() {
               <div className="text-xs text-slate-500">{user?.role === 'ADMIN' ? 'Quản trị viên' : 'Học sinh'}</div>
             </div>
           </div>
+          <button onClick={() => setShowGuide(true)} className="btn-ghost w-full text-sm" title="Xem lại hướng dẫn sử dụng">
+            ❓ Hướng dẫn sử dụng
+          </button>
           <div className="flex gap-2">
             <button onClick={toggle} className="btn-ghost flex-1 text-sm" title="Đổi giao diện sáng/tối">
               {dark ? '☀️ Sáng' : '🌙 Tối'}
@@ -129,6 +145,8 @@ export default function Layout() {
       <main className="ml-64 flex-1 px-8 py-8">
         <Outlet />
       </main>
+
+      {showGuide && user && <OnboardingGuide role={user.role} onClose={closeGuide} />}
 
       {showPw && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={() => setShowPw(false)}>
